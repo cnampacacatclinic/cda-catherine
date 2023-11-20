@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\CategorieRepository;
+use App\Repository\ImgRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CategorieRepository::class)
+ * @ORM\Entity(repositoryClass=ImgRepository::class)
  */
-class Categorie
+class Img
 {
     /**
      * @ORM\Id
@@ -22,24 +22,24 @@ class Categorie
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nameCategorie;
+    private $pathImg;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getCategorie(): ?string
+    public function getPathImg(): ?string
     {
-        return $this->nameCategorie;
+        return $this->pathImg;
     }
 
-    public function setCategorie(string $nameCategorie): self
+    public function setPathImg(string $pathImg): self
     {
-        $this->nameCategorie = $nameCategorie;
+        $this->pathImg = $pathImg;
 
         return $this;
-        
     }
 
 }

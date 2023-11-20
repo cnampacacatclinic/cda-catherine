@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -47,6 +49,32 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lastName;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $firstName;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Event::class, inversedBy="users")
+     */
+    private $fkEvent;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="usersList")
+     */
+    private $FK_event;
+
+    public function __construct()
+    {
+        $this->FK_event = new ArrayCollection();
+    }
+
+   
     public function getId(): ?int
     {
         return $this->id;
@@ -154,4 +182,58 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getlastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setlastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getFkEvent(): ?Event
+    {
+        return $this->fkEvent;
+    }
+
+    public function setFkEvent(?Event $fkEvent): self
+    {
+        $this->fkEvent = $fkEvent;
+
+        return $this;
+    }
+
+    public function addFKEvent(Event $fKEvent): self
+    {
+        if (!$this->FK_event->contains($fKEvent)) {
+            $this->FK_event[] = $fKEvent;
+        }
+
+        return $this;
+    }
+
+    public function removeFKEvent(Event $fKEvent): self
+    {
+        $this->FK_event->removeElement($fKEvent);
+
+        return $this;
+    }
+
+    
 }

@@ -22,12 +22,7 @@ class Article
     /**
      * @ORM\Column(type="datetime")
      */
-    private $date;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $titleArticle;
+    private $dateArticle;
 
     /**
      * @ORM\Column(type="text")
@@ -35,41 +30,64 @@ class Article
     private $textArticle;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titleArticle;
+
+    /**
+     * @ORM\Column(type="boolean")
      */
     private $active;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="articles")
+     * @ORM\ManyToOne(targetEntity=Page::class, inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $fkPage;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Categorie::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $fkCategorie;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article")
+     */
+    private $fkComment;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $fkUser;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Img::class)
+     */
+    private $fkImg;
+
+ 
+
+    public function __construct()
+    {
+        $this->fkComment = new ArrayCollection();
+        $this->fkImg = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDateArticle(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->dateArticle;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDateArticle(\DateTimeInterface $dateArticle): self
     {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    public function gettitleArticle(): ?string
-    {
-        return $this->titleArticle;
-    }
-
-    public function settitleArticle(string $titleArticle): self
-    {
-        $this->titleArticle = $titleArticle;
+        $this->dateArticle = $dateArticle;
 
         return $this;
     }
@@ -86,14 +104,38 @@ class Article
         return $this;
     }
 
-    public function getActive(): ?int
+    public function getTitleArticle(): ?string
+    {
+        return $this->titleArticle;
+    }
+
+    public function setTitleArticle(string $titleArticle): self
+    {
+        $this->titleArticle = $titleArticle;
+
+        return $this;
+    }
+
+    public function isActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(int $active): self
+    public function setActive(bool $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    public function getFkPage(): ?Page
+    {
+        return $this->fkPage;
+    }
+
+    public function setFkPage(?Page $fkPage): self
+    {
+        $this->fkPage = $fkPage;
 
         return $this;
     }
@@ -110,4 +152,70 @@ class Article
         return $this;
     }
 
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getFkComment(): Collection
+    {
+        return $this->fkComment;
+    }
+
+    public function addFkComment(Comment $fkComment): self
+    {
+        if (!$this->fkComment->contains($fkComment)) {
+            $this->fkComment[] = $fkComment;
+            $fkComment->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFkComment(Comment $fkComment): self
+    {
+        if ($this->fkComment->removeElement($fkComment)) {
+            // set the owning side to null (unless already changed)
+            if ($fkComment->getArticle() === $this) {
+                $fkComment->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getFkUser(): ?User
+    {
+        return $this->fkUser;
+    }
+
+    public function setFkUser(?User $fkUser): self
+    {
+        $this->fkUser = $fkUser;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Img>
+     */
+    public function getFkImg(): Collection
+    {
+        return $this->fkImg;
+    }
+
+    public function addFkImg(Img $fkImg): self
+    {
+        if (!$this->fkImg->contains($fkImg)) {
+            $this->fkImg[] = $fkImg;
+        }
+
+        return $this;
+    }
+
+    public function removeFkImg(Img $fkImg): self
+    {
+        $this->fkImg->removeElement($fkImg);
+
+        return $this;
+    }
+ 
 }
