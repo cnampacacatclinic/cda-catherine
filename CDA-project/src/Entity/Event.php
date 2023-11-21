@@ -44,6 +44,11 @@ class Event
      */
     private $usersList;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $descriptionEvent;
+
     public function __construct()
     {
         $this->participates = new ArrayCollection();
@@ -154,6 +159,18 @@ class Event
         if ($this->usersList->removeElement($usersList)) {
             $usersList->removeFKEvent($this);
         }
+
+        return $this;
+    }
+
+    public function getDescriptionEvent(): ?string
+    {
+        return $this->descriptionEvent;
+    }
+
+    public function setDescriptionEvent(string $descriptionEvent): self
+    {
+        $this->descriptionEvent = $descriptionEvent;
 
         return $this;
     }

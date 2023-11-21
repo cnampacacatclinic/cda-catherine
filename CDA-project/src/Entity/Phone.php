@@ -28,6 +28,17 @@ class Phone
      */
     private $center;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isMobile;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=PhoneType::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $fkType;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,6 +64,30 @@ class Phone
     public function setCenter(?Center $center): self
     {
         $this->center = $center;
+
+        return $this;
+    }
+
+    public function isIsMobile(): ?bool
+    {
+        return $this->isMobile;
+    }
+
+    public function setIsMobile(bool $isMobile): self
+    {
+        $this->isMobile = $isMobile;
+
+        return $this;
+    }
+
+    public function getFkType(): ?PhoneType
+    {
+        return $this->fkType;
+    }
+
+    public function setFkType(?PhoneType $fkType): self
+    {
+        $this->fkType = $fkType;
 
         return $this;
     }

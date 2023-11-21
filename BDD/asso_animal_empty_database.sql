@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 20 nov. 2023 à 10:56
+-- Généré le : lun. 20 nov. 2023 à 15:05
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -84,7 +84,6 @@ CREATE TABLE `center` (
 
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL,
-  `article_id` int(11) NOT NULL,
   `fk_article_id` int(11) NOT NULL,
   `fk_user_id` int(11) DEFAULT NULL,
   `date_comment` datetime NOT NULL,
@@ -108,7 +107,7 @@ CREATE TABLE `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20231120092432', '2023-11-20 10:24:41', 1585);
+('DoctrineMigrations\\Version20231120140223', '2023-11-20 15:02:48', 1493);
 
 -- --------------------------------------------------------
 
@@ -121,7 +120,8 @@ CREATE TABLE `event` (
   `start_date` datetime NOT NULL,
   `end_date` datetime NOT NULL,
   `title_event` varchar(255) NOT NULL,
-  `active` tinyint(1) NOT NULL
+  `active` tinyint(1) NOT NULL,
+  `description_event` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -171,7 +171,20 @@ CREATE TABLE `page` (
 CREATE TABLE `phone` (
   `id` int(11) NOT NULL,
   `center_id` int(11) NOT NULL,
-  `phone_number` varchar(255) NOT NULL
+  `fk_type_id` int(11) NOT NULL,
+  `phone_number` varchar(255) NOT NULL,
+  `is_mobile` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `phone_type`
+--
+
+CREATE TABLE `phone_type` (
+  `id` int(11) NOT NULL,
+  `name_type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -256,7 +269,6 @@ ALTER TABLE `center`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `IDX_9474526C7294869C` (`article_id`),
   ADD KEY `IDX_9474526C82FA4C0F` (`fk_article_id`),
   ADD KEY `IDX_9474526C5741EEB9` (`fk_user_id`);
 
@@ -298,7 +310,14 @@ ALTER TABLE `page`
 --
 ALTER TABLE `phone`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `IDX_444F97DD5932F377` (`center_id`);
+  ADD KEY `IDX_444F97DD5932F377` (`center_id`),
+  ADD KEY `IDX_444F97DD3563B1BF` (`fk_type_id`);
+
+--
+-- Index pour la table `phone_type`
+--
+ALTER TABLE `phone_type`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `reset_password_request`
@@ -382,6 +401,12 @@ ALTER TABLE `phone`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `phone_type`
+--
+ALTER TABLE `phone_type`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `reset_password_request`
 --
 ALTER TABLE `reset_password_request`
@@ -417,13 +442,13 @@ ALTER TABLE `article_img`
 --
 ALTER TABLE `comment`
   ADD CONSTRAINT `FK_9474526C5741EEB9` FOREIGN KEY (`fk_user_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `FK_9474526C7294869C` FOREIGN KEY (`article_id`) REFERENCES `article` (`id`),
   ADD CONSTRAINT `FK_9474526C82FA4C0F` FOREIGN KEY (`fk_article_id`) REFERENCES `article` (`id`);
 
 --
 -- Contraintes pour la table `phone`
 --
 ALTER TABLE `phone`
+  ADD CONSTRAINT `FK_444F97DD3563B1BF` FOREIGN KEY (`fk_type_id`) REFERENCES `phone_type` (`id`),
   ADD CONSTRAINT `FK_444F97DD5932F377` FOREIGN KEY (`center_id`) REFERENCES `center` (`id`);
 
 --

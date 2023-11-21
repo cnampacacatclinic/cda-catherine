@@ -28,12 +28,6 @@ class Comment
     private $textComment;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="fkComment")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $article;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Article::class)
      * @ORM\JoinColumn(nullable=false)
      */
@@ -69,18 +63,6 @@ class Comment
     public function setTextComment(string $textComment): self
     {
         $this->textComment = $textComment;
-
-        return $this;
-    }
-
-    public function getArticle(): ?Article
-    {
-        return $this->article;
-    }
-
-    public function setArticle(?Article $article): self
-    {
-        $this->article = $article;
 
         return $this;
     }

@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CenterRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use App\Enum\TypeWay;//import l'enum TypeWay
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -95,9 +96,14 @@ class Center
 
     public function setTypeWay(string $typeWay): self
     {
-        $this->typeWay = $typeWay;
-
-        return $this;
+        if (!TypeWay::isValid($typeWay)) {
+            throw new \InvalidArgumentException("Ce type de voie n'existe pas.");
+            $this->typeWay = "Voie";
+            return $this;
+        }else{
+            $this->typeWay = $typeWay;
+            return $this;
+        }
     }
 
     public function getNameWay(): ?string
