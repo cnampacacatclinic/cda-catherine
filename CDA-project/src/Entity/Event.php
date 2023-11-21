@@ -51,7 +51,6 @@ class Event
 
     public function __construct()
     {
-        $this->participates = new ArrayCollection();
         $this->usersList = new ArrayCollection();
     }
 
@@ -108,34 +107,7 @@ class Event
         return $this;
     }
 
-    /**
-     * @return Collection<int, Participate>
-     */
-    public function getParticipates(): Collection
-    {
-        return $this->participates;
-    }
-
-    public function addParticipate(Participate $participate): self
-    {
-        if (!$this->participates->contains($participate)) {
-            $this->participates[] = $participate;
-            $participate->addEvent($this);
-        }
-
-        return $this;
-    }
-
-    public function removeParticipate(Participate $participate): self
-    {
-        if ($this->participates->removeElement($participate)) {
-            $participate->removeEvent($this);
-        }
-
-        return $this;
-    }
-
-
+   
     /**
      * @return Collection<int, User>
      */
