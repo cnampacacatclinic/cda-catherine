@@ -67,12 +67,12 @@ class Article
      */
     private $fkImg;
 
- 
 
     public function __construct()
     {
         $this->fkComment = new ArrayCollection();
         $this->fkImg = new ArrayCollection();
+        
     }
 
     public function getId(): ?int
@@ -164,7 +164,7 @@ class Article
     {
         if (!$this->fkComment->contains($fkComment)) {
             $this->fkComment[] = $fkComment;
-            $fkComment->setArticle($this);
+            $fkComment->setfkArticle($this);
         }
 
         return $this;
@@ -174,8 +174,8 @@ class Article
     {
         if ($this->fkComment->removeElement($fkComment)) {
             // set the owning side to null (unless already changed)
-            if ($fkComment->getArticle() === $this) {
-                $fkComment->setArticle(null);
+            if ($fkComment->getfkArticle() === $this) {
+                $fkComment->setfkArticle(null);
             }
         }
 
