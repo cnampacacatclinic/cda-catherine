@@ -87,7 +87,6 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
         // line 6
         echo "
 <div class=\"example-wrapper\">
-    <h1>Asso Animal</h1>
     <p>Acceuille</p>
 </div>
 ";
@@ -132,7 +131,6 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
 {% block body %}
 
 <div class=\"example-wrapper\">
-    <h1>Asso Animal</h1>
     <p>Acceuille</p>
 </div>
 {% endblock %}
