@@ -63,4 +63,17 @@ class PhoneRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+public function findPhonesByCenterId($centerId)
+    {
+        return $this->createQueryBuilder('phone')
+            ->select('phone.phoneNumber', 'fkType.nameType as typeName')
+            ->innerJoin('phone.center', 'center')
+            ->innerJoin('phone.fkType', 'fkType')
+            ->andWhere('center.id = :centerId')
+            ->setParameter('centerId', $centerId)
+            ->orderBy('typeName')
+            ->getQuery()
+            ->getResult();
+    }
 }

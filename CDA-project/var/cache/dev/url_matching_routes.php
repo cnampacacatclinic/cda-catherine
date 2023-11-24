@@ -12,6 +12,7 @@ return [
         '/aider' => [[['_route' => 'app_aider', '_controller' => 'App\\Controller\\AiderController::index'], null, null, null, false, false, null]],
         '/contact' => [[['_route' => 'app_contact', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
         '/events' => [[['_route' => 'app_event_page', '_controller' => 'App\\Controller\\EventPageController::index'], null, null, null, false, false, null]],
+        '/faq' => [[['_route' => 'app_faq', '_controller' => 'App\\Controller\\FAQController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/main' => [[['_route' => 'app_main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/news' => [[['_route' => 'app_news', '_controller' => 'App\\Controller\\NewsController::index'], null, null, null, false, false, null]],

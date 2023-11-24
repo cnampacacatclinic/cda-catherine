@@ -92,7 +92,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
                                         <a class=\"nav-link\" title=\"Home\" href=\"";
         // line 35
         echo "/";
-        echo "\">Home <span class=\"sr-only\">(current)</span></a>
+        echo "\">Home</a>
                                     </li>
                                     <li class=\"nav-item\">
                                         <a class=\"nav-link\" title=\"Comment aider\" href=\"";
@@ -119,32 +119,38 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
         echo "\">Evenements</a>
                                     </li>
                                     <li class=\"nav-item\">
-                                        <a class=\"nav-link\" title=\"News\" href=\"";
+                                        <a class=\"nav-link\" title=\"FAQ\" href=\"";
         // line 50
+        echo "/faq";
+        echo "\">F.A.Q.</a>
+                                    </li>
+                                    <li class=\"nav-item\">
+                                        <a class=\"nav-link\" title=\"News\" href=\"";
+        // line 53
         echo "/news";
         echo "\">News</a>
                                     </li>
                                     <li class=\"nav-item\">
 
                                         ";
-        // line 54
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54)) {
-            // line 55
+        // line 57
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57)) {
+            // line 58
             echo "                                            <a class=\"nav-link\" title=\"Logout\" href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Logout</a>
                                         ";
         }
-        // line 57
+        // line 60
         echo "                                        ";
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57), false))) {
-            // line 58
+        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 60, $this->source); })()), "user", [], "any", false, false, false, 60), false))) {
+            // line 61
             echo "                                            <a class=\"nav-link\" title=\"Connexion\" href=\"";
             echo "/login";
             echo "\">Login</a>
                                         ";
         }
-        // line 60
+        // line 63
         echo "                                    </li>
                                 </ul>
                                 <form class=\"d-flex\">
@@ -158,12 +164,12 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
                 <h1>Asso Animal</h1>
             </header>
                 ";
-        // line 72
+        // line 75
         $this->displayBlock('body', $context, $blocks);
-        // line 73
+        // line 76
         echo "        </main>
         <script src=\"";
-        // line 74
+        // line 77
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap-5.0.2-dist/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
     </body>
@@ -242,7 +248,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
 
     }
 
-    // line 72
+    // line 75
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -281,7 +287,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
      */
     public function getDebugInfo()
     {
-        return array (  246 => 72,  233 => 19,  223 => 18,  210 => 15,  200 => 14,  181 => 5,  167 => 74,  164 => 73,  162 => 72,  148 => 60,  142 => 58,  139 => 57,  133 => 55,  131 => 54,  124 => 50,  118 => 47,  112 => 44,  106 => 41,  100 => 38,  94 => 35,  78 => 21,  76 => 18,  73 => 17,  70 => 14,  65 => 11,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  252 => 75,  239 => 19,  229 => 18,  216 => 15,  206 => 14,  187 => 5,  173 => 77,  170 => 76,  168 => 75,  154 => 63,  148 => 61,  145 => 60,  139 => 58,  137 => 57,  130 => 53,  124 => 50,  118 => 47,  112 => 44,  106 => 41,  100 => 38,  94 => 35,  78 => 21,  76 => 18,  73 => 17,  70 => 14,  65 => 11,  59 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -320,7 +326,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
                             <div class=\"navbar-nav\">
                                 <ul class=\"navbar-nav mr-auto\">
                                     <li class=\"nav-item active\">
-                                        <a class=\"nav-link\" title=\"Home\" href=\"{{ '/' }}\">Home <span class=\"sr-only\">(current)</span></a>
+                                        <a class=\"nav-link\" title=\"Home\" href=\"{{ '/' }}\">Home</a>
                                     </li>
                                     <li class=\"nav-item\">
                                         <a class=\"nav-link\" title=\"Comment aider\" href=\"{{ '/aider' }}\">Comment aider</a>
@@ -333,6 +339,9 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
                                     </li>
                                     <li class=\"nav-item\">
                                         <a class=\"nav-link\" title=\"Evenements\" href=\"{{ '/events' }}\">Evenements</a>
+                                    </li>
+                                    <li class=\"nav-item\">
+                                        <a class=\"nav-link\" title=\"FAQ\" href=\"{{ '/faq' }}\">F.A.Q.</a>
                                     </li>
                                     <li class=\"nav-item\">
                                         <a class=\"nav-link\" title=\"News\" href=\"{{ '/news' }}\">News</a>

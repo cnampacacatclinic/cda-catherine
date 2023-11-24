@@ -606,7 +606,13 @@ class ComposerStaticInit1ea76794f8844fa733e63ef7361c3f50
     );
 
     public static $classMap = array (
+        'App\\Controller\\AboutController' => __DIR__ . '/../..' . '/src/Controller/AboutController.php',
+        'App\\Controller\\AiderController' => __DIR__ . '/../..' . '/src/Controller/AiderController.php',
+        'App\\Controller\\ContactController' => __DIR__ . '/../..' . '/src/Controller/ContactController.php',
+        'App\\Controller\\EventPageController' => __DIR__ . '/../..' . '/src/Controller/EventPageController.php',
+        'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
         'App\\Controller\\MainController' => __DIR__ . '/../..' . '/src/Controller/MainController.php',
+        'App\\Controller\\NewsController' => __DIR__ . '/../..' . '/src/Controller/NewsController.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\ResetPasswordController' => __DIR__ . '/../..' . '/src/Controller/ResetPasswordController.php',
         'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',

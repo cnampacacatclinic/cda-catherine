@@ -7,6 +7,7 @@ return [
     'app_aider' => [[], ['_controller' => 'App\\Controller\\AiderController::index'], [], [['text', '/aider']], [], [], []],
     'app_contact' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], [], []],
     'app_event_page' => [[], ['_controller' => 'App\\Controller\\EventPageController::index'], [], [['text', '/events']], [], [], []],
+    'app_faq' => [[], ['_controller' => 'App\\Controller\\FAQController::index'], [], [['text', '/faq']], [], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'app_main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/main']], [], [], []],
     'app_news' => [[], ['_controller' => 'App\\Controller\\NewsController::index'], [], [['text', '/news']], [], [], []],

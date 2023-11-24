@@ -85,29 +85,51 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/Simplon/Documents/prive-cda-catherine/CDA-project/src/Controller/EventPageController.php", 0), "html", null, true);
-        echo "\">src/Controller/EventPageController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
+        echo "<section>
+    ";
+        // line 7
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["pageData"]) || array_key_exists("pageData", $context) ? $context["pageData"] : (function () { throw new RuntimeError('Variable "pageData" does not exist.', 7, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
+            // line 8
+            echo "        <h2>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "titlePage", [], "any", false, false, false, 8), "html", null, true);
+            echo "</h2>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 10
+        echo "    
+    ";
+        // line 11
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["enventData"]) || array_key_exists("enventData", $context) ? $context["enventData"] : (function () { throw new RuntimeError('Variable "enventData" does not exist.', 11, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
+            // line 12
+            echo "        <h3>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "titleEvent", [], "any", false, false, false, 12), "html", null, true);
+            echo "</h3>
+        <p>Date de début  : ";
+            // line 13
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "startDate", [], "any", false, false, false, 13), "m/d/Y"), "html", null, true);
+            echo "</p>
+        <p>Date de fin : ";
+            // line 14
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "endDate", [], "any", false, false, false, 14), "m/d/Y"), "html", null, true);
+            echo "</p>
+        <p>";
+            // line 15
+            echo twig_get_attribute($this->env, $this->source, $context["evenement"], "descriptionEvent", [], "any", false, false, false, 15);
+            echo "</p>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/Simplon/Documents/prive-cda-catherine/CDA-project/templates/event_page/index.html.twig", 0), "html", null, true);
-        echo "\">templates/event_page/index.html.twig</a></code></li>
-    </ul>
-</div>
+        echo "</section>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -138,7 +160,7 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
      */
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  132 => 17,  124 => 15,  120 => 14,  116 => 13,  111 => 12,  107 => 11,  104 => 10,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -148,20 +170,18 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
 {% block title %}Hello EventPageController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'C:/Users/Simplon/Documents/prive-cda-catherine/CDA-project/src/Controller/EventPageController.php'|file_link(0) }}\">src/Controller/EventPageController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'C:/Users/Simplon/Documents/prive-cda-catherine/CDA-project/templates/event_page/index.html.twig'|file_link(0) }}\">templates/event_page/index.html.twig</a></code></li>
-    </ul>
-</div>
+<section>
+    {% for page in pageData %}
+        <h2>{{ page.titlePage }}</h2>
+    {% endfor %}
+    
+    {% for evenement in enventData %}
+        <h3>{{ evenement.titleEvent }}</h3>
+        <p>Date de début  : {{ evenement.startDate|date(\"m/d/Y\") }}</p>
+        <p>Date de fin : {{ evenement.endDate|date(\"m/d/Y\") }}</p>
+        <p>{{ evenement.descriptionEvent|raw }}</p>
+    {% endfor %}
+</section>
 {% endblock %}
 ", "event_page/index.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\event_page\\index.html.twig");
     }

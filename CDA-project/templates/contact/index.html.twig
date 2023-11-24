@@ -4,14 +4,27 @@
 
 {% block body %}
 
-<div class="example-wrapper">
-{% for article in articlecontacts %}
-    <h3>{{ article.titleArticle }}</h3>
-    <p>{{ article.textArticle }}</p>
-{% endfor %}
-{% for center in centers %}
-    <h4>{{ center.nameCenter }}</h4>
-    <p>{{ center.numWay }} , {{ center.typeWay }}, {{ center.nameWay }}, {{ center.zipCode }}, {{ center.city }}</p>
-{% endfor %}
-</div>
+    {% for article in articleData %}
+        <h2>{{ article.titleArticle }}</h2>
+        <p>{{ article.textArticle }}</p>
+    {% endfor %}
+
+    <ul>
+        {% for center in centerData %}
+            <li>
+                <ul>
+                    <li>Nom : {{ center.nameCenter }}</li>
+                    <li>Adresse : {{ center.numWay }} {{ center.typeWay }} {{ center.nameWay }} {{ center.zipCode }},
+                        {{ center.city }}</li>
+                </ul>
+            </li>
+
+            {% for phone in phonesForCenter %}
+                {% if phone.center == center.id %}
+                    <p>{{ phone.phoneNumber }}</p>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ul>
+
 {% endblock %}
