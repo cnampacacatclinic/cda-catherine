@@ -18,7 +18,7 @@ class NewsController extends AbstractController
         $pageData = $pageService->findOnePage(5);
         $articleData = $articleService->findOneArticleByFkPage(5);
         
-        return $this->render('aider/index.html.twig', [
+        return $this->render('news/index.html.twig', [
             'pageData' => $pageData,
             'articleData'=>$articleData,
         ]);

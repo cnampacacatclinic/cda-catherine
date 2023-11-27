@@ -12,7 +12,7 @@
     <ul>
         {% for center in centerData %}
             <li>
-                    <p>Nom : {{ center.nameCenter }}</p>
+                    <p>Nom de l'établissement : {{ center.nameCenter }}</p>
                     <p>Adresse : {{ center.numWay }} {{ center.typeWay }} {{ center.nameWay }} {{ center.zipCode }},
                         {{ center.city }}</p>
                     <p>Téléphones :</p>
@@ -25,7 +25,7 @@
                                 <!-- si l'ide de la clé étrangere correpond à l'id du telephone-->
                                 {% if phone.center.id == center.id and phoneType.id == phone.fkType.id %}
                             
-                                    <p>{{ phoneType.nameType }}</p>
+                                    <h4>{{ phoneType.nameType }}</h4>
                     
                                        <p>{{ phone.phoneNumber }}</p>
                             

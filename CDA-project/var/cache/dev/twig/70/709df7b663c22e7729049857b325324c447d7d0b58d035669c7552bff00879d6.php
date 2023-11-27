@@ -86,9 +86,91 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
 
         // line 6
         echo "
-<div class=\"example-wrapper\">
-    <p>Acceuille</p>
-</div>
+    <section>
+    ";
+        // line 8
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["pageData"]) || array_key_exists("pageData", $context) ? $context["pageData"] : (function () { throw new RuntimeError('Variable "pageData" does not exist.', 8, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
+            // line 9
+            echo "        <h2>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "titlePage", [], "any", false, false, false, 9), "html", null, true);
+            echo "</h2>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 11
+        echo "    
+    ";
+        // line 12
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["articleData"]) || array_key_exists("articleData", $context) ? $context["articleData"] : (function () { throw new RuntimeError('Variable "articleData" does not exist.', 12, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+            // line 13
+            echo "        <h3>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "titleArticle", [], "any", false, false, false, 13), "html", null, true);
+            echo "</h3>
+        <p>";
+            // line 14
+            echo twig_get_attribute($this->env, $this->source, $context["article"], "textArticle", [], "any", false, false, false, 14);
+            echo "</p>
+        <a title=\"En savoir plus \" href=\"";
+            // line 15
+            echo "/aider";
+            echo "\">En savoir plus sur comment aider</a>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 17
+        echo "    </section>
+    <section>
+    ";
+        // line 19
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["lastNews"]) || array_key_exists("lastNews", $context) ? $context["lastNews"] : (function () { throw new RuntimeError('Variable "lastNews" does not exist.', 19, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["news"]) {
+            // line 20
+            echo "
+        <a title=\"Lire la suite\" href=\"";
+            // line 21
+            echo "/article?a=";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 21), "html", null, true);
+            echo "\"><h3>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "titleArticle", [], "any", false, false, false, 21), "html", null, true);
+            echo "</h3></a>
+        <p>";
+            // line 22
+            echo twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 22);
+            echo "</p>
+        ";
+            // line 24
+            echo "        ";
+            if ((1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 24)), 50))) {
+                // line 25
+                echo "            <p><a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article", ["a" => twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+                echo "\">Lire la suite</a></p>
+        ";
+            }
+            // line 27
+            echo "        
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['news'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 29
+        echo "
+    <a title=\"En savoir plus\" href=\"";
+        // line 30
+        echo "/news";
+        echo "\">Toutes les news</a>
+    </section>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -119,7 +201,7 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
      */
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  170 => 30,  167 => 29,  160 => 27,  154 => 25,  151 => 24,  147 => 22,  140 => 21,  137 => 20,  133 => 19,  129 => 17,  121 => 15,  117 => 14,  112 => 13,  108 => 12,  105 => 11,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -130,9 +212,32 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
 
 {% block body %}
 
-<div class=\"example-wrapper\">
-    <p>Acceuille</p>
-</div>
+    <section>
+    {% for page in pageData %}
+        <h2>{{ page.titlePage }}</h2>
+    {% endfor %}
+    
+    {% for article in articleData %}
+        <h3>{{ article.titleArticle }}</h3>
+        <p>{{ article.textArticle|raw }}</p>
+        <a title=\"En savoir plus \" href=\"{{ '/aider' }}\">En savoir plus sur comment aider</a>
+    {% endfor %}
+    </section>
+    <section>
+    {% for news in lastNews %}
+
+        <a title=\"Lire la suite\" href=\"{{ '/article?a=' }}{{ news.id }}\"><h3>{{ news.titleArticle }}</h3></a>
+        <p>{{ news.textArticle|raw }}</p>
+        {# Ajouter un lien pour lire la suite si nécessaire #}
+        {% if news.textArticle|length > 50 %}
+            <p><a href=\"{{ path('app_article', {'a': news.id}) }}\">Lire la suite</a></p>
+        {% endif %}
+        
+    {% endfor %}
+
+    <a title=\"En savoir plus\" href=\"{{ '/news' }}\">Toutes les news</a>
+    </section>
+
 {% endblock %}
 ", "home/index.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\home\\index.html.twig");
     }

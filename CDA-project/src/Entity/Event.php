@@ -40,8 +40,8 @@ class Event
     private $active;
 
     /**
-     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="FK_event")
-     */
+    * @ORM\ManyToMany(targetEntity=User::class, mappedBy="fkEvent")
+    */
     private $usersList;
 
     /**

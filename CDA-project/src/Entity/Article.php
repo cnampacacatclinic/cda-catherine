@@ -52,11 +52,6 @@ class Article
     private $fkCategorie;
 
     /**
-     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article")
-     */
-    private $fkComment;
-
-    /**
      * @ORM\ManyToOne(targetEntity=User::class)
      * @ORM\JoinColumn(nullable=false)
      */
@@ -148,36 +143,6 @@ class Article
     public function setFkCategorie(?Categorie $fkCategorie): self
     {
         $this->fkCategorie = $fkCategorie;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Comment>
-     */
-    public function getFkComment(): Collection
-    {
-        return $this->fkComment;
-    }
-
-    public function addFkComment(Comment $fkComment): self
-    {
-        if (!$this->fkComment->contains($fkComment)) {
-            $this->fkComment[] = $fkComment;
-            $fkComment->setfkArticle($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFkComment(Comment $fkComment): self
-    {
-        if ($this->fkComment->removeElement($fkComment)) {
-            // set the owning side to null (unless already changed)
-            if ($fkComment->getfkArticle() === $this) {
-                $fkComment->setfkArticle(null);
-            }
-        }
 
         return $this;
     }

@@ -62,7 +62,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="usersList")
-     */
+    * @ORM\JoinTable(name="user_event")
+    */
     private $fkEvent;
 
     public function __construct()

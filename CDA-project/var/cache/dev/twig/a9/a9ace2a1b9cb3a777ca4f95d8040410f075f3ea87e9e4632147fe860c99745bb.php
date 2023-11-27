@@ -113,11 +113,11 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
             echo "</h3>
         <p>Date de début  : ";
             // line 13
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "startDate", [], "any", false, false, false, 13), "m/d/Y"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "startDate", [], "any", false, false, false, 13), "d/m/Y"), "html", null, true);
             echo "</p>
         <p>Date de fin : ";
             // line 14
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "endDate", [], "any", false, false, false, 14), "m/d/Y"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "endDate", [], "any", false, false, false, 14), "d/m/Y"), "html", null, true);
             echo "</p>
         <p>";
             // line 15
@@ -177,8 +177,8 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
     
     {% for evenement in enventData %}
         <h3>{{ evenement.titleEvent }}</h3>
-        <p>Date de début  : {{ evenement.startDate|date(\"m/d/Y\") }}</p>
-        <p>Date de fin : {{ evenement.endDate|date(\"m/d/Y\") }}</p>
+        <p>Date de début  : {{ evenement.startDate|date(\"d/m/Y\") }}</p>
+        <p>Date de fin : {{ evenement.endDate|date(\"d/m/Y\") }}</p>
         <p>{{ evenement.descriptionEvent|raw }}</p>
     {% endfor %}
 </section>

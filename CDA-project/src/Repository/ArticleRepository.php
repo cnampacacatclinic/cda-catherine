@@ -16,6 +16,9 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ArticleRepository extends ServiceEntityRepository
 {
+    public $int=0;
+    public $int2=0;
+    
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Article::class);
@@ -37,6 +40,25 @@ class ArticleRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    /**
+     * Trouve les trois derniers articles en fonction des trois dates les plus récentes pour une page spécifique.
+     *
+     * @param int $int Le nombre d'articles à récupérer
+     * @param int $int2 L'ID de la page pour laquelle récupérer les articles
+     * @return Article[]
+     */
+    public function findLatestArticles($int, $int2)
+    {
+    return $this->createQueryBuilder('a')
+        ->andWhere('a.fkPage = :int2') //condition WHERE fkPage = :int2
+        ->andWhere('a.active = 1') // condition WHERE active = 1
+        ->setParameter('int2', $int2)
+        ->orderBy('a.dateArticle', 'DESC')
+        ->setMaxResults($int)
+        ->getQuery()
+        ->getResult();
     }
 
 //    /**

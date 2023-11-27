@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section>
+    {% for article in articleData %}
+        <h3>{{ article.titleArticle }}</h3>
+        <p>Ecrit par
+            {% for author in authors %}
+
+            {% if article.fkUser.id == author.id %}
+
+                {{ author.firstName }}
+
+            {% endif %}
+                
+            {% endfor %}
+        le {{ article.dateARticle|date("d/m/Y") }}</p>
+        <p>{{ article.textArticle|raw }}</p>
+    {% endfor %}
+</section>
+{% endblock %}

@@ -9,6 +9,7 @@ class ArticleService
     private $articleRepository;
     private $id;
     private $idPage;
+    private $i;
 
     public function __construct(ArticleRepository $articleRepository)
     {
@@ -24,11 +25,10 @@ class ArticleService
     {
         return $this->articleRepository->findBy(['id' => $id]);
     }
+
     public function findOneArticleByFkPage($idPage)
     {
-        
         return $this->articleRepository->findBy(['fkPage' => $idPage, 'active' => 1]);
-    
     }
 
     public function findActiveArticles()
@@ -41,4 +41,7 @@ class ArticleService
         return $this->articleRepository->findBy(['active' => 0]);
     }
 
+    public function findLastNews($i,$id){
+        return $this->articleRepository->findLatestArticles($i,$id);
+    }
 }

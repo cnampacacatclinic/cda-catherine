@@ -4,7 +4,30 @@
 
 {% block body %}
 
-<div class="example-wrapper">
-    <p>Acceuille</p>
-</div>
+    <section>
+    {% for page in pageData %}
+        <h2>{{ page.titlePage }}</h2>
+    {% endfor %}
+    
+    {% for article in articleData %}
+        <h3>{{ article.titleArticle }}</h3>
+        <p>{{ article.textArticle|raw }}</p>
+        <a title="En savoir plus " href="{{ '/aider' }}">En savoir plus sur comment aider</a>
+    {% endfor %}
+    </section>
+    <section>
+    {% for news in lastNews %}
+
+        <a title="Lire la suite" href="{{ '/article?a=' }}{{ news.id }}"><h3>{{ news.titleArticle }}</h3></a>
+        <p>{{ news.textArticle|raw }}</p>
+        {# Ajouter un lien pour lire la suite si nécessaire #}
+        {% if news.textArticle|length > 50 %}
+            <p><a href="{{ path('app_article', {'a': news.id}) }}">Lire la suite</a></p>
+        {% endif %}
+        
+    {% endfor %}
+
+    <a title="En savoir plus" href="{{ '/news' }}">Toutes les news</a>
+    </section>
+
 {% endblock %}

@@ -1,7 +1,4 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello NewsController!{% endblock %}
-
 {% block body %}
 <section>
     {% for page in pageData %}
@@ -9,7 +6,7 @@
     {% endfor %}
     
     {% for article in articleData %}
-        <h3>{{ article.titleArticle }}</h3>
+        <h3><a title="{{ article.titleArticle }}" href="{{ '/article?a=' }}{{ article.id }}">{{ article.titleArticle }}</a></h3>
         <p>{{ article.textArticle|raw }}</p>
     {% endfor %}
 </section>
