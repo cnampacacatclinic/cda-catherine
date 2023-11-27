@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EventPageController!{% endblock %}
+
+{% block body %}
+<section>
+    {% for page in pageData %}
+        <h2>{{ page.titlePage }}</h2>
+    {% endfor %}
+    
+    {% for evenement in enventData %}
+        <h3>{{ evenement.titleEvent }}</h3>
+        <p>Date de début  : {{ evenement.startDate|date("m/d/Y") }}</p>
+        <p>Date de fin : {{ evenement.endDate|date("m/d/Y") }}</p>
+        <p>{{ evenement.descriptionEvent|raw }}</p>
+    {% endfor %}
+</section>
+{% endblock %}
