@@ -3,7 +3,7 @@
 {% block title %}Page Contact{% endblock %}
 
 {% block body %}
-
+<section>
     {% for article in articleData %}
         <h2>{{ article.titleArticle }}</h2>
         <p>{{ article.textArticle }}</p>
@@ -12,19 +12,30 @@
     <ul>
         {% for center in centerData %}
             <li>
-                <ul>
-                    <li>Nom : {{ center.nameCenter }}</li>
-                    <li>Adresse : {{ center.numWay }} {{ center.typeWay }} {{ center.nameWay }} {{ center.zipCode }},
-                        {{ center.city }}</li>
-                </ul>
-            </li>
+                    <p>Nom : {{ center.nameCenter }}</p>
+                    <p>Adresse : {{ center.numWay }} {{ center.typeWay }} {{ center.nameWay }} {{ center.zipCode }},
+                        {{ center.city }}</p>
+                    <p>Téléphones :</p>
+                <!-- pour chaque telephones de la liste de telephones -->
+                {% for phone in phonesForCenter %}
 
-            {% for phone in phonesForCenter %}
-                {% if phone.center == center.id %}
-                    <p>{{ phone.phoneNumber }}</p>
-                {% endif %}
-            {% endfor %}
+                        <!-- pour chaque type de telephone de la liste du type de telepone -->
+                        {% for phoneType in phoneTypes %}
+                                
+                                <!-- si l'ide de la clé étrangere correpond à l'id du telephone-->
+                                {% if phone.center.id == center.id and phoneType.id == phone.fkType.id %}
+                            
+                                    <p>{{ phoneType.nameType }}</p>
+                    
+                                       <p>{{ phone.phoneNumber }}</p>
+                            
+                                {% endif %}
+                                
+                        {% endfor %} 
+            
+                {% endfor %}
+            </li>
         {% endfor %}
     </ul>
-
+</section>
 {% endblock %}

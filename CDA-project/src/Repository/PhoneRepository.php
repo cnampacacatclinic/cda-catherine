@@ -76,4 +76,17 @@ public function findPhonesByCenterId($centerId)
             ->getQuery()
             ->getResult();
     }
+
+    public function findPhonesByCenter2()
+    {
+        return $this->createQueryBuilder('phone')
+            ->select('phone.phoneNumber', 'fkType.nameType as typeName')
+            ->innerJoin('phone.center', 'center')
+            ->innerJoin('phone.fkType', 'fkType')
+            ->andWhere('center.id = :centerId')
+            ->orderBy('typeName')
+            ->getQuery()
+            ->getResult();
+    }
+    
 }

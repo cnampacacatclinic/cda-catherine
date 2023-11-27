@@ -51,4 +51,9 @@ class PhoneService
         return $phoneDTOs;
     }
 
+    public function findPhonesByCenterIdOrderedByType2(): array
+    {
+        return $phonesData = $this->phoneRepository->findPhonesByCenter2();
+    }
+
 }

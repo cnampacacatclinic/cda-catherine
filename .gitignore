@@ -1,0 +1,10 @@
+
+CDA-project/app/config/parameters.yml
+CDA-project/app/config/parameters.yml.dist
+CDA-project/var/cache/*
+CDA-project/var/logs/*
+CDA-project/var/sessions/*
+CDA-project/var/cache/.gitkeep
+CDA-project/var/logs/.gitkeep
+CDA-project/var/sessions/.gitkeep
+CDA-project/var/cache/dev/*
