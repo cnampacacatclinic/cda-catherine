@@ -19,9 +19,9 @@
     {% for news in lastNews %}
 
         <a title="Lire la suite" href="{{ '/article?a=' }}{{ news.id }}"><h3>{{ news.titleArticle }}</h3></a>
-        <p>{{ news.textArticle|raw }}</p>
+        <p>{{ news.textArticle|striptags|slice(0, 300)}} etc..</p>
         {# Ajouter un lien pour lire la suite si nécessaire #}
-        {% if news.textArticle|length > 50 %}
+        {% if news.textArticle|length > 300 %}
             <p><a href="{{ path('app_article', {'a': news.id}) }}">Lire la suite</a></p>
         {% endif %}
         
