@@ -15,14 +15,21 @@ class SearchController extends AbstractController
      */
     public function index(EventService $eventService, ArticleService $articleService): Response
     {
-        
-        $articleSearch = $articleService->findWordA($_GET['word']);
-        $eventSearch = $eventService->findWordE($_GET['word']);
-        
-        return $this->render('search/index.html.twig', [
-            'controller_name' => 'SearchController',
-            'eventSearch' => $eventSearch,
-            'articleSearch'=>$articleSearch,
-        ]);
+        // si on a pas de valeur en get
+        if (empty($_GET['word'])) {
+            return $this->render('page404/index.html.twig', [
+                'controller_name' => 'Page404Controller',
+            ]);
+        }
+        else{
+            $articleSearch = $articleService->findWordA($_GET['word']);
+            $eventSearch = $eventService->findWordE($_GET['word']);
+            
+            return $this->render('search/index.html.twig', [
+                'controller_name' => 'SearchController',
+                'eventSearch' => $eventSearch,
+                'articleSearch'=>$articleSearch,
+            ]);
+        }
     }
 }

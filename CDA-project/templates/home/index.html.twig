@@ -16,6 +16,16 @@
     {% endfor %}
     </section>
     <section>
+    <section>
+        <h3>Ils ont trouvé leur bonheur</h3>
+        {% for avis in livreDOr %}
+
+            <h4>{{ avis.titleArticle }}</h4>
+            <p>{{ avis.textArticle|striptags}}</p>
+            
+        {% endfor %}
+    </section>
+    <h3>Les dernières news</h3>
     {% for news in lastNews %}
 
         <a title="Lire la suite" href="{{ '/article?a=' }}{{ news.id }}"><h3>{{ news.titleArticle }}</h3></a>
@@ -25,8 +35,6 @@
         {% endif %}
         
     {% endfor %}
-
-    <a title="En savoir plus" href="{{ '/news' }}">Toutes les news</a>
     </section>
 
 {% endblock %}

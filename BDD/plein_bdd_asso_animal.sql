@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 24 nov. 2023 à 15:35
+-- Généré le : mar. 28 nov. 2023 à 12:44
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -50,7 +50,12 @@ INSERT INTO `article` (`id`, `fk_page_id`, `fk_categorie_id`, `fk_user_id`, `dat
 (5, 5, 2, 1, '2023-11-22 15:29:05', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p>', 'Article 2', 0),
 (6, 5, 2, 1, '2023-11-22 15:29:06', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p>', 'Article 3', 1),
 (7, 5, 2, 1, '2023-11-22 16:20:24', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p>', 'Article 4', 1),
-(9, 6, 5, 1, '2023-11-22 16:30:12', '<h3>Faire un don</h3>\r\n<p>\r\nLe don est le moyen le plus simple et le plus efficace d\'aider un refuge pour animaux. Votre don permettra de couvrir les frais de nourriture, de soins vétérinaires, d\'hébergement et de transport des animaux. Vous pouvez faire un don en ligne, par chèque ou par carte de crédit. \r\n</p>\r\n<h3>Devenir bénévole</h3>\r\n<p>\r\nDevenir bénévole est une autre excellente façon d\'aider un refuge pour animaux. Vous pouvez aider à nourrir et à soigner les animaux, à nettoyer les cages, à organiser des événements de collecte de fonds ou à faire du bénévolat dans le cadre d\'autres programmes. \r\n</p>\r\n<h3>Partager l\'information sur le refuge</h3>\r\n<p>\r\nPartager l\'information sur le refuge sur les réseaux sociaux ou avec vos amis et votre famille est un excellent moyen d\'aider à faire connaître le refuge et à trouver des familles adoptives pour les animaux. Vous pouvez également partager des histoires sur les animaux du refuge ou sur le travail du refuge. \r\n</p>\r\n<h3>Adopter un animal</h3>\r\n<p>\r\nL\'adoption est la meilleure façon d\'aider un refuge pour animaux. En adoptant un animal, vous lui donnez une chance de trouver une famille aimante et pour la vie. Les refuges accueillent des animaux de tous âges, races et personnalités. Vous êtes sûr de trouver l\'animal qui vous convient. \r\n</p>\r\n<h3>Votre soutien est important</h3>\r\n<p>\r\nGrâce à votre soutien, nous pouvons continuer à aider les animaux sans abri à trouver une famille aimante. Chaque geste, même petit, est important.</p>', 'Voici ce que vous pouvez faire', 1);
+(9, 6, 5, 1, '2023-11-22 16:30:12', '<h3>Faire un don</h3>\r\n<p>\r\nLe don est le moyen le plus simple et le plus efficace d\'aider un refuge pour animaux. Votre don permettra de couvrir les frais de nourriture, de soins vétérinaires, d\'hébergement et de transport des animaux. Vous pouvez faire un don en ligne, par chèque ou par carte de crédit. \r\n</p>\r\n<h3>Devenir bénévole</h3>\r\n<p>\r\nDevenir bénévole est une autre excellente façon d\'aider un refuge pour animaux. Vous pouvez aider à nourrir et à soigner les animaux, à nettoyer les cages, à organiser des événements de collecte de fonds ou à faire du bénévolat dans le cadre d\'autres programmes. \r\n</p>\r\n<h3>Partager l\'information sur le refuge</h3>\r\n<p>\r\nPartager l\'information sur le refuge sur les réseaux sociaux ou avec vos amis et votre famille est un excellent moyen d\'aider à faire connaître le refuge et à trouver des familles adoptives pour les animaux. Vous pouvez également partager des histoires sur les animaux du refuge ou sur le travail du refuge. \r\n</p>\r\n<h3>Adopter un animal</h3>\r\n<p>\r\nL\'adoption est la meilleure façon d\'aider un refuge pour animaux. En adoptant un animal, vous lui donnez une chance de trouver une famille aimante et pour la vie. Les refuges accueillent des animaux de tous âges, races et personnalités. Vous êtes sûr de trouver l\'animal qui vous convient. \r\n</p>\r\n<h3>Votre soutien est important</h3>\r\n<p>\r\nGrâce à votre soutien, nous pouvons continuer à aider les animaux sans abri à trouver une famille aimante. Chaque geste, même petit, est important.</p>', 'Voici ce que vous pouvez faire', 1),
+(10, 1, 2, 2, '2023-11-01 11:13:37', '\r\n<p>Nos refuges animaliers accueillent des chiens et des chats abandonnés, perdus ou maltraités. Ils leur offrent un abri, des soins et une éducation pour les préparer à une adoption responsable.<br> \r\nLes refuges animaliers sont des lieux essentiels pour la protection des animaux. Grâce à leur travail, de nombreux chiens et chats trouvent un nouveau foyer et une seconde chance.</p>', 'Nous aider', 1),
+(11, 8, 1, 2, '2023-11-28 12:18:59', '<p>J\'ai eu le coup de foudre pour ce  chien ! Merci pour tout !</p>\r\n', '', 0),
+(12, 8, 1, 2, '2023-11-28 12:18:59', 'Adopter notre chat chez Asso Animal a été la meilleure décision de ma vie. Il  comble notre maison de ronronnements chaleureux et de moments de bonheur infinis. Mes deux fils sont si heureux !', 'Hélène', 1),
+(13, 8, 1, 2, '2023-11-28 12:38:42', 'C\'est incroyable comment un petit être poilu peut changer votre quotidien. Depuis l\'adoption de mon chien, chaque jour devient une aventure joyeuse. Asso Animal fait vraiment un travail exceptionnel en donnant une seconde chance à ces animaux adorables.', 'Karim', 1),
+(14, 8, 1, 2, '2023-11-28 12:38:42', 'Soutenir Asso Animal était une évidence. Adopter notre chien non seulement nous a apporté un compagnon fidèle, mais a également contribué à donner une vie meilleure à un être qui en avait besoin. Notre foyer est désormais empli de gratitude et d\'amour, grâce à cette belle initiative.', 'Erica', 1);
 
 -- --------------------------------------------------------
 
@@ -179,7 +184,9 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `start_date`, `end_date`, `title_event`, `active`, `description_event`) VALUES
-(1, '2023-11-24 14:55:15', '2024-11-24 14:55:15', 'Event test', 1, 'Ceci est un test pour vérifier si il affiche l\' événement. ');
+(1, '2023-11-24 14:55:15', '2024-11-24 14:55:15', 'Event test', 1, 'Ceci est un test pour vérifier si il affiche l\' événement. '),
+(2, '2023-11-24 15:48:04', '2023-11-28 15:48:04', 'Event non actif', 0, 'Non actif'),
+(3, '2023-11-24 15:48:04', '2024-01-30 15:48:04', 'Actif event', 1, 'Actif event pour tester l\'affichage');
 
 -- --------------------------------------------------------
 
@@ -249,7 +256,8 @@ INSERT INTO `page` (`id`, `title_page`) VALUES
 (4, 'F.A.Q.'),
 (5, 'News'),
 (6, 'Comment aider'),
-(7, 'Evenements');
+(7, 'Evenements'),
+(8, 'livre-d-or');
 
 -- --------------------------------------------------------
 
@@ -479,7 +487,7 @@ ALTER TABLE `user_event`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `categorie`
@@ -503,7 +511,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `img`
@@ -521,7 +529,7 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT pour la table `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `phone`

@@ -128,47 +128,68 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
         // line 17
         echo "    </section>
     <section>
-    ";
-        // line 19
+    <section>
+        <h3>Ils ont trouvé leur bonheur</h3>
+        ";
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["lastNews"]) || array_key_exists("lastNews", $context) ? $context["lastNews"] : (function () { throw new RuntimeError('Variable "lastNews" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["livreDOr"]) || array_key_exists("livreDOr", $context) ? $context["livreDOr"] : (function () { throw new RuntimeError('Variable "livreDOr" does not exist.', 21, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["avis"]) {
+            // line 22
+            echo "
+            <h4>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["avis"], "titleArticle", [], "any", false, false, false, 23), "html", null, true);
+            echo "</h4>
+            <p>";
+            // line 24
+            echo twig_escape_filter($this->env, twig_striptags(twig_get_attribute($this->env, $this->source, $context["avis"], "textArticle", [], "any", false, false, false, 24)), "html", null, true);
+            echo "</p>
+            
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['avis'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
+        echo "    </section>
+    <h3>Les dernières news</h3>
+    ";
+        // line 29
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["lastNews"]) || array_key_exists("lastNews", $context) ? $context["lastNews"] : (function () { throw new RuntimeError('Variable "lastNews" does not exist.', 29, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["news"]) {
-            // line 20
+            // line 30
             echo "
         <a title=\"Lire la suite\" href=\"";
-            // line 21
+            // line 31
             echo "/article?a=";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 31), "html", null, true);
             echo "\"><h3>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "titleArticle", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "titleArticle", [], "any", false, false, false, 31), "html", null, true);
             echo "</h3></a>
         <p>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_slice($this->env, twig_striptags(twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 22)), 0, 300), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, twig_slice($this->env, twig_striptags(twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 32)), 0, 300), "html", null, true);
             echo " etc..</p>
         ";
-            // line 23
-            if ((1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 23)), 300))) {
-                // line 24
+            // line 33
+            if ((1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 33)), 300))) {
+                // line 34
                 echo "            <p><a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article", ["a" => twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article", ["a" => twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 34)]), "html", null, true);
                 echo "\">Lire la suite</a></p>
         ";
             }
-            // line 26
+            // line 36
             echo "        
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['news'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
-        echo "
-    <a title=\"En savoir plus\" href=\"";
-        // line 29
-        echo "/news";
-        echo "\">Toutes les news</a>
-    </section>
+        // line 38
+        echo "    </section>
 
 ";
         
@@ -200,7 +221,7 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
      */
     public function getDebugInfo()
     {
-        return array (  169 => 29,  166 => 28,  159 => 26,  153 => 24,  151 => 23,  147 => 22,  140 => 21,  137 => 20,  133 => 19,  129 => 17,  121 => 15,  117 => 14,  112 => 13,  108 => 12,  105 => 11,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  192 => 38,  185 => 36,  179 => 34,  177 => 33,  173 => 32,  166 => 31,  163 => 30,  159 => 29,  155 => 27,  146 => 24,  142 => 23,  139 => 22,  135 => 21,  129 => 17,  121 => 15,  117 => 14,  112 => 13,  108 => 12,  105 => 11,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -223,6 +244,16 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
     {% endfor %}
     </section>
     <section>
+    <section>
+        <h3>Ils ont trouvé leur bonheur</h3>
+        {% for avis in livreDOr %}
+
+            <h4>{{ avis.titleArticle }}</h4>
+            <p>{{ avis.textArticle|striptags}}</p>
+            
+        {% endfor %}
+    </section>
+    <h3>Les dernières news</h3>
     {% for news in lastNews %}
 
         <a title=\"Lire la suite\" href=\"{{ '/article?a=' }}{{ news.id }}\"><h3>{{ news.titleArticle }}</h3></a>
@@ -232,8 +263,6 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
         {% endif %}
         
     {% endfor %}
-
-    <a title=\"En savoir plus\" href=\"{{ '/news' }}\">Toutes les news</a>
     </section>
 
 {% endblock %}
