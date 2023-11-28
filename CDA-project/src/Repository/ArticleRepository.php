@@ -61,6 +61,24 @@ class ArticleRepository extends ServiceEntityRepository
         ->getResult();
     }
 
+     /**
+     * Recherche les articles avec la condition active=1 et lorsque le mot correspond à la recherche
+     *
+     * @param string $word
+     * @return Article[]
+     */
+    public function findByActiveAndLikeWord($word): array
+    {
+        return $this->createQueryBuilder('a')
+            ->select('a.textArticle', 'a.titleArticle, a.id')
+            ->andWhere('a.textArticle LIKE :searchText')
+            ->orWhere('a.titleArticle LIKE :searchText')
+            ->andWhere('a.active = 1')//Il faut mettre cette condition à la  fin
+            ->setParameter('searchText', '%' . $word . '%')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Article[] Returns an array of Article objects
 //     */

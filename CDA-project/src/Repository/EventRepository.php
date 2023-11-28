@@ -39,6 +39,25 @@ class EventRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * Recherche les événements avec la condition active=1 et lorsque le mot correspond à la recherche
+     *
+        * @param string $word
+     * @return Event[] Returns an array of Event objects
+     */
+    public function findByActiveAndLikeWord($word): array
+    {
+        return $this->createQueryBuilder('e')
+            ->select('e.descriptionEvent', 'e.titleEvent, e.id')
+            ->andWhere('e.descriptionEvent LIKE :searchText')
+            ->orWhere('e.titleEvent LIKE :searchText')
+            ->andWhere('e.active = 1')
+            ->setParameter('searchText', '%' . $word . '%')
+            ->getQuery()
+            ->getResult();
+    }
+
+
 //    /**
 //     * @return Event[] Returns an array of Event objects
 //     */

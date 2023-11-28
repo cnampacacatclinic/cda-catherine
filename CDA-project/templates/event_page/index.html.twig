@@ -4,12 +4,8 @@
 
 {% block body %}
 <section>
-    {% for page in pageData %}
-        <h2>{{ page.titlePage }}</h2>
-    {% endfor %}
-    
-    {% for evenement in enventData %}
-        <h3>{{ evenement.titleEvent }}</h3>
+    {% for evenement in eventData %}
+        <h2>{{ evenement.titleEvent }}</h2>
         <p>Date de début  : {{ evenement.startDate|date("d/m/Y") }}</p>
         <p>Date de fin : {{ evenement.endDate|date("d/m/Y") }}</p>
         <p>{{ evenement.descriptionEvent|raw }}</p>

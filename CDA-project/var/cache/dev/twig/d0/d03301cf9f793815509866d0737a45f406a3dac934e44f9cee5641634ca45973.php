@@ -153,8 +153,8 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
         // line 63
         echo "                                    </li>
                                 </ul>
-                                <form class=\"d-flex\">
-                                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
+                                <form method=\"GET\" action=\"/search\" class=\"d-flex\">
+                                    <input name=\"word\" class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
                                     <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
                                 </form>
                             </div>
@@ -356,8 +356,8 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
                                         {% endif %}
                                     </li>
                                 </ul>
-                                <form class=\"d-flex\">
-                                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
+                                <form method=\"GET\" action=\"/search\" class=\"d-flex\">
+                                    <input name=\"word\" class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
                                     <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
                                 </form>
                             </div>

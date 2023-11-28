@@ -10,6 +10,7 @@ class ArticleService
     private $id;
     private $idPage;
     private $i;
+    private $word;
 
     public function __construct(ArticleRepository $articleRepository)
     {
@@ -43,5 +44,9 @@ class ArticleService
 
     public function findLastNews($i,$id){
         return $this->articleRepository->findLatestArticles($i,$id);
+    }
+
+    public function findWordA($word){
+        return $this->articleRepository->findByActiveAndLikeWord($word);
     }
 }

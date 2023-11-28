@@ -147,26 +147,25 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
             echo twig_escape_filter($this->env, twig_slice($this->env, twig_striptags(twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 22)), 0, 300), "html", null, true);
             echo " etc..</p>
         ";
-            // line 24
-            echo "        ";
-            if ((1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 24)), 300))) {
-                // line 25
+            // line 23
+            if ((1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 23)), 300))) {
+                // line 24
                 echo "            <p><a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article", ["a" => twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article", ["a" => twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 24)]), "html", null, true);
                 echo "\">Lire la suite</a></p>
         ";
             }
-            // line 27
+            // line 26
             echo "        
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['news'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 28
         echo "
     <a title=\"En savoir plus\" href=\"";
-        // line 30
+        // line 29
         echo "/news";
         echo "\">Toutes les news</a>
     </section>
@@ -201,7 +200,7 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
      */
     public function getDebugInfo()
     {
-        return array (  170 => 30,  167 => 29,  160 => 27,  154 => 25,  151 => 24,  147 => 22,  140 => 21,  137 => 20,  133 => 19,  129 => 17,  121 => 15,  117 => 14,  112 => 13,  108 => 12,  105 => 11,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  169 => 29,  166 => 28,  159 => 26,  153 => 24,  151 => 23,  147 => 22,  140 => 21,  137 => 20,  133 => 19,  129 => 17,  121 => 15,  117 => 14,  112 => 13,  108 => 12,  105 => 11,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -228,7 +227,6 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
 
         <a title=\"Lire la suite\" href=\"{{ '/article?a=' }}{{ news.id }}\"><h3>{{ news.titleArticle }}</h3></a>
         <p>{{ news.textArticle|striptags|slice(0, 300)}} etc..</p>
-        {# Ajouter un lien pour lire la suite si nécessaire #}
         {% if news.textArticle|length > 300 %}
             <p><a href=\"{{ path('app_article', {'a': news.id}) }}\">Lire la suite</a></p>
         {% endif %}
