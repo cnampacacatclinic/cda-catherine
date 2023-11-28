@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 28 nov. 2023 à 12:44
+-- Généré le : mar. 28 nov. 2023 à 15:47
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -55,7 +55,10 @@ INSERT INTO `article` (`id`, `fk_page_id`, `fk_categorie_id`, `fk_user_id`, `dat
 (11, 8, 1, 2, '2023-11-28 12:18:59', '<p>J\'ai eu le coup de foudre pour ce  chien ! Merci pour tout !</p>\r\n', '', 0),
 (12, 8, 1, 2, '2023-11-28 12:18:59', 'Adopter notre chat chez Asso Animal a été la meilleure décision de ma vie. Il  comble notre maison de ronronnements chaleureux et de moments de bonheur infinis. Mes deux fils sont si heureux !', 'Hélène', 1),
 (13, 8, 1, 2, '2023-11-28 12:38:42', 'C\'est incroyable comment un petit être poilu peut changer votre quotidien. Depuis l\'adoption de mon chien, chaque jour devient une aventure joyeuse. Asso Animal fait vraiment un travail exceptionnel en donnant une seconde chance à ces animaux adorables.', 'Karim', 1),
-(14, 8, 1, 2, '2023-11-28 12:38:42', 'Soutenir Asso Animal était une évidence. Adopter notre chien non seulement nous a apporté un compagnon fidèle, mais a également contribué à donner une vie meilleure à un être qui en avait besoin. Notre foyer est désormais empli de gratitude et d\'amour, grâce à cette belle initiative.', 'Erica', 1);
+(14, 8, 1, 2, '2023-11-28 12:38:42', 'Soutenir Asso Animal était une évidence. Adopter notre chien non seulement nous a apporté un compagnon fidèle, mais a également contribué à donner une vie meilleure à un être qui en avait besoin. Notre foyer est désormais empli de gratitude et d\'amour, grâce à cette belle initiative.', 'Erica', 1),
+(15, 11, 1, 1, '2023-11-28 14:53:02', '<h4>Propriété intellectuelle</h4>\r\n<p>\r\nLes photographies et les textes publiés sur le site web du Asso Animal sont la propriété exclusive du refuge. Toute reproduction, représentation, adaptation, traduction, ou transformation, partielle ou intégrale, de ces éléments est strictement interdite sans l\'autorisation expresse de Asso Animal.\r\n</p><p>\r\nLes dessins et logos figurant sur le site web du refuge d\'animaux de compagnie sont également la propriété exclusive du refuge. Toute reproduction, représentation, ou exploitation, partielle ou intégrale, de ces éléments est strictement interdite sans l\'autorisation expresse du refuge.\r\n</p><p>\r\nL\'ensemble du contenu du site web du refuge d\'animaux de compagnie est protégé par le droit d\'auteur. Toute reproduction, représentation, ou exploitation, partielle ou intégrale, du site web est strictement interdite sans l\'autorisation expresse du refuge.\r\n</p>\r\n<h4>Hyperliens</h4>\r\n<p>\r\nLes liens hypertextes présents sur le site web du refuge d\'animaux de compagnie peuvent renvoyer sur des sites web tiers. Le refuge n\'exerce aucun contrôle sur ces sites web et décline toute responsabilité quant à leur contenu.\r\n</p>\r\n<h4>Modifications</h4>\r\n<p>\r\nAsso Animal se réserve le droit de modifier les mentions légales à tout moment. L\'utilisateur est invité à consulter régulièrement les mentions légales afin de prendre connaissance des modifications éventuelles.\r\n</p>\r\n', 'Mentions légales', 1),
+(16, 9, 1, 1, '2023-11-28 14:53:02', '<p>\r\nLe site web du refuge d\'animaux de compagnie utilise des cookies afin de collecter des informations sur la navigation des utilisateurs. Ces informations sont utilisées pour améliorer le contenu du site web et la navigation des utilisateurs.\r\n</p><p>\r\nL\'utilisateur peut s\'opposer à l\'utilisation des cookies en modifiant les paramètres de son navigateur. En effet vous pouvez vider le cache également grâce au raccourci clavier Ctrl + Maj + Suppr<br>\r\nPour un Mac, utilisez Command + Maj + Suppr .</p>', 'Cookies', 1),
+(17, 10, 1, 1, '2023-11-28 14:53:02', '<p>Asso Animal s\'engage à protéger la confidentialité des informations personnelles que vous nous fournissez.\r\n</p><p>\r\nNous collectons des informations personnelles lorsque vous utilisez notre site web, par exemple lorsque vous :\r\n<ul>\r\n<li>Visitez notre site web</li>\r\n<li>Vous inscrivez à notre newsletter</li>\r\n<li>Faites un don</li>\r\n<li>Adoptez un animal</li>\r\n</ul>\r\n</p>\r\n<p>Les informations personnelles que nous collectons peuvent inclure :\r\n<ul>\r\n<li>Votre nom</li>\r\n<li>Votre adresse e-mail</li>\r\n<li>Vos informations sur l\'animal que vous adoptez</li>\r\n</ul>\r\n</p><p>\r\nNous utilisons les informations personnelles que nous collectons pour :\r\n<ul>\r\n<li>\r\nVous fournir les services que vous demandez</li>\r\n<li>Vous contacter pour vous informer de nos activités</li>\r\n<li>Améliorer notre site web et nos services</li>\r\n</ul>\r\n</p>\r\n<p>\r\nNous ne partageons vos informations personnelles avec des tiers que dans les cas suivants :\r\n<ul>\r\n<li>Avec votre consentement</li>\r\n<li>Pour nous conformer à une loi ou une réglementation</li>\r\n<li>Pour protéger nos droits ou notre propriété</li>\r\n</ul>\r\n</p>\r\n<h4>Données personnelles</h4>\r\n<p>\r\nLes données personnelles collectées sur le site web de Asso Animal sont destinées à la gestion des relations avec les utilisateurs. Ces données sont conservées pendant une durée de 2 ans après la dernière interaction de l\'utilisateur avec le site web.\r\n</p><p>\r\nL\'utilisateur dispose d\'un droit d\'accès, de rectification, et d\'effacement des données personnelles le concernant. L\'utilisateur peut également demander la limitation du traitement de ses données personnelles ou s\'opposer à leur traitement.\r\n</p><p>\r\nL\'utilisateur peut exercer ses droits en contactant le refuge par mail à l\'adresse suivante : <a href=\"mailto:emailassoanimal@examplemail.org\">emailassoanimal@examplemail.org</a>\r\n</p>\r\n<h4>Sécurité</h4>\r\n<p>\r\nLe refuge d\'animaux de compagnie s\'engage à protéger les données personnelles des utilisateurs. Le refuge met en œuvre des mesures de sécurité techniques et organisationnelles pour protéger les données personnelles contre les risques de perte, de destruction, de modification, ou de divulgation à des tiers non autorisés.</p>', 'Politique de confidentialité', 1);
 
 -- --------------------------------------------------------
 
@@ -257,7 +260,10 @@ INSERT INTO `page` (`id`, `title_page`) VALUES
 (5, 'News'),
 (6, 'Comment aider'),
 (7, 'Evenements'),
-(8, 'livre-d-or');
+(8, 'livre-d-or'),
+(9, 'Cookies'),
+(10, 'Confidentialité'),
+(11, 'Mentions légales');
 
 -- --------------------------------------------------------
 
@@ -487,7 +493,7 @@ ALTER TABLE `user_event`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT pour la table `categorie`
@@ -529,7 +535,7 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT pour la table `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `phone`

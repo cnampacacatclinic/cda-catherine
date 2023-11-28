@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MentionslegalesController!{% endblock %}
+
+{% block body %}
+
+<section>
+    {% for page in pageData %}
+        <h2>{{ page.titlePage }}</h2>
+    {% endfor %}
+    
+    {% for article in articleData %}
+        <p>{{ article.textArticle|raw }}</p>
+    {% endfor %}
+</section>
+{% endblock %}

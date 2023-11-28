@@ -265,7 +265,6 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
     {% endfor %}
     </section>
 
-{% endblock %}
-", "home/index.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\home\\index.html.twig");
+{% endblock %}", "home/index.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\home\\index.html.twig");
     }
 }

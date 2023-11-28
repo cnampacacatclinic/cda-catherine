@@ -352,11 +352,25 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\ArticleController"/>
       </call>
     </service>
+    <service id="App\Controller\ConfidentialiteController" class="App\Controller\ConfidentialiteController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\ConfidentialiteController"/>
+      </call>
+    </service>
     <service id="App\Controller\ContactController" class="App\Controller\ContactController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\ContactController"/>
+      </call>
+    </service>
+    <service id="App\Controller\CookiesController" class="App\Controller\CookiesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\CookiesController"/>
       </call>
     </service>
     <service id="App\Controller\EventPageController" class="App\Controller\EventPageController" public="true" autowire="true" autoconfigure="true">
@@ -392,6 +406,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\MainController"/>
+      </call>
+    </service>
+    <service id="App\Controller\MentionslegalesController" class="App\Controller\MentionslegalesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\MentionslegalesController"/>
       </call>
     </service>
     <service id="App\Controller\NewsController" class="App\Controller\NewsController" public="true" autowire="true" autoconfigure="true">
@@ -5921,9 +5942,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ConfidentialiteController" class="App\Controller\ConfidentialiteController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ConfidentialiteController" class="App\Controller\ConfidentialiteController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ConfidentialiteController" class="App\Controller\ConfidentialiteController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CookiesController" class="App\Controller\CookiesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CookiesController" class="App\Controller\CookiesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CookiesController" class="App\Controller\CookiesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EventPageController" class="App\Controller\EventPageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EventPageController" class="App\Controller\EventPageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\EventPageController" class="App\Controller\EventPageController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5939,6 +5966,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MentionslegalesController" class="App\Controller\MentionslegalesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MentionslegalesController" class="App\Controller\MentionslegalesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MentionslegalesController" class="App\Controller\MentionslegalesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\NewsController" class="App\Controller\NewsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\NewsController" class="App\Controller\NewsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\NewsController" class="App\Controller\NewsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6390,17 +6420,20 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.F4T_9a." class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.z40aZ7m" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AboutController::index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\AiderController::index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\ArticleController::index" type="service_closure" id=".service_locator.TGwuNNH"/>
+        <argument key="App\Controller\ConfidentialiteController::index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\ContactController::index" type="service_closure" id=".service_locator._qXlq9w"/>
+        <argument key="App\Controller\CookiesController::index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\EventPageController::index" type="service_closure" id=".service_locator.JqHGF8v"/>
         <argument key="App\Controller\EventsController::index" type="service_closure" id=".service_locator.5q7XbqE"/>
         <argument key="App\Controller\FAQController::index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.AAo1TIt"/>
+        <argument key="App\Controller\MentionslegalesController::index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\NewsController::index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.RvQm_uI"/>
         <argument key="App\Controller\RegistrationController::verifyUserEmail" type="service_closure" id=".service_locator.mzjt3rI"/>
@@ -6415,11 +6448,14 @@
         <argument key="App\Controller\AboutController:index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\AiderController:index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\ArticleController:index" type="service_closure" id=".service_locator.TGwuNNH"/>
+        <argument key="App\Controller\ConfidentialiteController:index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\ContactController:index" type="service_closure" id=".service_locator._qXlq9w"/>
+        <argument key="App\Controller\CookiesController:index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\EventPageController:index" type="service_closure" id=".service_locator.JqHGF8v"/>
         <argument key="App\Controller\EventsController:index" type="service_closure" id=".service_locator.5q7XbqE"/>
         <argument key="App\Controller\FAQController:index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.AAo1TIt"/>
+        <argument key="App\Controller\MentionslegalesController:index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\NewsController:index" type="service_closure" id=".service_locator.AAo1TIt"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.RvQm_uI"/>
         <argument key="App\Controller\RegistrationController:verifyUserEmail" type="service_closure" id=".service_locator.mzjt3rI"/>
@@ -6804,9 +6840,21 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\ConfidentialiteController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ConfidentialiteController"/>
+      <argument>App\Controller\ConfidentialiteController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
     <service id=".service_locator.GNc8e5B.App\Controller\ContactController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ContactController"/>
       <argument>App\Controller\ContactController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\CookiesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CookiesController"/>
+      <argument>App\Controller\CookiesController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
@@ -6837,6 +6885,12 @@
     <service id=".service_locator.GNc8e5B.App\Controller\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\MainController"/>
       <argument>App\Controller\MainController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\MentionslegalesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\MentionslegalesController"/>
+      <argument>App\Controller\MentionslegalesController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
@@ -7052,12 +7106,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.F4T_9a."/>
+      <argument type="service" id=".service_locator.z40aZ7m"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.F4T_9a."/>
+      <argument type="service" id=".service_locator.z40aZ7m"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -7926,7 +7980,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.F4T_9a."/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.z40aZ7m"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -7953,7 +8007,7 @@
     <service id=".service_locator.uPl6UfT" alias=".service_locator.RvQm_uI"/>
     <service id=".service_locator.W7rQ2zM" alias=".service_locator.LI1wy7E"/>
     <service id=".service_locator.h8tHOam" alias=".service_locator.S7W8GRK"/>
-    <service id=".service_locator.W5Y3qSX" alias=".service_locator.F4T_9a."/>
+    <service id=".service_locator.xnNG6pC" alias=".service_locator.z40aZ7m"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.kcPp2BX" alias=".service_locator.4sfG50J"/>
     <service id=".service_locator.4hi2aOY" alias=".service_locator.bBRwv06"/>
