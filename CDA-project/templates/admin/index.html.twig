@@ -3,18 +3,69 @@
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section>
+    <h1>Gestion des articles</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Simplon/Documents/prive-cda-catherine/CDA-project/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Simplon/Documents/prive-cda-catherine/CDA-project/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="card">
+        <div class="card-body row">
+            <div class="col-md-6 text-right">
+                <a href="#" class="btn btn-primary">Créer un article</a>
+            </div>
+        </div>
+    </div>
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+    <h3>Liste des articles des autres utilisateurs</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">Date</th>
+                    <th scope="col" class="text-center">Titre</th>
+                    <th scope="col" class="text-center" colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in articleData %}
+                    {% if article.fkUser.id != app.user.id %}
+                    <tr>
+                        <td>{{ article.dateARticle|date("d/m/Y") }}</td>
+                        <td><a title="{{ article.titleArticle }}" href="{{ '/article?a=' }}{{ article.id }}">{{ article.titleArticle }}</a></td>
+                        <td class="text-end">
+                            <a href="#" class="btn btn-dark">Brouillon</a>
+                        </td>
+                        <td class="text-end">
+                            <a href="#" class="btn btn-success">Modifier</a>
+                        </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <h3>Liste des ses propres articles</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">Date</th>
+                    <th scope="col" class="text-center">Titre</th>
+                    <th scope="col" class="text-center" colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in articleData %}
+                    <tr>
+                        {% if article.fkUser.id == app.user.id %}
+                            <td>{{ article.dateARticle|date("d/m/Y") }}</td>
+                            <td><a title="{{ article.titleArticle }}" href="{{ '/article?a=' }}{{ article.id }}">{{ article.titleArticle }}</a></td>
+                            <td class="text-end">
+                                <a href="#" class="btn btn-dark">Brouillon</a>
+                            </td>
+                            <td class="text-end">
+                                <a href="#" class="btn btn-success">Modifier</a>
+                            </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</section>
 {% endblock %}

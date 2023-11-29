@@ -59,13 +59,15 @@
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" title="Accueil user" href="{{ '/user' }}">1</a></li>
-                                                <li><a class="dropdown-item" title="admin" href="{{ '/admin' }}">2</a></li>
-                                                <li><a class="dropdown-item" title="superadmin" href="{{ '/superadmin' }}">3</a></li>
+                                                {% if is_granted('ROLE_ADMIN') %}
+                                                    <li><a class="dropdown-item" title="admin" href="{{ '/admin' }}">2</a></li>
+                                                {% endif %}
+                                                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                                                    <li><a class="dropdown-item" title="superadmin" href="{{ '/superadmin' }}">3</a></li>
+                                                {% endif %}
                                             </ul>
                                         </li>
                                     {% endif %}
-
-
                                 </ul>
                                 <form method="GET" action="/search" class="d-flex">
                                     <input name="word" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

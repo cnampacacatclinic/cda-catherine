@@ -27,6 +27,11 @@ class ArticleService
         return $this->articleRepository->findBy(['id' => $id]);
     }
 
+    public function findByAuthor($id)
+    {
+        return $this->articleRepository->findBy(['fkUser' => $id]);
+    }
+
     public function findOneArticleByFkPage($idPage)
     {
         return $this->articleRepository->findBy(['fkPage' => $idPage, 'active' => 1]);
