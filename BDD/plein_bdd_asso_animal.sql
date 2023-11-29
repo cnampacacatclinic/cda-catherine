@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 29 nov. 2023 à 11:00
+-- Généré le : mer. 29 nov. 2023 à 12:04
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -361,8 +361,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `is_verified`, `last_name`, `first_name`) VALUES
-(1, 'cathy@gmail.com', '[]', '$2y$13$KW4/NeknCPrcVaA47mcx/.bheXn16pr8KkCpXh0UjR5Gyd7P1M3Xu', 0, 'ccc', 'cccccccc'),
-(2, 'paul@gmail.com', '[]', '$2y$13$.eGV1CRP3zSg8Hk7Hp5sdOuUPYD73xTvPH9g4v5.2UaDCWQpYznWu', 0, 'paulo', 'paulopaulo'),
+(1, 'cathy@gmail.com', '[\"ROLE_SUPER_ADMIN\"]', '$2y$13$KW4/NeknCPrcVaA47mcx/.bheXn16pr8KkCpXh0UjR5Gyd7P1M3Xu', 0, 'jules', 'catherine'),
+(2, 'paul@gmail.com', '[\"ROLE_ADMIN\"]\r\n', '$2y$13$.eGV1CRP3zSg8Hk7Hp5sdOuUPYD73xTvPH9g4v5.2UaDCWQpYznWu', 0, 'paulo', 'paulopaulo'),
 (3, 'perso@gmail.com', '[]', '$2y$13$d8v.aXPloFdBkg9n8PMj1.Rw9ijfwX3CB.bdSkhMSmpG6utp8JTcO', 0, 'ccc', 'yyyy');
 
 -- --------------------------------------------------------

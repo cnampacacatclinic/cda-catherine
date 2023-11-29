@@ -52,6 +52,20 @@
                                             <a class="nav-link" title="Connexion" href="{{ '/login' }}">Login</a>
                                         {% endif %}
                                     </li>
+                                    {% if app.user %}
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Administration
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" title="Accueil user" href="{{ '/user' }}">1</a></li>
+                                                <li><a class="dropdown-item" title="admin" href="{{ '/admin' }}">2</a></li>
+                                                <li><a class="dropdown-item" title="superadmin" href="{{ '/superadmin' }}">3</a></li>
+                                            </ul>
+                                        </li>
+                                    {% endif %}
+
+
                                 </ul>
                                 <form method="GET" action="/search" class="d-flex">
                                     <input name="word" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
