@@ -24,6 +24,7 @@ class EventPageController extends AbstractController
             $eventData = $eventService->findOneEvent($_GET['e']);/* en parametre l'id de l'event' */
 
             return $this->render('event_page/index.html.twig', [
+                'controller_name' => 'Events',
                 'eventData'=>$eventData,
             ]);
 

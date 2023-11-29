@@ -26,7 +26,7 @@ class SearchController extends AbstractController
             $eventSearch = $eventService->findWordE($_GET['word']);
             
             return $this->render('search/index.html.twig', [
-                'controller_name' => 'SearchController',
+                'controller_name' => 'Search',
                 'eventSearch' => $eventSearch,
                 'articleSearch'=>$articleSearch,
             ]);

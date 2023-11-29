@@ -19,6 +19,7 @@ class AiderController extends AbstractController
         $articleData = $articleService->findOneArticleByFkPage(6);
         
         return $this->render('aider/index.html.twig', [
+            'controller_name' => 'Aider',
             'pageData' => $pageData,
             'articleData'=>$articleData,
         ]);

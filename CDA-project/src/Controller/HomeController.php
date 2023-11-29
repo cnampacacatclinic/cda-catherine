@@ -21,6 +21,7 @@ class HomeController extends AbstractController
             $livreDOr = $articleService->findOneArticleByFkPage(8);/*on recherche les articles du livre d'or */
         {
             return $this->render('home/index.html.twig', [
+                'controller_name' => 'Home',
                 'pageData' => $pageData,
                 'articleData'=>$articleData,
                 'lastNews'=>$lastNews,

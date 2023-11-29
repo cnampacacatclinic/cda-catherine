@@ -49,6 +49,11 @@ class Event
      */
     private $descriptionEvent;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $locationEvent;
+
     public function __construct()
     {
         $this->usersList = new ArrayCollection();
@@ -143,6 +148,18 @@ class Event
     public function setDescriptionEvent(string $descriptionEvent): self
     {
         $this->descriptionEvent = $descriptionEvent;
+
+        return $this;
+    }
+
+    public function getLocationEvent(): ?string
+    {
+        return $this->locationEvent;
+    }
+
+    public function setLocationEvent(string $locationEvent): self
+    {
+        $this->locationEvent = $locationEvent;
 
         return $this;
     }

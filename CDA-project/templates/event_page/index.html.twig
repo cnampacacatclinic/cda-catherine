@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EventPageController!{% endblock %}
+{% block title %}Event{% endblock %}
 
 {% block body %}
 <section>
@@ -8,6 +8,7 @@
         <h2>{{ evenement.titleEvent }}</h2>
         <p>Date de début  : {{ evenement.startDate|date("d/m/Y") }}</p>
         <p>Date de fin : {{ evenement.endDate|date("d/m/Y") }}</p>
+        <p>Lieu de l'événement : {{ evenement.locationEvent|raw }}</p>
         <p>{{ evenement.descriptionEvent|raw }}</p>
     {% endfor %}
 </section>

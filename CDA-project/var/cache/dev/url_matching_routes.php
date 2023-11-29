@@ -18,7 +18,6 @@ return [
         '/events' => [[['_route' => 'app_events', '_controller' => 'App\\Controller\\EventsController::index'], null, null, null, false, false, null]],
         '/faq' => [[['_route' => 'app_faq', '_controller' => 'App\\Controller\\FAQController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
-        '/main' => [[['_route' => 'app_main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/mentionslegales' => [[['_route' => 'app_mentionslegales', '_controller' => 'App\\Controller\\MentionslegalesController::index'], null, null, null, false, false, null]],
         '/news' => [[['_route' => 'app_news', '_controller' => 'App\\Controller\\NewsController::index'], null, null, null, false, false, null]],
         '/page404' => [[['_route' => 'app_page404', '_controller' => 'App\\Controller\\Page404Controller::index'], null, null, null, false, false, null]],

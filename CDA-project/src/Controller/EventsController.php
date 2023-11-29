@@ -17,11 +17,12 @@ class EventsController extends AbstractController
     public function index(EventService $eventService, PageService $pageService, ArticleService $articleService): Response
     {
         
-        $pageData = $pageService->findOnePage(2);
-        $articleData = $articleService->findOneArticleByFkPage(2);
+        $pageData = $pageService->findOnePage(7);
+        $articleData = $articleService->findOneArticleByFkPage(7);
         $eventData = $eventService->findActiveEvents();
 
         return $this->render('events/index.html.twig', [
+            'controller_name' => 'Events',
             'pageData' => $pageData,
             'articleData'=>$articleData,
             'eventData'=>$eventData,

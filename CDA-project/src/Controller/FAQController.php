@@ -19,7 +19,7 @@ class FAQController extends AbstractController
         $articleData = $articleService->findOneArticleByFkPage(4);
         
         return $this->render('faq/index.html.twig', [
-            'controller_name' => 'FAQController',
+            'controller_name' => 'FAQ',
             'pageData' => $pageData,
             'articleData'=>$articleData,
         ]);

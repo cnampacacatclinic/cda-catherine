@@ -19,7 +19,7 @@ class CookiesController extends AbstractController
         $articleData = $articleService->findOneArticleByFkPage(9);
 
         return $this->render('cookies/index.html.twig', [
-            'controller_name' => 'CookiesController',
+            'controller_name' => 'Cookies',
             'pageData' => $pageData,
             'articleData'=>$articleData,
         ]);

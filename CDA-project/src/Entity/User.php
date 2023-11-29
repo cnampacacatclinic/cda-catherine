@@ -41,11 +41,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $userName;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
@@ -159,13 +154,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
-    }
-
-    public function setUserName(string $userName): self
-    {
-        $this->userName = $userName;
-
-        return $this;
     }
 
     public function isVerified(): bool

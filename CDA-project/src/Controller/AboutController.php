@@ -19,7 +19,7 @@ class AboutController extends AbstractController
         $articleData = $articleService->findOneArticleByFkPage(2);
         
         return $this->render('about/index.html.twig', [
-            'controller_name' => 'AboutController',
+            'controller_name' => 'About',
             'pageData' => $pageData,
             'articleData'=>$articleData,
         ]);

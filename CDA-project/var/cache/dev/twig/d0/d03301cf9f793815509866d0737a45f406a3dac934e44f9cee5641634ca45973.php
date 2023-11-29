@@ -143,7 +143,10 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
                     </div>
             </nav>
 
-                <h1>Asso Animal</h1>
+            <a class=\"nav-link\" title=\"Home de Asso Animal\" href=\"";
+        // line 64
+        echo "/";
+        echo "\"><h1>Asso Animal</h1></a>
             </header>
                 ";
         // line 66
@@ -318,7 +321,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
      */
     public function getDebugInfo()
     {
-        return array (  283 => 66,  270 => 19,  260 => 18,  247 => 15,  237 => 14,  218 => 5,  204 => 99,  178 => 76,  174 => 75,  170 => 74,  166 => 73,  162 => 72,  158 => 71,  152 => 67,  150 => 66,  136 => 54,  130 => 52,  127 => 51,  121 => 49,  119 => 48,  112 => 44,  106 => 41,  100 => 38,  94 => 35,  78 => 21,  76 => 18,  73 => 17,  70 => 14,  65 => 11,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  286 => 66,  273 => 19,  263 => 18,  250 => 15,  240 => 14,  221 => 5,  207 => 99,  181 => 76,  177 => 75,  173 => 74,  169 => 73,  165 => 72,  161 => 71,  155 => 67,  153 => 66,  148 => 64,  136 => 54,  130 => 52,  127 => 51,  121 => 49,  119 => 48,  112 => 44,  106 => 41,  100 => 38,  94 => 35,  78 => 21,  76 => 18,  73 => 17,  70 => 14,  65 => 11,  59 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -386,7 +389,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
                     </div>
             </nav>
 
-                <h1>Asso Animal</h1>
+            <a class=\"nav-link\" title=\"Home de Asso Animal\" href=\"{{ '/' }}\"><h1>Asso Animal</h1></a>
             </header>
                 {% block body %}{% endblock %}
         </main>

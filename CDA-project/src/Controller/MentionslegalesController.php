@@ -19,7 +19,7 @@ class MentionslegalesController extends AbstractController
         $articleData = $articleService->findOneArticleByFkPage(11);
         
         return $this->render('mentionslegales/index.html.twig', [
-            'controller_name' => 'MentionslegalesController',
+            'controller_name' => 'Legales',
             'pageData' => $pageData,
             'articleData'=>$articleData,
         ]);

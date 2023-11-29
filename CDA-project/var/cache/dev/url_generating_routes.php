@@ -13,7 +13,6 @@ return [
     'app_events' => [[], ['_controller' => 'App\\Controller\\EventsController::index'], [], [['text', '/events']], [], [], []],
     'app_faq' => [[], ['_controller' => 'App\\Controller\\FAQController::index'], [], [['text', '/faq']], [], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
-    'app_main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/main']], [], [], []],
     'app_mentionslegales' => [[], ['_controller' => 'App\\Controller\\MentionslegalesController::index'], [], [['text', '/mentionslegales']], [], [], []],
     'app_news' => [[], ['_controller' => 'App\\Controller\\NewsController::index'], [], [['text', '/news']], [], [], []],
     'app_page404' => [[], ['_controller' => 'App\\Controller\\Page404Controller::index'], [], [['text', '/page404']], [], [], []],

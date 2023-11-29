@@ -14,7 +14,7 @@ class Page404Controller extends AbstractController
     public function index(): Response
     {
         return $this->render('page404/index.html.twig', [
-            'controller_name' => 'Page404Controller',
+            'controller_name' => 'Page404',
         ]);
     }
 }

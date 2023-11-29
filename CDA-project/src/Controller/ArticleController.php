@@ -29,6 +29,7 @@ class ArticleController extends AbstractController
             $authors = $userService->findAllUsers();
 
             return $this->render('article/index.html.twig', [
+                'controller_name' => 'Article',
                 'articleData'=>$articleData,
                 'authors'=>$authors,
                 

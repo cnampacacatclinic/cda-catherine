@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 28 nov. 2023 à 15:47
+-- Généré le : mer. 29 nov. 2023 à 11:00
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -179,17 +179,18 @@ CREATE TABLE `event` (
   `end_date` datetime NOT NULL,
   `title_event` varchar(255) NOT NULL,
   `active` tinyint(1) NOT NULL,
-  `description_event` varchar(255) NOT NULL
+  `description_event` varchar(255) NOT NULL,
+  `location_event` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `event`
 --
 
-INSERT INTO `event` (`id`, `start_date`, `end_date`, `title_event`, `active`, `description_event`) VALUES
-(1, '2023-11-24 14:55:15', '2024-11-24 14:55:15', 'Event test', 1, 'Ceci est un test pour vérifier si il affiche l\' événement. '),
-(2, '2023-11-24 15:48:04', '2023-11-28 15:48:04', 'Event non actif', 0, 'Non actif'),
-(3, '2023-11-24 15:48:04', '2024-01-30 15:48:04', 'Actif event', 1, 'Actif event pour tester l\'affichage');
+INSERT INTO `event` (`id`, `start_date`, `end_date`, `title_event`, `active`, `description_event`, `location_event`) VALUES
+(1, '2023-11-24 14:55:15', '2024-11-24 14:55:15', 'Event test', 1, 'Ceci est un test pour vérifier si il affiche l\' événement. ', 'Rue du Chat-qui-Pêche 75012 Paris'),
+(2, '2023-11-24 15:48:04', '2023-11-28 15:48:04', 'Event non actif', 0, 'Non actif', '25 Boulevard du rat, Lyon'),
+(3, '2023-11-24 15:48:04', '2024-01-30 15:48:04', 'Actif event', 1, 'Actif event pour tester l\'affichage', 'Rue du Chat-qui-Pêche 75012 Paris');
 
 -- --------------------------------------------------------
 
@@ -350,7 +351,6 @@ CREATE TABLE `user` (
   `email` varchar(180) NOT NULL,
   `roles` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`roles`)),
   `password` varchar(255) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
   `is_verified` tinyint(1) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL
@@ -360,9 +360,10 @@ CREATE TABLE `user` (
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `roles`, `password`, `user_name`, `is_verified`, `last_name`, `first_name`) VALUES
-(1, 'cathy@gmail.com', '[]', '$2y$13$KW4/NeknCPrcVaA47mcx/.bheXn16pr8KkCpXh0UjR5Gyd7P1M3Xu', 'Cathy223', 0, 'ccc', 'cccccccc'),
-(2, 'paul@gmail.com', '[]', '$2y$13$.eGV1CRP3zSg8Hk7Hp5sdOuUPYD73xTvPH9g4v5.2UaDCWQpYznWu', 'paul', 0, 'paulo', 'paulopaulo');
+INSERT INTO `user` (`id`, `email`, `roles`, `password`, `is_verified`, `last_name`, `first_name`) VALUES
+(1, 'cathy@gmail.com', '[]', '$2y$13$KW4/NeknCPrcVaA47mcx/.bheXn16pr8KkCpXh0UjR5Gyd7P1M3Xu', 0, 'ccc', 'cccccccc'),
+(2, 'paul@gmail.com', '[]', '$2y$13$.eGV1CRP3zSg8Hk7Hp5sdOuUPYD73xTvPH9g4v5.2UaDCWQpYznWu', 0, 'paulo', 'paulopaulo'),
+(3, 'perso@gmail.com', '[]', '$2y$13$d8v.aXPloFdBkg9n8PMj1.Rw9ijfwX3CB.bdSkhMSmpG6utp8JTcO', 0, 'ccc', 'yyyy');
 
 -- --------------------------------------------------------
 
@@ -559,7 +560,7 @@ ALTER TABLE `reset_password_request`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées
