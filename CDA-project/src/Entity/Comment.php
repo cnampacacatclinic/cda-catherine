@@ -18,7 +18,7 @@ class Comment
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
      */
     private $dateComment;
 
@@ -37,6 +37,11 @@ class Comment
      * @ORM\ManyToOne(targetEntity=User::class)
      */
     private $fkUser;
+
+    /**
+     * @ORM\Column(type="smallint")
+     */
+    private $active;
 
     public function getId(): ?int
     {
@@ -89,5 +94,25 @@ class Comment
         $this->fkUser = $fkUser;
 
         return $this;
+    }
+
+    public function getActive(): ?int
+    {
+        return $this->active;
+    }
+
+    public function setActive(int $active): self
+    {
+        
+        /* Par défaut, je souhaite que le commentaire soit à zéro.
+        * Donc, si il n'est pas spécifié qu'on souhaite qu'il soit égal à 1, il sera égal à 0.
+        */
+        if(empty($this->active)|| $this->active==null) {
+            return $this->active = 0;
+        }
+        else{
+            return $this->active = $active;
+        }
+        
     }
 }

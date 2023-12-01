@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1ea76794f8844fa733e63ef7361c3f50
+class ComposerStaticInit669c790ca93a4efb0371025a2c9f9284
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -587,18 +587,29 @@ class ComposerStaticInit1ea76794f8844fa733e63ef7361c3f50
 
     public static $classMap = array (
         'App\\Controller\\AboutController' => __DIR__ . '/../..' . '/src/Controller/AboutController.php',
+        'App\\Controller\\AdminController' => __DIR__ . '/../..' . '/src/Controller/AdminController.php',
         'App\\Controller\\AiderController' => __DIR__ . '/../..' . '/src/Controller/AiderController.php',
         'App\\Controller\\ArticleController' => __DIR__ . '/../..' . '/src/Controller/ArticleController.php',
+        'App\\Controller\\ConfidentialiteController' => __DIR__ . '/../..' . '/src/Controller/ConfidentialiteController.php',
         'App\\Controller\\ContactController' => __DIR__ . '/../..' . '/src/Controller/ContactController.php',
+        'App\\Controller\\CookiesController' => __DIR__ . '/../..' . '/src/Controller/CookiesController.php',
         'App\\Controller\\EventPageController' => __DIR__ . '/../..' . '/src/Controller/EventPageController.php',
+        'App\\Controller\\EventsController' => __DIR__ . '/../..' . '/src/Controller/EventsController.php',
         'App\\Controller\\FAQController' => __DIR__ . '/../..' . '/src/Controller/FAQController.php',
+        'App\\Controller\\GestionCommentController' => __DIR__ . '/../..' . '/src/Controller/GestionCommentController.php',
+        'App\\Controller\\GestionEventController' => __DIR__ . '/../..' . '/src/Controller/GestionEventController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
-        'App\\Controller\\MainController' => __DIR__ . '/../..' . '/src/Controller/MainController.php',
+        'App\\Controller\\InsertArticleController' => __DIR__ . '/../..' . '/src/Controller/InsertArticleController.php',
+        'App\\Controller\\ManagementOtherPeopleContentController' => __DIR__ . '/../..' . '/src/Controller/ManagementOtherPeopleContentController.php',
+        'App\\Controller\\MentionslegalesController' => __DIR__ . '/../..' . '/src/Controller/MentionslegalesController.php',
         'App\\Controller\\NewsController' => __DIR__ . '/../..' . '/src/Controller/NewsController.php',
         'App\\Controller\\Page404Controller' => __DIR__ . '/../..' . '/src/Controller/Page404Controller.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\ResetPasswordController' => __DIR__ . '/../..' . '/src/Controller/ResetPasswordController.php',
+        'App\\Controller\\SearchController' => __DIR__ . '/../..' . '/src/Controller/SearchController.php',
         'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',
+        'App\\Controller\\SuperadminController' => __DIR__ . '/../..' . '/src/Controller/SuperadminController.php',
+        'App\\Controller\\UpdateArticleController' => __DIR__ . '/../..' . '/src/Controller/UpdateArticleController.php',
         'App\\Controller\\UserController' => __DIR__ . '/../..' . '/src/Controller/UserController.php',
         'App\\DTO\\CenterDTO' => __DIR__ . '/../..' . '/src/DTO/CenterDTO.php',
         'App\\DTO\\PhoneDTO' => __DIR__ . '/../..' . '/src/DTO/PhoneDTO.php',
@@ -615,6 +626,7 @@ class ComposerStaticInit1ea76794f8844fa733e63ef7361c3f50
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Enum\\TypeWay' => __DIR__ . '/../..' . '/src/Enum/TypeWay.php',
         'App\\Form\\ChangePasswordFormType' => __DIR__ . '/../..' . '/src/Form/ChangePasswordFormType.php',
+        'App\\Form\\InsertContentType' => __DIR__ . '/../..' . '/src/Form/InsertContentType.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Form\\ResetPasswordRequestFormType' => __DIR__ . '/../..' . '/src/Form/ResetPasswordRequestFormType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
@@ -6464,9 +6476,9 @@ class ComposerStaticInit1ea76794f8844fa733e63ef7361c3f50
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1ea76794f8844fa733e63ef7361c3f50::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1ea76794f8844fa733e63ef7361c3f50::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit1ea76794f8844fa733e63ef7361c3f50::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit669c790ca93a4efb0371025a2c9f9284::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit669c790ca93a4efb0371025a2c9f9284::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit669c790ca93a4efb0371025a2c9f9284::$classMap;
 
         }, null, ClassLoader::class);
     }

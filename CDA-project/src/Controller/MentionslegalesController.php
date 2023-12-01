@@ -16,7 +16,7 @@ class MentionslegalesController extends AbstractController
     public function index(PageService $pageService, ArticleService $articleService): Response
     {
         $pageData = $pageService->findOnePage(11);
-        $articleData = $articleService->findOneArticleByFkPage(11);
+        $articleData = $articleService->findOneArticleByFkPageActive(11);
         
         return $this->render('mentionslegales/index.html.twig', [
             'controller_name' => 'Legales',

@@ -11,10 +11,7 @@
         <p>Publié le {{ article.dateARticle|date("d/m/Y") }}</p>
         <p>{{ article.textArticle|striptags|slice(0, 500)}} etc..</p>
         {# Ajoute un lien pour lire la suite si nécessaire #}
-        {% if article.textArticle|length > 500 %}
-            <p><a href="{{ path('app_article', {'a': article.id}) }}">Lire la suite</a></p>
-        {% endif %}
-
+        <p><a href="{{ path('app_article', {'a': article.id}) }}">Lire la suite</a></p>
     {% endfor %}
 </section>
 {% endblock %}

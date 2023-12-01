@@ -17,7 +17,7 @@ class ConfidentialiteController extends AbstractController
     {
         
         $pageData = $pageService->findOnePage(10);
-        $articleData = $articleService->findOneArticleByFkPage(10);
+        $articleData = $articleService->findOneArticleByFkPageActive(10);
         
         return $this->render('confidentialite/index.html.twig', [
             'controller_name' => 'Confidentialite',

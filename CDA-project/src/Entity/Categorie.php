@@ -29,12 +29,12 @@ class Categorie
         return $this->id;
     }
 
-    public function getCategorie(): ?string
+    public function getNameCategorie(): ?string
     {
         return $this->nameCategorie;
     }
 
-    public function setCategorie(string $nameCategorie): self
+    public function setNameCategorie(string $nameCategorie): self
     {
         $this->nameCategorie = $nameCategorie;
 

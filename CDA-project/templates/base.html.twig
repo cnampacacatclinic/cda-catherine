@@ -58,12 +58,15 @@
                                                 Administration
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" title="Accueil user" href="{{ '/user' }}">1</a></li>
+                                                <li><a class="dropdown-item" title="Accueil user" href="{{ '/user' }}">Votre compte</a></li>
                                                 {% if is_granted('ROLE_ADMIN') %}
-                                                    <li><a class="dropdown-item" title="admin" href="{{ '/admin' }}">2</a></li>
+                                                    <li><a class="dropdown-item" title="admin" href="{{ '/gestionevent' }}">Gestion des evenements</a></li>
+                                                    <li><a class="dropdown-item" title="admin" href="{{ '/gestioncomment' }}">Gestion des commentaires</a></li>
+                                                    <li><a class="dropdown-item" title="admin" href="{{ '/admin' }}">Gestion de ses articles</a></li>
                                                 {% endif %}
                                                 {% if is_granted('ROLE_SUPER_ADMIN') %}
-                                                    <li><a class="dropdown-item" title="superadmin" href="{{ '/superadmin' }}">3</a></li>
+                                                    <li><a class="dropdown-item" title="superadmin" href="{{ '/management-other-people-content' }}">Gestion des autres articles</a></li>
+                                                    <li><a class="dropdown-item" title="superadmin" href="{{ '/superadmin' }}">Gestion des utilisateurs</a></li>
                                                 {% endif %}
                                             </ul>
                                         </li>

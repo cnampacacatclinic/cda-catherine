@@ -18,7 +18,7 @@ class EventsController extends AbstractController
     {
         
         $pageData = $pageService->findOnePage(7);
-        $articleData = $articleService->findOneArticleByFkPage(7);
+        $articleData = $articleService->findOneArticleByFkPageActive(7);
         $eventData = $eventService->findActiveEvents();
 
         return $this->render('events/index.html.twig', [

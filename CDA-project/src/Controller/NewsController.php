@@ -16,7 +16,7 @@ class NewsController extends AbstractController
     public function index(PageService $pageService, ArticleService $articleService): Response
     {
         $pageData = $pageService->findOnePage(5);
-        $articleData = $articleService->findOneArticleByFkPage(5);
+        $articleData = $articleService->findOneArticleByFkPageActive(5);
         
         return $this->render('news/index.html.twig', [
             'controller_name' => 'News',

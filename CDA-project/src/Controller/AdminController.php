@@ -19,7 +19,17 @@ class AdminController extends AbstractController
         $authors = $userService->findAllUsers();
         $pageData = $pageService->findOnePage(5);
         $articleData = $articleService->findOneArticleByFkPage(5);
-        
+        $articleSupp ='';
+        if(!empty($_GET['supp'])){
+            $articleService->deleteById($_GET['supp']);
+        }
+        //Si GET 'active'
+        if (!empty($_GET['active'])) {
+
+            //On change la valeur de active
+            $articleService->toggleActive($_GET['active']);
+        }
+
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
             'articleData'=>$articleData,

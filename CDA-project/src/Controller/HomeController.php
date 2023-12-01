@@ -16,9 +16,9 @@ class HomeController extends AbstractController
         public function index(PageService $pageService, ArticleService $articleService): Response
         {
             $pageData = $pageService->findOnePage(1);/* en parametre l'id de la page */
-            $articleData = $articleService->findOneArticleByFkPage(1);/* en parametre l'id de la page */
+            $articleData = $articleService->findOneArticleByFkPageActive(1);/* en parametre l'id de la page */
             $lastNews = $articleService->findLastNews(3,5);/* en parametre : le nombre d'articles souhaités et l'id des articles de la page News*/
-            $livreDOr = $articleService->findOneArticleByFkPage(8);/*on recherche les articles du livre d'or */
+            $livreDOr = $articleService->findOneArticleByFkPageActive(8);/*on recherche les articles du livre d'or */
         {
             return $this->render('home/index.html.twig', [
                 'controller_name' => 'Home',

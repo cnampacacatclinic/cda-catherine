@@ -28,6 +28,7 @@ class ConnexionAuthenticator extends AbstractLoginFormAuthenticator
         $this->urlGenerator = $urlGenerator;
     }
 
+
     public function authenticate(Request $request): Passport
     {
         $email = $request->request->get('email', '');
@@ -48,10 +49,17 @@ class ConnexionAuthenticator extends AbstractLoginFormAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
-
-        // For example:
-        return new RedirectResponse($this->urlGenerator->generate('app_user'));
-        //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        //Si on reçoit en get un lien on le conserve dans une variable
+        $_REQUEST['a'] = empty($_REQUEST['a']) ? null : $_REQUEST['a'];
+        //Si on ne veut pas laisser un commentaire
+        if($_REQUEST['a']==null){
+            //on est redirigé vers le profil utilisateur
+            return new RedirectResponse($this->urlGenerator->generate('app_user'));
+            //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        }
+        else{//Sinon on est redirigé vers l'article
+            return new RedirectResponse($this->urlGenerator->generate('app_article', ['a' => $_REQUEST['a']]));//envoi de $_REQUEST['a']
+        }
     }
 
     protected function getLoginUrl(Request $request): string

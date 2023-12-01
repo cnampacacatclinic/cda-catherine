@@ -16,7 +16,7 @@ class CookiesController extends AbstractController
     public function index(PageService $pageService, ArticleService $articleService): Response
     {
         $pageData = $pageService->findOnePage(9);
-        $articleData = $articleService->findOneArticleByFkPage(9);
+        $articleData = $articleService->findOneArticleByFkPageActive(9);
 
         return $this->render('cookies/index.html.twig', [
             'controller_name' => 'Cookies',

@@ -16,7 +16,7 @@ class AboutController extends AbstractController
     public function index(PageService $pageService, ArticleService $articleService): Response
     {
         $pageData = $pageService->findOnePage(2);
-        $articleData = $articleService->findOneArticleByFkPage(2);
+        $articleData = $articleService->findOneArticleByFkPageActive(2);
         
         return $this->render('about/index.html.twig', [
             'controller_name' => 'About',
