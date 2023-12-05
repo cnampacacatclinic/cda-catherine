@@ -17,6 +17,13 @@ class GestionEventController extends AbstractController
     {
         $pageData = $pageService->findOnePage(7);
         $eventData = $eventService->findAllEvents();
+
+        if(!empty($_GET['supp'])){
+            $eventService->deleteById($_GET['supp']);
+         }
+         if (!empty($_GET['active'])) {
+             $eventService->toggleActive($_GET['active']);
+         }
         
         return $this->render('gestion_event/index.html.twig', [
             'controller_name' => 'GestionEventController',

@@ -30,14 +30,14 @@
                         <td>{{ article.dateARticle|date("d/m/Y") }}</td>
                         <td><a title="{{ article.titleArticle }}" href="{{ '/article?a=' }}{{ article.id }}">{{ article.titleArticle }}</a></td>
                         <td class="text-end">
+                            <a href="#" class="btn btn-success">Modifier</a>
+                        </td>
+                        <td class="text-end">
                             {% if article.active == 1 %}
                                 <a href="{{ '?active=' }}{{ article.id }}" class="btn btn-dark">Brouillon</a>
                             {% else %}
                                 <a href="{{ '?active=' }}{{ article.id }}" class="btn btn-primary">Publier</a>
                             {% endif %}
-                        </td>
-                        <td class="text-end">
-                            <a href="#" class="btn btn-success">Modifier</a>
                         </td>
                         <td class="text-end">
                             <a data-article-id="{{ article.id }}" data-bs-toggle="modal" data-bs-target="#myModal" href="{{ '?supp=' }}{{ article.id }}" class="btn btn-danger supp">Supprimer</a>

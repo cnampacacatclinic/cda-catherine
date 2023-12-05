@@ -7,7 +7,7 @@ use App\Repository\EventRepository;
 class EventService
 {
     private $eventRepository;
-    private $idEvent;
+    private $id;
     private $word;
 
     public function __construct(EventRepository $eventRepository)
@@ -35,14 +35,14 @@ class EventService
         return $this->eventRepository->findByActiveAndLikeWord($word);
     }
 
-    public function findOneEvent($idEvent)
+    public function findOneEvent($id)
     {
-        return $this->eventRepository->findBy(['id' => $idEvent]);
+        return $this->eventRepository->findBy(['id' => $id]);
     }
 
-    public function toggleActive($idEvent)
+    public function toggleActive($id)
     {
-        $event = $this->eventRepository->find($idEvent);
+        $event = $this->eventRepository->find($id);
 
         if ($event) {
             // Mise à jour la valeur de 'active' en fonction de sa valeur actuelle
@@ -55,6 +55,11 @@ class EventService
         }
 
         return null; //Null si l'evenement n'a pas été trouvé
+    }
+
+    public function deleteById($id)
+    {    
+        return $this->eventRepository->delete($id);
     }
 
 }

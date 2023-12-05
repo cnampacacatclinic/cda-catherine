@@ -6,6 +6,7 @@ use App\Entity\Event;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
+
 /**
  * @extends ServiceEntityRepository<Event>
  *
@@ -17,10 +18,12 @@ use Doctrine\Persistence\ManagerRegistry;
 class EventRepository extends ServiceEntityRepository
 {
     public $int=0;
+    private $entityManager;
     
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Event::class);
+        $this->entityManager = $registry->getManager();
     }
 
     public function add(Event $entity, bool $flush = false): void
@@ -68,6 +71,31 @@ class EventRepository extends ServiceEntityRepository
         $this->entityManager->flush();
     }
 
+    // Méthode pour supprimer un élément par son ID
+    public function delete($id)
+    {
+        
+        // L'EntityManager est une classe fournie par Doctrine. Elle gère les entités dans une application Symfony
+        $entityManager = $this->getEntityManager();
+
+        // Cherche grâce à l' ID
+        $e = $this->find($id);
+
+        // Si l'élément est trouvé
+        if ($e) {
+            // On supprime
+            $entityManager->remove($e);
+
+            // Applique les changements à la base de données
+            $entityManager->flush();
+
+            // Retourne true si la suppression a réussi
+            return true;
+        }
+
+        // Retourne false si l'élément n'a pas été trouvé
+        return false;
+    }
 
 //    /**
 //     * @return Event[] Returns an array of Event objects
