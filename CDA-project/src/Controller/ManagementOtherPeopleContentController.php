@@ -19,7 +19,7 @@ class ManagementOtherPeopleContentController extends AbstractController
         $authors = $userService->findAllUsers();
         $articleData = $articleService->findOneArticleByFkPage(5);
         if(!empty($_GET['supp'])){
-            $articleSupp = $articleService->deleteById($_GET['supp']);
+           $articleService->deleteById($_GET['supp']);
         }
         if (!empty($_GET['active'])) {
             $articleService->toggleActive($_GET['active']);
@@ -29,7 +29,6 @@ class ManagementOtherPeopleContentController extends AbstractController
             'controller_name' => 'Management Other People\'s Content',
             'articleData'=>$articleData,
             'authors'=>$authors,
-            'message'=>$articleSupp,
         ]);
     }
 }

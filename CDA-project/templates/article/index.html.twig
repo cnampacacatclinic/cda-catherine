@@ -18,7 +18,6 @@
         <p>{{ article.textArticle|raw }}</p>
 
         <section>
-        {% for comment in comments %}
             <!-- si je ne suis pas connecté on affiche une lien pour se connecter -->
             {% if app.user == null %}
                 <a title="Connexion" href="{{ '/login?a=' }}{{ article.id }}"><h3>Laisser un commentaire</h3></a>
@@ -33,17 +32,23 @@
             {% endif %}
 
         </section>
+        {% for comment in comments %}
             {% if comment.active == 1 and comment.fkArticle.id == article.id %}
-                <section>
-                    <h3>Les commentaires</h3>
-                    <p>Le {{ comment.dateComment|date("d/m/Y") }} Machin à dit :</p>
+                <div>
+                    <p>Le {{ comment.dateComment|date("d/m/Y") }} 
+                        {% for user in authors %}
+                            {% if comment.fkUser.id == user.id %}
+                                {{ user.firstName }} {{ user.lastName }}
+                            {% endif %}
+                        {% endfor %}
+                     à dit :</p>
                     <p>{{ comment.textComment }}</p>
-                </section>
+                </div>
             {% endif %}
         
         
         {% endfor %}
     <!--end if de si je suis connecté-->
     {% endfor %}
-//pour l'article
-</section>{% endblock %}
+</section>
+{% endblock %}

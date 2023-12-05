@@ -58,15 +58,16 @@
                                                 Administration
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" title="Accueil user" href="{{ '/user' }}">Votre compte</a></li>
+                                                <li><a class="dropdown-item" title="Profil utilisateur" href="{{ '/user' }}">Votre compte</a></li>
                                                 {% if is_granted('ROLE_ADMIN') %}
-                                                    <li><a class="dropdown-item" title="admin" href="{{ '/gestionevent' }}">Gestion des evenements</a></li>
-                                                    <li><a class="dropdown-item" title="admin" href="{{ '/gestioncomment' }}">Gestion des commentaires</a></li>
-                                                    <li><a class="dropdown-item" title="admin" href="{{ '/admin' }}">Gestion de ses articles</a></li>
+                                                    <li><a class="dropdown-item" title="Gestion des événements" href="{{ '/gestionevent' }}">Gestion des événements</a></li>
+                                                    <li><a class="dropdown-item" title="Gestion des commentaires" href="{{ '/gestioncomment' }}">Gestion des commentaires</a></li>
+                                                    <li><a class="dropdown-item" title="Vos articles" href="{{ '/admin' }}">Vos articles</a></li>
                                                 {% endif %}
                                                 {% if is_granted('ROLE_SUPER_ADMIN') %}
-                                                    <li><a class="dropdown-item" title="superadmin" href="{{ '/management-other-people-content' }}">Gestion des autres articles</a></li>
-                                                    <li><a class="dropdown-item" title="superadmin" href="{{ '/superadmin' }}">Gestion des utilisateurs</a></li>
+                                                    <li><a class="dropdown-item" title="Gestion des autres articles" href="{{ '/management-other-people-content' }}">Gestion des autres articles</a></li>
+                                                    <li><a class="dropdown-item" title="Gestion des utilisateurs" href="{{ '/superadmin' }}">Gestion des utilisateurs</a></li>
+                                                    <li><a class="dropdown-item" title="Gestion des centres" href="{{ '/gestion-centre' }}">Gestion des centres</a></li>
                                                 {% endif %}
                                             </ul>
                                         </li>

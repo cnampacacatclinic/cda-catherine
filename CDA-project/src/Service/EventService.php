@@ -40,4 +40,21 @@ class EventService
         return $this->eventRepository->findBy(['id' => $idEvent]);
     }
 
+    public function toggleActive($idEvent)
+    {
+        $event = $this->eventRepository->find($idEvent);
+
+        if ($event) {
+            // Mise à jour la valeur de 'active' en fonction de sa valeur actuelle
+            $event->setActive($event->getActive() == 0 ? 1 : 0);
+
+            // On enregistre les modif
+            $this->eventRepository->save($event);
+
+            return $event;
+        }
+
+        return null; //Null si l'evenement n'a pas été trouvé
+    }
+
 }

@@ -46,7 +46,10 @@ security:
         - { path: ^/gestionevent, roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/insert-article, roles: ROLE_ADMIN }
+        - { path: ^/insertevent, roles: ROLE_ADMIN }
         - { path: ^/superadmin, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/gestioncomment, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/management-other-people-content, roles: ROLE_SUPER_ADMIN }
 
 when@test:
     security:

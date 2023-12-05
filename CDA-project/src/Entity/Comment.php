@@ -103,16 +103,9 @@ class Comment
 
     public function setActive(int $active): self
     {
-        
-        /* Par défaut, je souhaite que le commentaire soit à zéro.
-        * Donc, si il n'est pas spécifié qu'on souhaite qu'il soit égal à 1, il sera égal à 0.
-        */
-        if(empty($this->active)|| $this->active==null) {
-            return $this->active = 0;
-        }
-        else{
-            return $this->active = $active;
-        }
-        
+
+        $this->active = $active;
+        // Retourne l'instance de l'entité
+        return $this;
     }
 }

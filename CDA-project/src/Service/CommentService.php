@@ -9,7 +9,7 @@ class CommentService
 {
     private $articleRepository;
     private $commentRepository;
-    private $id;
+    private int $id=0;
 
     public function __construct(ArticleRepository $articleRepository, CommentRepository $commentRepository)
     {
@@ -25,5 +25,28 @@ class CommentService
     public function findCommentByArticleId($id)
     {
         return $this->commentRepository->findBy(['fkArticle' => $id]);
+    }
+
+    public function toggleActive($id)
+    {
+        $comment = $this->commentRepository->find($id);
+
+        if ($comment) {
+            //On Inverse la valeur
+            $newActiveState = $comment->getActive();
+            if ($newActiveState==0){
+                $comment->setActive(1);
+            }else{
+                $comment->setActive(0);
+            }
+            return $this->commentRepository->save($comment);
+        }
+
+        return null; //Si le commentaire n'a pas été trouvé
+    }
+
+    public function deleteById($id)
+    {    
+        return $this->commentRepository->delete($id);
     }
 }

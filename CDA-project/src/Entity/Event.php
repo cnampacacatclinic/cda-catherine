@@ -34,15 +34,6 @@ class Event
      */
     private $titleEvent;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $active;
-
-    /**
-    * @ORM\ManyToMany(targetEntity=User::class, mappedBy="fkEvent")
-    */
-    private $usersList;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -54,9 +45,19 @@ class Event
      */
     private $locationEvent;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class)
+     */
+    private $User;
+
+    /**
+     * @ORM\Column(type="smallint")
+     */
+    private $active;
+
     public function __construct()
     {
-        $this->usersList = new ArrayCollection();
+        $this->User = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -100,17 +101,6 @@ class Event
         return $this;
     }
 
-    public function isBoolean(): ?bool
-    {
-        return $this->active;
-    }
-
-    public function setBoolean(bool $active): self
-    {
-        $this->active = $active;
-
-        return $this;
-    }
 
    
     /**
@@ -131,14 +121,7 @@ class Event
         return $this;
     }
 
-    public function removeUsersList(User $usersList): self
-    {
-        if ($this->usersList->removeElement($usersList)) {
-            $usersList->removeFKEvent($this);
-        }
-
-        return $this;
-    }
+ 
 
     public function getDescriptionEvent(): ?string
     {
@@ -160,6 +143,42 @@ class Event
     public function setLocationEvent(string $locationEvent): self
     {
         $this->locationEvent = $locationEvent;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUser(): Collection
+    {
+        return $this->User;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->User->contains($user)) {
+            $this->User[] = $user;
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        $this->User->removeElement($user);
+
+        return $this;
+    }
+
+    public function getActive(): ?int
+    {
+        return $this->active;
+    }
+
+    public function setActive(int $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

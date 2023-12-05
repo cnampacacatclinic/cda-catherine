@@ -54,6 +54,12 @@ class ArticleController extends AbstractController
             $comment = new Comment();
             //On set par défaut l'utilisateur connecté
             $comment->setFkUser($user);
+            //On crée une instance avec la date actuelle
+            $commentDate = new \DateTime();
+            //On utilise la méthode setDateComment avec la date actuelle
+            $comment->setDateComment($commentDate);
+            //On set la valeur active par defaut à zero;
+            $comment->setActive(0);
             //On "set" la clé étrangère de l'article avec la requete en GET
             $comment->setFkArticle($articleRepository->find($_GET['a']));
             //On envoie au formulaire $comment
@@ -61,13 +67,13 @@ class ArticleController extends AbstractController
             //On requete
             $form->handleRequest($request);
 
-            //Si le formulaire est soummis et si il est valid
+            //Si le formulaire est soummis et si il est valide
             if ($form->isSubmitted() && $form->isValid()) {
                 $entityManager = $this->doctrine->getManager();
                 $entityManager->persist($comment);
                 $entityManager->flush();
     
-                return $this->redirectToRoute('app_article');
+                return $this->redirectToRoute('app_article', ['a' => $_GET['a']]);//On envoie de $_GET['a']
             }
 
 

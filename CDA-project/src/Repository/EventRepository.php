@@ -16,6 +16,8 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class EventRepository extends ServiceEntityRepository
 {
+    public $int=0;
+    
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Event::class);
@@ -55,6 +57,15 @@ class EventRepository extends ServiceEntityRepository
             ->setParameter('searchText', '%' . $word . '%')
             ->getQuery()
             ->getResult();
+    }
+    
+    /*La fonction save() n'existe pas par defaut j'ai du l'ajouter*/
+    public function save($int)
+    {
+        /*Pour Doctrine "persist" signifie que l'objet sera enregistré par Doctrine et suivi pour les modifications. */
+        $this->entityManager->persist($int);
+        /*Pour Doctrine "flush" signifie que toutes les modifications en attente sont exécutées et les objets sont synchronisés avec la base de données. */
+        $this->entityManager->flush();
     }
 
 
