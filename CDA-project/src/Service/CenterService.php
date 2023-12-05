@@ -7,7 +7,7 @@ use App\Repository\CenterRepository;
 class CenterService
 {
     private $centerRepository;
-    private $idCenter;
+    private int $id=0;
 
     public function __construct(CenterRepository $centerRepository)
     {
@@ -17,5 +17,10 @@ class CenterService
     public function findAllCenters()
     {
         return $this->centerRepository->findAll();
+    }
+
+    public function deleteById($id)
+    {    
+        return $this->centerRepository->delete($id);
     }
 }

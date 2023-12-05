@@ -25,7 +25,6 @@ class ContactController extends AbstractController
         $phonesForCenter2 = $phoneService->findAllPhones();
         $phoneTypes = $phoneTypeService->findAllTypePhoneOrderedByName();
 
-
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'Contact',
             'centerData' => $centerData,
