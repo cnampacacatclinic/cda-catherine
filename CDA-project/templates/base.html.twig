@@ -59,10 +59,11 @@
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" title="Profil utilisateur" href="{{ '/user' }}">Votre compte</a></li>
+                                                <li><a class="dropdown-item" title="Inscription au événements" href="{{ '/registration-event' }}">Inscription aux événements</a></li>
                                                 {% if is_granted('ROLE_ADMIN') %}
+                                                <li><a class="dropdown-item" title="Vos articles" href="{{ '/admin' }}">Vos articles</a></li>
                                                     <li><a class="dropdown-item" title="Gestion des événements" href="{{ '/gestionevent' }}">Gestion des événements</a></li>
                                                     <li><a class="dropdown-item" title="Gestion des commentaires" href="{{ '/gestioncomment' }}">Gestion des commentaires</a></li>
-                                                    <li><a class="dropdown-item" title="Vos articles" href="{{ '/admin' }}">Vos articles</a></li>
                                                 {% endif %}
                                                 {% if is_granted('ROLE_SUPER_ADMIN') %}
                                                     <li><a class="dropdown-item" title="Gestion des autres articles" href="{{ '/management-other-people-content' }}">Gestion des autres articles</a></li>

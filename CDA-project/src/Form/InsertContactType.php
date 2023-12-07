@@ -25,11 +25,11 @@ class InsertContactType extends AbstractType
                 'required' => true,
                 'error_bubbling' => true,
                 'attr' => [
-                  'min' => 0
+                  'min' => 0 /* La valeur minimum autorisée */
                 ]
             ])
             ->add('typeWay', ChoiceType::class, [
-                'choices' => TypeWayEnum::toArray(),
+                'choices' => TypeWayEnum::getChoices(), /* La methode getChoise créée pour afficher les valeurs des constantes et non leur nom */
                 'placeholder' => 'Choisir un type de voie',
             ])
             ->add('nameWay',TextType::class)
@@ -37,11 +37,11 @@ class InsertContactType extends AbstractType
             [
                 'required' => true,
                 'attr' => [
-                  'min' => 999
+                  'min' => 999 /* La valeur minimum autorisée */
                 ]
             ])
             ->add('city', ChoiceType::class, [
-                'choices' => CityEnum::toArray(),
+                'choices' => CityEnum::getChoices(), /* La methode getChoise créée pour afficher les valeurs des constantes et non leur nom */
                 'placeholder' => 'Choisir une des villes',
             ])
         ;

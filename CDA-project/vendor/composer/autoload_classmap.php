@@ -29,6 +29,7 @@ return array(
     'App\\Controller\\NewsController' => $baseDir . '/src/Controller/NewsController.php',
     'App\\Controller\\Page404Controller' => $baseDir . '/src/Controller/Page404Controller.php',
     'App\\Controller\\RegistrationController' => $baseDir . '/src/Controller/RegistrationController.php',
+    'App\\Controller\\RegistrationEventController' => $baseDir . '/src/Controller/RegistrationEventController.php',
     'App\\Controller\\ResetPasswordController' => $baseDir . '/src/Controller/ResetPasswordController.php',
     'App\\Controller\\SearchController' => $baseDir . '/src/Controller/SearchController.php',
     'App\\Controller\\SecurityController' => $baseDir . '/src/Controller/SecurityController.php',

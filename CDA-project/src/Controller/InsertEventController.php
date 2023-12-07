@@ -13,18 +13,15 @@ use App\Entity\Article;
 use App\Entity\Page;
 use App\Form\InsertContentType;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Component\Security\Core\Security;//pour obtenir l'id de l'utilisateur connecté
 
 
 class InsertEventController extends AbstractController
 {
     private $doctrine;
-    private $security;
 
-    public function __construct(ManagerRegistry $doctrine,Security $security)
+    public function __construct(ManagerRegistry $doctrine)
     {
         $this->doctrine = $doctrine;
-        $this->security = $security;
     }
     
     /**
@@ -32,13 +29,8 @@ class InsertEventController extends AbstractController
      */
     public function createEvent(Request $request): Response
     {
-        // On récupére l'utilisateur connecté
-        $user = $this->security->getUser();
 
         $event = new Event();
-        $event->addUser($user);
-        //$fkEvent=$this->event->getEvent();
-        //$user->addFKEvent($fkEvent);
 
         $form = $this->createForm(InsertEventType::class, $event);
         

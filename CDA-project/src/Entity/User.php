@@ -55,10 +55,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $firstName;
 
-    /**
+   /**
      * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="usersList")
-    * @ORM\JoinTable(name="user_event")
-    */
+     * @ORM\JoinTable(name="event_user")
+     */
     private $fkEvent;
 
     public function __construct()
@@ -188,6 +188,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setFirstName(string $firstName): self
     {
         $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Event>
+     */
+    public function getFkEvent(): Collection
+    {
+        return $this->fkEvent;
+    }
+
+    public function addFkEvent(Event $fkEvent): self
+    {
+        if (!$this->fkEvent->contains($fkEvent)) {
+            $this->fkEvent[] = $fkEvent;
+        }
+
+        return $this;
+    }
+
+    public function removeFkEvent(Event $fkEvent): self
+    {
+        $this->fkEvent->removeElement($fkEvent);
 
         return $this;
     }

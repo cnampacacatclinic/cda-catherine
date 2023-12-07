@@ -51,14 +51,19 @@ class ConnexionAuthenticator extends AbstractLoginFormAuthenticator
         }
         //Si on reçoit en get un lien on le conserve dans une variable
         $_REQUEST['a'] = empty($_REQUEST['a']) ? null : $_REQUEST['a'];
-        //Si on ne veut pas laisser un commentaire
-        if($_REQUEST['a']==null){
+        
+        $_REQUEST['e'] = empty($_REQUEST['e']) ? null : $_REQUEST['e'];
+       
+        //si on veut s'inscrire à une evenement
+        if($_REQUEST['e']!=null){
+                return new RedirectResponse($this->urlGenerator->generate('app_event_page', ['e' => $_REQUEST['e']]));//envoi de $_REQUEST['e']
+        }//si on veut déposer un commentaire
+        elseif ($_REQUEST['a']!=null){
+                return new RedirectResponse($this->urlGenerator->generate('app_article', ['a' => $_REQUEST['a']]));//envoi de $_REQUEST['a']
+        }else{
             //on est redirigé vers le profil utilisateur
             return new RedirectResponse($this->urlGenerator->generate('app_user'));
             //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
-        }
-        else{//Sinon on est redirigé vers l'article
-            return new RedirectResponse($this->urlGenerator->generate('app_article', ['a' => $_REQUEST['a']]));//envoi de $_REQUEST['a']
         }
     }
 

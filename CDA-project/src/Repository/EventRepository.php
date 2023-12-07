@@ -97,6 +97,7 @@ class EventRepository extends ServiceEntityRepository
         return false;
     }
 
+
 //    /**
 //     * @return Event[] Returns an array of Event objects
 //     */

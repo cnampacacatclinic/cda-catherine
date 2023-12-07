@@ -3,16 +3,24 @@
 namespace App\Service;
 
 use App\Repository\EventRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\User;
+use App\Entity\Event;
 
 class EventService
 {
     private $eventRepository;
-    private $id;
-    private $word;
+    private $entityManager;
 
-    public function __construct(EventRepository $eventRepository)
+    private $id;
+    private $userId;
+    private $word;
+    private $user;
+
+    public function __construct(EventRepository $eventRepository, EntityManagerInterface $entityManager)
     {
         $this->eventRepository = $eventRepository;
+        $this->entityManager = $entityManager;
     }
 
     public function findAllEvents()
@@ -61,5 +69,28 @@ class EventService
     {    
         return $this->eventRepository->delete($id);
     }
+
+    public function registrationUserEvent($userId, $id)
+{
+    $user = $this->entityManager->getRepository(User::class)->find($userId);
+    $event = $this->entityManager->getRepository(Event::class)->find($id);
+
+    if ($user && $event) {
+        // Assuming you have appropriate methods like `addFkEvent` and `addUsersList` in your User and Event entities.
+
+        // Add the event to the user's list
+        $user->addFkEvent($event);
+
+        // Add the user to the event's user list
+        $event->addUsersList($user);
+
+        // You don't need to persist $userId and $id, you need to persist the entities (User and Event).
+        // Assuming $user and $event are instances of your User and Event entities.
+
+        $this->entityManager->persist($user);
+        $this->entityManager->persist($event);
+        $this->entityManager->flush();
+    }
+}
 
 }

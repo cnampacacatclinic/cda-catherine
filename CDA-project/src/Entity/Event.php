@@ -34,7 +34,6 @@ class Event
      */
     private $titleEvent;
 
-
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -46,9 +45,10 @@ class Event
     private $locationEvent;
 
     /**
-     * @ORM\ManyToMany(targetEntity=User::class)
-     */
-    private $User;
+    * @ORM\ManyToMany(targetEntity=User::class, mappedBy="fkEvent")
+    * @ORM\JoinTable(name="event_user")
+    */
+    private $usersList;
 
     /**
      * @ORM\Column(type="smallint")
@@ -57,7 +57,7 @@ class Event
 
     public function __construct()
     {
-        $this->User = new ArrayCollection();
+        $this->usersList = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -101,8 +101,6 @@ class Event
         return $this;
     }
 
-
-   
     /**
      * @return Collection<int, User>
      */
@@ -120,8 +118,6 @@ class Event
 
         return $this;
     }
-
- 
 
     public function getDescriptionEvent(): ?string
     {
@@ -147,26 +143,11 @@ class Event
         return $this;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUser(): Collection
+    public function removeUsersList(User $usersList): self
     {
-        return $this->User;
-    }
-
-    public function addUser(User $user): self
-    {
-        if (!$this->User->contains($user)) {
-            $this->User[] = $user;
+        if ($this->usersList->removeElement($usersList)) {
+            $usersList->removeFKEvent($this);
         }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): self
-    {
-        $this->User->removeElement($user);
 
         return $this;
     }
