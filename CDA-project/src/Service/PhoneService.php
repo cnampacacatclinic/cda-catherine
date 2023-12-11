@@ -56,4 +56,9 @@ class PhoneService
         return $phonesData = $this->phoneRepository->findPhonesByCenter2();
     }
 
+    public function deleteById($id)
+    {    
+        return $this->phoneRepository->delete($id);
+    }
+
 }

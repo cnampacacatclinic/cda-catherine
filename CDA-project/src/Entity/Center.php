@@ -51,7 +51,7 @@ class Center
     private $city;
 
     /**
-     * @ORM\OneToMany(targetEntity=Phone::class, mappedBy="center")
+     * @ORM\OneToMany(targetEntity=Phone::class, mappedBy="center", cascade={"remove"})
      */
     private $fkPhone;
 
@@ -163,7 +163,7 @@ class Center
     public function removeFkPhone(Phone $fkPhone): self
     {
         if ($this->fkPhone->removeElement($fkPhone)) {
-            // set the owning side to null (unless already changed)
+
             if ($fkPhone->getCenter() === $this) {
                 $fkPhone->setCenter(null);
             }

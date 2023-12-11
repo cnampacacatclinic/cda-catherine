@@ -10,8 +10,7 @@ use App\Form\InsertPhoneType;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Phone;
 use App\Entity\PhoneType;
-use App\Entity\Center;
-use App\Form\InsertContactType;
+//use App\Entity\Center;
 use App\Service\PhoneTypeService;
 
 class InsertPhoneController extends AbstractController
@@ -47,7 +46,7 @@ class InsertPhoneController extends AbstractController
         }
 
         
-        return $this->render('insert_phone/index.html.twig', [
+        return $this->render('form_phone/index.html.twig', [
             'controller_name' => 'InsertPhoneController',
             'form'=> $form->createView(),
             'phoneTypes' => $phoneTypes,
