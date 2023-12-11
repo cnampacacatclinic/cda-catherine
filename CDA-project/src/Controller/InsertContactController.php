@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;//à ajouter pour les fomulaires
-use App\Form\InsertContentType;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Center;
 use App\Form\InsertContactType;
@@ -38,7 +37,7 @@ class InsertContactController extends AbstractController
         }
 
 
-        return $this->render('insert_contact/index.html.twig', [
+        return $this->render('form_contact/index.html.twig', [
             'controller_name' => 'InsertContactController',
             'form' => $form->createView(),
         ]);

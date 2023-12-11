@@ -36,7 +36,7 @@
                     <td>{{ center.nameCenter }}</td>
                     <td>{{ center.numWay }} {{ center.typeWay }} {{ center.nameWay }} {{ center.zipCode}}, {{center.city}}</td>
                     <td class="text-end">
-                        <a href="{{ path('app_gestion_centre', {'modif': center.id }) }}" class="btn btn-success">Modifier</a>
+                        <a href="{{ path('app_update_center', {'modif': center.id }) }}" class="btn btn-success">Modifier</a>
                     </td>
                     <td class="text-end">
                         <a href="{{ path('app_gestion_centre', {'supp': center.id }) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr?')">Supprimer</a>
