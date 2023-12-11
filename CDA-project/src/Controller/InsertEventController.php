@@ -45,7 +45,7 @@ class InsertEventController extends AbstractController
             return $this->redirectToRoute('app_insert_event');
         }
 
-        return $this->render('insert_event/index.html.twig', [
+        return $this->render('form_event/index.html.twig', [
             'controller_name' => 'InsertEventController',
             'form' => $form->createView(),
         ]);

@@ -1,7 +1,5 @@
 <?php
 
-// src/Form/UpdateContentType.php
-
 namespace App\Form;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -46,6 +44,8 @@ class UpdateContentType extends AbstractType
                         $form->get('dateArticle')->setData($articleData->getDateArticle());
                         $form->get('titleArticle')->setData($articleData->getTitleArticle());
                         $form->get('textArticle')->setData($articleData->getTextArticle());
+                        $form->get('active')->setData($articleData->isActive());
+                        $form->get('fkCategorie')->setData($articleData->getFkCategorie());
                         
                     }
                 }

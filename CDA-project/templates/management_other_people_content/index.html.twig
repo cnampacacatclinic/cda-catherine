@@ -21,7 +21,7 @@
                         <td>{{ article.dateARticle|date("d/m/Y") }}</td>
                         <td><a title="{{ article.titleArticle }}" href="{{ '/article?a=' }}{{ article.id }}">{{ article.titleArticle }}</a></td>
                         <td class="text-end">
-                            <a href="#" class="btn btn-success">Modifier</a>
+                            <a href="{{ path('app_update_article', {'modif': article.id }) }}" class="btn btn-success">Modifier</a>
                         </td>
                         <td class="text-end">
                             {% if article.active == 1 %}

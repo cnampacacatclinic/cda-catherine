@@ -58,7 +58,7 @@ class InsertArticleController extends AbstractController
             return $this->redirectToRoute('app_insert_article');
         }
 
-        return $this->render('insert_article/index.html.twig', [
+        return $this->render('form_article/index.html.twig', [
             'form' => $form->createView(),
         ]);
     }

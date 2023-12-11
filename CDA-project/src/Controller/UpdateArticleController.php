@@ -37,7 +37,7 @@ class UpdateArticleController extends AbstractController
                     return $this->redirectToRoute('app_update_article', ['modif' => $_GET['modif']]);
                 }
 
-                return $this->render('update_article/index.html.twig', [
+                return $this->render('form_article/index.html.twig', [
                     'controller_name' => 'UpdateArticleController',
                     'form' => $form->createView(),
                 ]);
