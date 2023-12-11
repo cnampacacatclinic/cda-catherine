@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 05 déc. 2023 à 11:36
+-- Généré le : lun. 11 déc. 2023 à 16:16
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -59,9 +59,16 @@ INSERT INTO `article` (`id`, `fk_page_id`, `fk_categorie_id`, `fk_user_id`, `dat
 (15, 11, 1, 1, '2023-11-28 14:53:02', '<h4>Propriété intellectuelle</h4>\r\n<p>\r\nLes photographies et les textes publiés sur le site web du Asso Animal sont la propriété exclusive du refuge. Toute reproduction, représentation, adaptation, traduction, ou transformation, partielle ou intégrale, de ces éléments est strictement interdite sans l\'autorisation expresse de Asso Animal.\r\n</p><p>\r\nLes dessins et logos figurant sur le site web du refuge d\'animaux de compagnie sont également la propriété exclusive du refuge. Toute reproduction, représentation, ou exploitation, partielle ou intégrale, de ces éléments est strictement interdite sans l\'autorisation expresse du refuge.\r\n</p><p>\r\nL\'ensemble du contenu du site web du refuge d\'animaux de compagnie est protégé par le droit d\'auteur. Toute reproduction, représentation, ou exploitation, partielle ou intégrale, du site web est strictement interdite sans l\'autorisation expresse du refuge.\r\n</p>\r\n<h4>Hyperliens</h4>\r\n<p>\r\nLes liens hypertextes présents sur le site web du refuge d\'animaux de compagnie peuvent renvoyer sur des sites web tiers. Le refuge n\'exerce aucun contrôle sur ces sites web et décline toute responsabilité quant à leur contenu.\r\n</p>\r\n<h4>Modifications</h4>\r\n<p>\r\nAsso Animal se réserve le droit de modifier les mentions légales à tout moment. L\'utilisateur est invité à consulter régulièrement les mentions légales afin de prendre connaissance des modifications éventuelles.\r\n</p>\r\n', 'Mentions légales', 1),
 (16, 9, 1, 1, '2023-11-28 14:53:02', '<p>\r\nLe site web du refuge d\'animaux de compagnie utilise des cookies afin de collecter des informations sur la navigation des utilisateurs. Ces informations sont utilisées pour améliorer le contenu du site web et la navigation des utilisateurs.\r\n</p><p>\r\nL\'utilisateur peut s\'opposer à l\'utilisation des cookies en modifiant les paramètres de son navigateur. En effet vous pouvez vider le cache également grâce au raccourci clavier Ctrl + Maj + Suppr<br>\r\nPour un Mac, utilisez Command + Maj + Suppr .</p>', 'Cookies', 1),
 (17, 10, 1, 1, '2023-11-28 14:53:02', '<p>Asso Animal s\'engage à protéger la confidentialité des informations personnelles que vous nous fournissez.\r\n</p><p>\r\nNous collectons des informations personnelles lorsque vous utilisez notre site web, par exemple lorsque vous :\r\n<ul>\r\n<li>Visitez notre site web</li>\r\n<li>Vous inscrivez à notre newsletter</li>\r\n<li>Faites un don</li>\r\n<li>Adoptez un animal</li>\r\n</ul>\r\n</p>\r\n<p>Les informations personnelles que nous collectons peuvent inclure :\r\n<ul>\r\n<li>Votre nom</li>\r\n<li>Votre adresse e-mail</li>\r\n<li>Vos informations sur l\'animal que vous adoptez</li>\r\n</ul>\r\n</p><p>\r\nNous utilisons les informations personnelles que nous collectons pour :\r\n<ul>\r\n<li>\r\nVous fournir les services que vous demandez</li>\r\n<li>Vous contacter pour vous informer de nos activités</li>\r\n<li>Améliorer notre site web et nos services</li>\r\n</ul>\r\n</p>\r\n<p>\r\nNous ne partageons vos informations personnelles avec des tiers que dans les cas suivants :\r\n<ul>\r\n<li>Avec votre consentement</li>\r\n<li>Pour nous conformer à une loi ou une réglementation</li>\r\n<li>Pour protéger nos droits ou notre propriété</li>\r\n</ul>\r\n</p>\r\n<h4>Données personnelles</h4>\r\n<p>\r\nLes données personnelles collectées sur le site web de Asso Animal sont destinées à la gestion des relations avec les utilisateurs. Ces données sont conservées pendant une durée de 2 ans après la dernière interaction de l\'utilisateur avec le site web.\r\n</p><p>\r\nL\'utilisateur dispose d\'un droit d\'accès, de rectification, et d\'effacement des données personnelles le concernant. L\'utilisateur peut également demander la limitation du traitement de ses données personnelles ou s\'opposer à leur traitement.\r\n</p><p>\r\nL\'utilisateur peut exercer ses droits en contactant le refuge par mail à l\'adresse suivante : <a href=\"mailto:emailassoanimal@examplemail.org\">emailassoanimal@examplemail.org</a>\r\n</p>\r\n<h4>Sécurité</h4>\r\n<p>\r\nLe refuge d\'animaux de compagnie s\'engage à protéger les données personnelles des utilisateurs. Le refuge met en œuvre des mesures de sécurité techniques et organisationnelles pour protéger les données personnelles contre les risques de perte, de destruction, de modification, ou de divulgation à des tiers non autorisés.</p>', 'Politique de confidentialité', 1),
-(18, 5, 3, 2, '2023-11-29 14:45:01', 'article test de paul', 'Article de Paul', 1),
+(18, 5, 3, 2, '2023-11-29 00:00:00', 'Cathy a modifié l\'article de Paul mais n\'a pas modifié l\'auteur de l\'article !!!', 'Article de Paul', 1),
 (19, 5, 3, 2, '2023-11-29 14:45:01', 'article test de Paul', 'Article de Paul', 1),
-(20, 5, 3, 2, '2023-11-29 14:45:01', 'second article test de Paul', 'Article 2 de Paul', 1);
+(20, 5, 2, 2, '2020-11-29 00:00:00', 'second article de Paul modifié par Cathy !', 'Article 2 de Paul', 0),
+(21, 5, 1, 1, '2018-01-01 00:00:00', '2584444', 'test44444', 0),
+(26, 5, 3, 1, '2018-01-01 00:00:00', 'ytryrty', 'ygtgyry', 0),
+(27, 5, 1, 1, '2018-01-01 00:00:00', 'oooooooooooooooooooo', 'oooooooooooooo', 1),
+(28, 5, 1, 1, '2018-01-01 00:00:00', 'tttttttt', 'ttttt', 1),
+(29, 5, 1, 1, '2018-01-01 00:00:00', 'yy', 'yy', 1),
+(30, 5, 1, 1, '2018-01-01 00:00:00', 'yyyy', 'yyy', 1),
+(31, 5, 1, 1, '2018-01-01 00:00:00', 'fdsfsdf', 'test 2fsfqfsdqfq', 1);
 
 -- --------------------------------------------------------
 
@@ -133,7 +140,7 @@ CREATE TABLE `center` (
 --
 
 INSERT INTO `center` (`id`, `name_center`, `num_way`, `type_way`, `name_way`, `zip_code`, `city`) VALUES
-(1, 'Le roux', 12, 'rue', 'du roi', 13120, 'Gardanne'),
+(1, 'Le blond', 15, 'Descente', 'du prince', 13123, 'Valence'),
 (2, 'Vertigo', 32, 'avenue', 'Jean-Jean De Jean', 75000, 'Paris'),
 (3, 'Carmin', 54, 'place', 'des quatre dauphins', 13190, 'Aix-En-Provence');
 
@@ -203,9 +210,9 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `start_date`, `end_date`, `title_event`, `active`, `description_event`, `location_event`) VALUES
-(1, '2023-11-24 14:55:15', '2024-11-24 14:55:15', 'Event test', 1, 'Ceci est un test pour vérifier si il affiche l\' événement. ', 'Rue du Chat-qui-Pêche 75012 Paris'),
-(2, '2023-11-24 15:48:04', '2023-11-28 15:48:04', 'Event non actif', 1, 'Non actif', '25 Boulevard du rat, Lyon'),
-(3, '2023-11-24 15:48:04', '2024-01-30 15:48:04', 'Actif event', 0, 'Actif event pour tester l\'affichage', 'Rue du Chat-qui-Pêche 75012 Paris');
+(2, '2023-11-24 15:48:04', '2023-11-28 15:48:04', 'Event non actif', 0, 'Non actif', '25 Boulevard du rat, Lyon'),
+(3, '2023-02-24 00:00:00', '2024-11-30 00:00:00', 'Actif event', 1, 'Éventement actif pour tester l\'affichage', 'Rue du Chat-qui-Pêche 75012 Paris'),
+(6, '2020-01-01 00:00:00', '2025-01-01 00:00:00', 'test', 1, 'test', 'Paris');
 
 -- --------------------------------------------------------
 
@@ -217,6 +224,16 @@ CREATE TABLE `event_user` (
   `user_id` int(11) NOT NULL,
   `event_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `event_user`
+--
+
+INSERT INTO `event_user` (`user_id`, `event_id`) VALUES
+(1, 3),
+(1, 6),
+(3, 3),
+(4, 3);
 
 -- --------------------------------------------------------
 
@@ -312,9 +329,6 @@ CREATE TABLE `phone` (
 
 INSERT INTO `phone` (`id`, `center_id`, `fk_type_id`, `phone_number`, `is_mobile`) VALUES
 (1, 3, 3, '072222222', 1),
-(2, 3, 2, '0033333333', 0),
-(3, 3, 1, '064444444', 1),
-(4, 3, 1, '001425630', 0),
 (5, 1, 3, '005555555', 0),
 (6, 1, 2, '062544444', 1),
 (7, 1, 2, '0099999999', 0),
@@ -325,9 +339,10 @@ INSERT INTO `phone` (`id`, `center_id`, `fk_type_id`, `phone_number`, `is_mobile
 (12, 2, 3, '0688888888', 1),
 (13, 2, 3, '0011111110', 0),
 (14, 2, 1, '0024524524', 0),
-(15, 2, 4, '0699999999', 1),
-(16, 2, 4, '0045345345', 0),
-(17, 3, 4, '068888889', 1);
+(21, 1, 3, '37524527452', 1),
+(30, 1, 2, '237523725742174', 1),
+(32, 1, 2, '1', 1),
+(33, 3, 2, '55555555555', 1);
 
 -- --------------------------------------------------------
 
@@ -389,7 +404,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `is_verified`, `last_name`, `first_name`) VALUES
 (1, 'cathy@gmail.com', '[\"ROLE_SUPER_ADMIN\"]', '$2y$13$KW4/NeknCPrcVaA47mcx/.bheXn16pr8KkCpXh0UjR5Gyd7P1M3Xu', 0, 'jules', 'catherine'),
 (2, 'paul@gmail.com', '[\"ROLE_ADMIN\"]\r\n', '$2y$13$.eGV1CRP3zSg8Hk7Hp5sdOuUPYD73xTvPH9g4v5.2UaDCWQpYznWu', 0, 'paulo', 'paulopaulo'),
-(3, 'perso@gmail.com', '[]', '$2y$13$d8v.aXPloFdBkg9n8PMj1.Rw9ijfwX3CB.bdSkhMSmpG6utp8JTcO', 0, 'ccc', 'yyyy');
+(3, 'perso@gmail.com', '[]', '$2y$13$d8v.aXPloFdBkg9n8PMj1.Rw9ijfwX3CB.bdSkhMSmpG6utp8JTcO', 0, 'ccc', 'yyyy'),
+(4, 'rezrezr@fjdksljf.lm', '[]', '$2y$13$fyqYpQo8TvtlXg/vBkkTw.DCjMdcgrBy5rOF1lJz0i6UBSO5PsqJK', 0, 'rzer', 'rezre');
 
 --
 -- Index pour les tables déchargées
@@ -509,7 +525,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT pour la table `categorie`
@@ -521,7 +537,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `center`
 --
 ALTER TABLE `center`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `comment`
@@ -533,7 +549,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `img`
@@ -557,7 +573,7 @@ ALTER TABLE `page`
 -- AUTO_INCREMENT pour la table `phone`
 --
 ALTER TABLE `phone`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT pour la table `phone_type`
@@ -575,7 +591,7 @@ ALTER TABLE `reset_password_request`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
@@ -615,7 +631,7 @@ ALTER TABLE `event_user`
 --
 ALTER TABLE `phone`
   ADD CONSTRAINT `FK_444F97DD3563B1BF` FOREIGN KEY (`fk_type_id`) REFERENCES `phone_type` (`id`),
-  ADD CONSTRAINT `FK_444F97DD5932F377` FOREIGN KEY (`center_id`) REFERENCES `center` (`id`);
+  ADD CONSTRAINT `FK_444F97DD5932F377` FOREIGN KEY (`center_id`) REFERENCES `center` (`id`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `reset_password_request`
