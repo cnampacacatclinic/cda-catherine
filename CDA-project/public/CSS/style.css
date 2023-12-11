@@ -3,6 +3,9 @@
 
 body{
     position:relative;
-    top:80px;
+    top:160px;
     background-color: #ccc;
+}
+#logo1{
+    width: 4.5em;
 }

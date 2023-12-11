@@ -25,11 +25,11 @@ class RegistrationEventController extends AbstractController
      */
     public function index(EventService $eventService): Response
     {
-        // On récupére l'utilisateur connecté
+        /*// On récupére l'utilisateur connecté
         $user = $this->security->getUser();
         //On cherche son identitiant
-        $userId= $user->getId();
-        //On trasmet au service l'id
+        $userId= $user->getId();/**/
+        
         $eventData = $eventService->findAllEvents();
 
         return $this->render('registration_event/index.html.twig', [

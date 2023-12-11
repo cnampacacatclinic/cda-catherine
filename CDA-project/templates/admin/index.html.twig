@@ -9,7 +9,7 @@
     <div class="card">
         <div class="card-body row">
             <div class="col-md-6 text-right">
-                <a href="{{ '/insert-article' }}" class="btn btn-primary">Créer un article</a>
+                <a href="{{ path('app_insert_article') }}" class="btn btn-primary">Créer un article</a>
             </div>
         </div>
     </div>
@@ -30,17 +30,17 @@
                         <td>{{ article.dateARticle|date("d/m/Y") }}</td>
                         <td><a title="{{ article.titleArticle }}" href="{{ '/article?a=' }}{{ article.id }}">{{ article.titleArticle }}</a></td>
                         <td class="text-end">
-                            <a href="#" class="btn btn-success">Modifier</a>
+                            <a href="{{ path('app_update_article', {'modif': article.id }) }}" class="btn btn-success">Modifier</a>
                         </td>
                         <td class="text-end">
                             {% if article.active == 1 %}
-                                <a href="{{ '?active=' }}{{ article.id }}" class="btn btn-dark">Brouillon</a>
+                                <a href="{{ path('app_admin', {'active': article.id }) }}" class="btn btn-dark">Brouillon</a>
                             {% else %}
-                                <a href="{{ '?active=' }}{{ article.id }}" class="btn btn-primary">Publier</a>
+                                <a href="{{ path('app_admin', {'active': article.id }) }}" class="btn btn-primary">Publier</a>
                             {% endif %}
                         </td>
                         <td class="text-end">
-                            <a data-article-id="{{ article.id }}" data-bs-toggle="modal" data-bs-target="#myModal" href="{{ '?supp=' }}{{ article.id }}" class="btn btn-danger supp">Supprimer</a>
+                            <a data-article-id="{{ article.id }}" data-bs-toggle="modal" data-bs-target="#myModal" href="{{ path('app_admin', {'supp': article.id }) }}" class="btn btn-danger supp">Supprimer</a>
                         </td>
                     {% endif %}
                 </tr>

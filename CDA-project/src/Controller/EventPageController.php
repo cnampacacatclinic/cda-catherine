@@ -29,21 +29,22 @@ class EventPageController extends AbstractController
                 'controller_name' => 'Page404Controller',
             ]);
         }
+        else{
+            $eventId = $_GET['e'];
 
-        $eventId = $_GET['e'];
+            $event = $eventService->findOneEvent($eventId);
 
-        $event = $eventService->findOneEvent($eventId);
+            if (!empty($_GET['x'])) {
+                //on cherche l'id de l'utilisateur
+                $userId = $user->getId();
+                // on enregistre la donnée dans la BDD pour inscrire l'utilisateur
+                $eventService->registrationUserEvent($userId, $eventId);
+            }
 
-        if (!empty($_GET['x'])) {
-            //on cherche l'id de l'utilisateur
-            $userId = $user->getId();
-            // on enregistre la donnée dans la BDD pour inscrire l'utilisateur
-            $eventService->registrationUserEvent($userId, $eventId);
+            return $this->render('event_page/index.html.twig', [
+                'controller_name' => 'Events',
+                'eventData' => $event,
+            ]);
         }
-
-        return $this->render('event_page/index.html.twig', [
-            'controller_name' => 'Events',
-            'eventData' => $event,
-        ]);
     }
 }

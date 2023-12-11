@@ -59,6 +59,7 @@ return array(
     'App\\Form\\InsertPhoneType' => $baseDir . '/src/Form/InsertPhoneType.php',
     'App\\Form\\RegistrationFormType' => $baseDir . '/src/Form/RegistrationFormType.php',
     'App\\Form\\ResetPasswordRequestFormType' => $baseDir . '/src/Form/ResetPasswordRequestFormType.php',
+    'App\\Form\\UpdateContentType' => $baseDir . '/src/Form/UpdateContentType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
     'App\\Repository\\ArticleRepository' => $baseDir . '/src/Repository/ArticleRepository.php',
     'App\\Repository\\CategorieRepository' => $baseDir . '/src/Repository/CategorieRepository.php',

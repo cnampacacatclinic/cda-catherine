@@ -20,7 +20,7 @@
         <section>
             <!-- si je ne suis pas connecté on affiche une lien pour se connecter -->
             {% if app.user == null %}
-                <a title="Connexion" href="{{ '/login?a=' }}{{ article.id }}"><h3>Laisser un commentaire</h3></a>
+                <a title="Connexion" href="{{ path('app_login', {'a': article.id}) }}"><h3>Laisser un commentaire</h3></a>
             {% else %}
             <!-- sinon on affiche le formulaire -->
             <h3>Laisser un commentaire</h3>

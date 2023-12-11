@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit804f18606e593988e20bae746594d380
+class ComposerStaticInit33ce4775ebe4d46f43b142f38bc2764f
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -639,6 +639,7 @@ class ComposerStaticInit804f18606e593988e20bae746594d380
         'App\\Form\\InsertPhoneType' => __DIR__ . '/../..' . '/src/Form/InsertPhoneType.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Form\\ResetPasswordRequestFormType' => __DIR__ . '/../..' . '/src/Form/ResetPasswordRequestFormType.php',
+        'App\\Form\\UpdateContentType' => __DIR__ . '/../..' . '/src/Form/UpdateContentType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\ArticleRepository' => __DIR__ . '/../..' . '/src/Repository/ArticleRepository.php',
         'App\\Repository\\CategorieRepository' => __DIR__ . '/../..' . '/src/Repository/CategorieRepository.php',
@@ -6488,9 +6489,9 @@ class ComposerStaticInit804f18606e593988e20bae746594d380
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit804f18606e593988e20bae746594d380::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit804f18606e593988e20bae746594d380::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit804f18606e593988e20bae746594d380::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit33ce4775ebe4d46f43b142f38bc2764f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit33ce4775ebe4d46f43b142f38bc2764f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit33ce4775ebe4d46f43b142f38bc2764f::$classMap;
 
         }, null, ClassLoader::class);
     }

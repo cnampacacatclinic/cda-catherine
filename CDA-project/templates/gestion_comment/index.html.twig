@@ -28,13 +28,13 @@
                     </td>
                     <td class="text-end">
                         {% if comment.active == 1 %}
-                            <a href="{{ '?active=' }}{{ comment.id }}" class="btn btn-dark">Ne pas valider</a>
+                            <a href="{{ path('app_gestion_comment', {'active': comment.id }) }}" class="btn btn-dark">Ne pas valider</a>
                         {% else %}
-                            <a href="{{ '?active=' }}{{ comment.id }}" class="btn btn-primary">Valider</a>
+                            <a href="{{ path('app_gestion_comment', {'active': comment.id }) }}" class="btn btn-primary">Valider</a>
                         {% endif %}
                     </td>
                     <td class="text-end">
-                        <a href="{{ '?supp=' }}{{ comment.id }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr?')">Supprimer</a>
+                        <a href="{{ path('app_gestion_comment', {'supp': comment.id }) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr?')">Supprimer</a>
                     </td>
                 </tr>
             {% endfor %}

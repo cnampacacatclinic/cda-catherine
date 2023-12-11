@@ -24,11 +24,11 @@
                                 
                                 <!-- si l'ide de la clé étrangere correpond à l'id du telephone-->
                                 {% if phone.center.id == center.id and phoneType.id == phone.fkType.id %}
-                            
+                                
                                     <h4>{{ phoneType.nameType }}</h4>
-                    
-                                       <p>{{ phone.phoneNumber }}</p>
-                            
+                                        <!-- if phoneType.id in phone.fkType -->
+                                            <p>{{ phone.phoneNumber }}</p>
+                                        <!-- endif -->
                                 {% endif %}
                                 
                         {% endfor %} 

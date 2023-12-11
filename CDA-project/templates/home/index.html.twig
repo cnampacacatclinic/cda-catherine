@@ -12,7 +12,7 @@
     {% for article in articleData %}
         <h3>{{ article.titleArticle }}</h3>
         <p>{{ article.textArticle|raw }}</p>
-        <a title="En savoir plus " href="{{ '/aider' }}">En savoir plus sur comment aider</a>
+        <a title="En savoir plus " href="{{ path('app_aider') }}">En savoir plus sur comment aider</a>
     {% endfor %}
     </section>
     <section>
@@ -28,9 +28,9 @@
     <h3>Les dernières news</h3>
     {% for news in lastNews %}
 
-        <a title="Lire la suite" href="{{ '/article?a=' }}{{ news.id }}"><h3>{{ news.titleArticle }}</h3></a>
+        <a title="{{ news.titleArticle }}" href="{{ path('app_article', {'a': news.id}) }}"><h3>{{ news.titleArticle }}</h3></a>
         <p>{{ news.textArticle|striptags|slice(0, 300)}} etc..</p>
-        <p><a href="{{ path('app_article', {'a': news.id}) }}">Lire la suite</a></p>
+        <p><a title="Lire la suite" href="{{ path('app_article', {'a': news.id}) }}">Lire la suite</a></p>
         
     {% endfor %}
     </section>
