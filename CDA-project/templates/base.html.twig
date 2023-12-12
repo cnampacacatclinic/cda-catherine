@@ -3,21 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <!-- Bootstrap css -->
-        <!-- La fonction asset permet une redirection vers le dossier public -->
-        <link rel="stylesheet" href="{{ asset('bootstrap-5.0.2-dist/css/bootstrap.min.css') }}">
-        <!-- Fichier css personalisé -->
-        <!-- La fonction asset permet une redirection vers le dossier public -->
+        {# Fichier css personalisé contenant l'import de boostrap #}
+        {# La fonction asset permet une redirection vers le dossier public #}
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-        
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </head>
     <body>
         <main>
@@ -117,6 +107,8 @@
         </ul>
         <p class="text-center text-muted">© 2024 Asso Animal</p>
   </footer>
-        <script src="{{ asset('bootstrap-5.0.2-dist/js/bootstrap.bundle.js') }}"></script>
+        
+        <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
     </body>
 </html>
