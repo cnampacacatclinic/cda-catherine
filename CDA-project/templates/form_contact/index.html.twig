@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InsertContactController!{% endblock %}
+
+{% block body %}
+<h2>Enregistrer l'adresse d'un centre</h2>
+
+{{ form_start(form) }}
+
+{{ form_row(form.nameCenter) }}
+{{ form_row(form.numWay) }}
+{{ form_row(form.typeWay) }}
+{{ form_row(form.nameWay) }}
+{{ form_row(form.zipCode) }}
+{{ form_row(form.city) }}
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+{{ form_end(form) }}
+
+{% if app.request.query.get('modif') is not null %}
+
+    <h2>Modifier les téléphones</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Type de téléphone</th>
+                <th scope="col" class="text-center">Numéro de téléphone</th>
+                <th scope="col" class="text-center" colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for phone in phoneData %}
+                {% for phoneType in phoneTypes %}
+                    {% if phone.center.id == app.request.query.get('modif') and phoneType.id == phone.fkType.id %}
+                        <tr>
+                            <td>{{ phoneType.nameType }}</td>
+                            <td>{{ phone.phoneNumber }}</td>
+                            <td class="text-end">
+                                <a href="{{ path('app_update_phone', {'modif': phone.id }) }}" class="btn btn-success">Modifier</a>
+                            </td>
+                            <td class="text-end">
+                                <a href="{{ path('app_update_phone', {'supp': phone.id, 'modif':app.request.query.get('modif') }) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr?')">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endif %}
+{% endblock %}

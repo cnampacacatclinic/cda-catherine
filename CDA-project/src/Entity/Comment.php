@@ -18,7 +18,7 @@ class Comment
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
      */
     private $dateComment;
 
@@ -37,6 +37,11 @@ class Comment
      * @ORM\ManyToOne(targetEntity=User::class)
      */
     private $fkUser;
+
+    /**
+     * @ORM\Column(type="smallint")
+     */
+    private $active;
 
     public function getId(): ?int
     {
@@ -88,6 +93,19 @@ class Comment
     {
         $this->fkUser = $fkUser;
 
+        return $this;
+    }
+
+    public function getActive(): ?int
+    {
+        return $this->active;
+    }
+
+    public function setActive(int $active): self
+    {
+
+        $this->active = $active;
+        // Retourne l'instance de l'entité
         return $this;
     }
 }

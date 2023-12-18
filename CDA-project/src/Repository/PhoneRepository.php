@@ -39,6 +39,31 @@ class PhoneRepository extends ServiceEntityRepository
         }
     }
 
+    // Méthode pour supprimer un élément par son ID
+    public function delete($id)
+    {
+        
+        // L'EntityManager est une classe fournie par Doctrine. Elle gère les entités dans une application Symfony
+        $entityManager = $this->getEntityManager();
+
+        // Cherche grâce à l' ID
+        $e = $this->find($id);
+
+        // Si l'élément est trouvé
+        if ($e) {
+            // On supprime
+            $entityManager->remove($e);
+
+            // Applique les changements à la base de données
+            $entityManager->flush();
+
+            // Retourne true si la suppression a réussi
+            return true;
+        }
+
+        // Retourne false si l'élément n'a pas été trouvé
+        return false;
+    }
 //    /**
 //     * @return Phone[] Returns an array of Phone objects
 //     */
@@ -76,4 +101,17 @@ public function findPhonesByCenterId($centerId)
             ->getQuery()
             ->getResult();
     }
+
+    public function findPhonesByCenter2()
+    {
+        return $this->createQueryBuilder('phone')
+            ->select('phone.phoneNumber', 'fkType.nameType as typeName')
+            ->innerJoin('phone.center', 'center')
+            ->innerJoin('phone.fkType', 'fkType')
+            ->andWhere('center.id = :centerId')
+            ->orderBy('typeName')
+            ->getQuery()
+            ->getResult();
+    }
+    
 }

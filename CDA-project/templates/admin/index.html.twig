@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+<section>
+    <h1>Vos articles</h1>
+
+    <div class="card">
+        <div class="card-body row">
+            <div class="col-md-6 text-right">
+                <a href="{{ path('app_insert_article') }}" class="btn btn-primary">Créer un article</a>
+            </div>
+        </div>
+    </div>
+    
+    <h3>Liste des ses propres articles</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Date</th>
+                <th scope="col" class="text-center">Titre</th>
+                <th scope="col" class="text-center" colspan="3">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articleData %}
+                <tr>
+                    {% if article.fkUser.id == app.user.id %}
+                        <td>{{ article.dateARticle|date("d/m/Y") }}</td>
+                        <td><a title="{{ article.titleArticle }}" href="{{ '/article?a=' }}{{ article.id }}">{{ article.titleArticle }}</a></td>
+                        <td class="text-end">
+                            <a href="{{ path('app_update_article', {'modif': article.id }) }}" class="btn btn-success">Modifier</a>
+                        </td>
+                        <td class="text-end">
+                            {% if article.active == 1 %}
+                                <a href="{{ path('app_admin', {'active': article.id }) }}" class="btn btn-dark">Brouillon</a>
+                            {% else %}
+                                <a href="{{ path('app_admin', {'active': article.id }) }}" class="btn btn-primary">Publier</a>
+                            {% endif %}
+                        </td>
+                        <td class="text-end">
+                            <a data-article-id="{{ article.id }}" data-bs-toggle="modal" data-bs-target="#myModal" href="{{ path('app_admin', {'supp': article.id }) }}" class="btn btn-danger supp">Supprimer</a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Modale de confirmation Bootstrap -->
+    <div class="modal fade" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation de suppression</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Êtes-vous sûr de vouloir supprimer cet élément ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">Supprimer</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- Script JavaScript pour gérer la suppression -->
+<script>
+    console.log('supprimerButton.length');
+     //Obtient les éléments de classe 'supp'
+     var supprimerButton = document.querySelectorAll('.supp');
+        
+     //Pour chaque elements de la class supp
+     supprimerButton.forEach(function (supprimerButton) {
+         supprimerButton.addEventListener('click', function (event) {
+             event.preventDefault(); //On empêche le comportement par défaut du lien
+
+             console.log('Le bouton de suppression a été cliqué');
+             console.log('2');
+
+            // Sélectionnez le bouton avec l'ID #confirmDelete
+            var confirmButton = document.getElementById('confirmDelete');
+            
+                //On obtient l'ID
+                var articleId = supprimerButton.getAttribute('data-article-id');
+
+                // On cache la modale
+                myModal.style.display = 'block';
+
+                //On envoie l'ID en tant que paramètre GET
+                var url = '?supp=' + articleId;
+
+                // Effectuez une requête AJAX ou une redirection vers l'URL
+                // Notez que cet exemple utilise une redirection pour illustrer le concept
+                window.location.href = url;
+
+         });
+     });
+      
+  </script>
+
+{% endblock %}

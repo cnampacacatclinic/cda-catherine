@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InsertEventController!{% endblock %}
+
+{% block body %}
+<h1>Créait un evenement</h1>
+
+{{ form_start(form) }}
+
+{{ form_row(form.startDate) }}
+
+{{ form_row(form.endDate) }}
+
+{{ form_row(form.locationEvent) }}
+{{ form_row(form.titleEvent) }}
+{{ form_row(form.descriptionEvent) }}
+{{ form_row(form.active) }}
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+{{ form_end(form) }}
+{% endblock %}

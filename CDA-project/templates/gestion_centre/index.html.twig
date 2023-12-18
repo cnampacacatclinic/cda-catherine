@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GestionCentreController!{% endblock %}
+
+{% block body %}
+<section>
+    <h1>Gestions des centres</h1>
+
+    <div class="card">
+        <div class="card-body row">
+            <div class="col-md-6 text-right">
+                <a href="{{ path('app_insert_contact') }}" class="btn btn-primary">Créer une adresse pour un centre</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body row">
+            <div class="col-md-6 text-right">
+                <a href="{{ path('app_insert_phone') }}" class="btn btn-primary">Ajouter un numéro de téléphone</a>
+            </div>
+        </div>
+    </div>
+    
+    <h3>Liste des centres</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Nom</th>
+                <th scope="col" class="text-center">Adresse</th>
+                <th scope="col" class="text-center" colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for center in centerData %}
+                <tr>
+                    <td>{{ center.nameCenter }}</td>
+                    <td>{{ center.numWay }} {{ center.typeWay }} {{ center.nameWay }} {{ center.zipCode}}, {{center.city}}</td>
+                    <td class="text-end">
+                        <a href="{{ path('app_update_center', {'modif': center.id }) }}" class="btn btn-success">Modifier</a>
+                    </td>
+                    <td class="text-end">
+                        <a href="{{ path('app_gestion_centre', {'supp': center.id }) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr?')">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

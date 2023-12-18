@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GestionEventController!{% endblock %}
+
+{% block body %}
+<section>
+        <h1>Gestion des evenements</h1>
+        <div class="card">
+            <div class="card-body row">
+                <div class="col-md-6 text-right">
+                    <a href="{{ path('app_insert_event') }}" class="btn btn-primary">Créer un evenement</a>
+                </div>
+            </div>
+        </div>
+        <h3>Liste des événements</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">Date de début</th>
+                    <th scope="col" class="text-center">Date de fin</th>
+                    <th scope="col" class="text-center">Titre</th>
+                    <th scope="col" class="text-center">Lieu</th>
+                    <th scope="col" class="text-center" colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in eventData %}
+                    <tr>
+                        <td>{{ event.startDate|date("d/m/Y") }}</td>
+                        <td>{{ event.endDate|date("d/m/Y") }}</td>
+                        <td>{{ event.titleEvent }}</td>
+                        <td>{{ event.locationEvent|raw }}</td>
+                        <td class="text-end">
+                            <a href="{{ path('app_update_event', {'modif': event.id }) }}" class="btn btn-success">Modifier</a>
+                        </td>
+                        <td class="text-end">
+                            {% if event.active == 1 %}
+                                <a href="{{ path('app_gestion_event', {'active': event.id }) }}" class="btn btn-dark">Ne pas valider</a>
+                            {% else %}
+                                <a href="{{ path('app_gestion_event', {'active': event.id }) }}" class="btn btn-primary">Valider</a>
+                            {% endif %}
+                        </td>
+                        <td class="text-end">
+                            <a href="{{ path('app_gestion_event', {'supp': event.id }) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr?')">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</section>
+{% endblock %}

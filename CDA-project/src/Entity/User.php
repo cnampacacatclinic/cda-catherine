@@ -41,11 +41,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $userName;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
@@ -60,8 +55,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $firstName;
 
-    /**
+   /**
      * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="usersList")
+     * @ORM\JoinTable(name="event_user")
      */
     private $fkEvent;
 
@@ -160,13 +156,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function setUserName(string $userName): self
-    {
-        $this->userName = $userName;
-
-        return $this;
-    }
-
     public function isVerified(): bool
     {
         return $this->isVerified;
@@ -199,6 +188,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setFirstName(string $firstName): self
     {
         $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Event>
+     */
+    public function getFkEvent(): Collection
+    {
+        return $this->fkEvent;
+    }
+
+    public function addFkEvent(Event $fkEvent): self
+    {
+        if (!$this->fkEvent->contains($fkEvent)) {
+            $this->fkEvent[] = $fkEvent;
+        }
+
+        return $this;
+    }
+
+    public function removeFkEvent(Event $fkEvent): self
+    {
+        $this->fkEvent->removeElement($fkEvent);
 
         return $this;
     }

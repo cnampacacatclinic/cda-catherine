@@ -35,19 +35,25 @@ class Event
     private $titleEvent;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="string", length=255)
      */
-    private $active;
-
-    /**
-     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="FK_event")
-     */
-    private $usersList;
+    private $descriptionEvent;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $descriptionEvent;
+    private $locationEvent;
+
+    /**
+    * @ORM\ManyToMany(targetEntity=User::class, mappedBy="fkEvent")
+    * @ORM\JoinTable(name="event_user")
+    */
+    private $usersList;
+
+    /**
+     * @ORM\Column(type="smallint")
+     */
+    private $active;
 
     public function __construct()
     {
@@ -95,19 +101,6 @@ class Event
         return $this;
     }
 
-    public function isBoolean(): ?bool
-    {
-        return $this->active;
-    }
-
-    public function setBoolean(bool $active): self
-    {
-        $this->active = $active;
-
-        return $this;
-    }
-
-   
     /**
      * @return Collection<int, User>
      */
@@ -126,6 +119,30 @@ class Event
         return $this;
     }
 
+    public function getDescriptionEvent(): ?string
+    {
+        return $this->descriptionEvent;
+    }
+
+    public function setDescriptionEvent(string $descriptionEvent): self
+    {
+        $this->descriptionEvent = $descriptionEvent;
+
+        return $this;
+    }
+
+    public function getLocationEvent(): ?string
+    {
+        return $this->locationEvent;
+    }
+
+    public function setLocationEvent(string $locationEvent): self
+    {
+        $this->locationEvent = $locationEvent;
+
+        return $this;
+    }
+
     public function removeUsersList(User $usersList): self
     {
         if ($this->usersList->removeElement($usersList)) {
@@ -135,14 +152,14 @@ class Event
         return $this;
     }
 
-    public function getDescriptionEvent(): ?string
+    public function getActive(): ?int
     {
-        return $this->descriptionEvent;
+        return $this->active;
     }
 
-    public function setDescriptionEvent(string $descriptionEvent): self
+    public function setActive(int $active): self
     {
-        $this->descriptionEvent = $descriptionEvent;
+        $this->active = $active;
 
         return $this;
     }

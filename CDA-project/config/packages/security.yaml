@@ -1,4 +1,12 @@
 security:
+
+    #code ajouté pour la hiérarchie des roles
+    #ROLE_SUPER_ADMIN a les droits de ROLE_ADMIN et ROLE_USER et ROLE_ADMIN a les droits de ROLE_USER.
+    role_hierarchy:
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_USER]
+        ROLE_ADMIN: ROLE_USER
+
+
     enable_authenticator_manager: true
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
@@ -35,6 +43,17 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/user, roles: ROLE_USER }
+        - { path: ^/registration-event, roles: ROLE_USER }
+        - { path: ^/gestionevent, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/insert-article, roles: ROLE_ADMIN }
+        - { path: ^/insertcontact, roles: ROLE_ADMIN }
+        - { path: ^/insertphone, roles: ROLE_ADMIN }
+        - { path: ^/insertevent, roles: ROLE_ADMIN }
+        - { path: ^/superadmin, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/gestioncomment, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/gestion-centre, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/management-other-people-content, roles: ROLE_SUPER_ADMIN }
 
 when@test:
     security:

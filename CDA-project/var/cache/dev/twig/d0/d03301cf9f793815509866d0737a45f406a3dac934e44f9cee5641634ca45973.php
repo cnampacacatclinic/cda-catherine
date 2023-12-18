@@ -79,7 +79,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
     <body>
         <main>
             <hearder>
-                <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+                <nav class=\"navbar navbar-expand-lg navbar-light bg-light fixed-top\">
                     <div class=\"container-fluid\">
                         <a class=\"navbar-brand\" href=\"#\">Navbar</a>
                         <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -101,75 +101,109 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
         echo "\">Comment aider</a>
                                     </li>
                                     <li class=\"nav-item\">
-                                        <a class=\"nav-link\" title=\"About\" href=\"";
-        // line 41
-        echo "/about";
-        echo "\">About</a>
-                                    </li>
-                                    <li class=\"nav-item\">
-                                        <a class=\"nav-link\" title=\"Contact\" href=\"";
-        // line 44
-        echo "/contact";
-        echo "\">Contact</a>
-                                    </li>
-                                    <li class=\"nav-item\">
                                         <a class=\"nav-link\" title=\"Evenements\" href=\"";
-        // line 47
+        // line 41
         echo "/events";
         echo "\">Evenements</a>
                                     </li>
                                     <li class=\"nav-item\">
-                                        <a class=\"nav-link\" title=\"FAQ\" href=\"";
-        // line 50
-        echo "/faq";
-        echo "\">F.A.Q.</a>
-                                    </li>
-                                    <li class=\"nav-item\">
                                         <a class=\"nav-link\" title=\"News\" href=\"";
-        // line 53
+        // line 44
         echo "/news";
         echo "\">News</a>
                                     </li>
                                     <li class=\"nav-item\">
 
                                         ";
-        // line 57
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57)) {
-            // line 58
+        // line 48
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48)) {
+            // line 49
             echo "                                            <a class=\"nav-link\" title=\"Logout\" href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Logout</a>
                                         ";
         }
-        // line 60
+        // line 51
         echo "                                        ";
-        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 60, $this->source); })()), "user", [], "any", false, false, false, 60), false))) {
-            // line 61
+        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), false))) {
+            // line 52
             echo "                                            <a class=\"nav-link\" title=\"Connexion\" href=\"";
             echo "/login";
             echo "\">Login</a>
                                         ";
         }
-        // line 63
+        // line 54
         echo "                                    </li>
                                 </ul>
-                                <form class=\"d-flex\">
-                                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
+                                <form method=\"GET\" action=\"/search\" class=\"d-flex\">
+                                    <input name=\"word\" class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
                                     <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
                                 </form>
                             </div>
                     </div>
             </nav>
 
-                <h1>Asso Animal</h1>
+            <a class=\"nav-link\" title=\"Home de Asso Animal\" href=\"";
+        // line 64
+        echo "/";
+        echo "\"><h1>Asso Animal</h1></a>
             </header>
                 ";
-        // line 75
+        // line 66
         $this->displayBlock('body', $context, $blocks);
-        // line 76
+        // line 67
         echo "        </main>
+
+        <footer class=\"py-3 my-4\">
+         <ul class=\"nav justify-content-center border-bottom pb-3 mb-3\">
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"Contact\" href=\"";
+        // line 71
+        echo "/contact";
+        echo "\">Contactez-nous</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"FAQ\" href=\"";
+        // line 72
+        echo "/faq";
+        echo "\">FAQs</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"About\" href=\"";
+        // line 73
+        echo "/about";
+        echo "\">About</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"Contact\" href=\"";
+        // line 74
+        echo "/mentionslegales";
+        echo "\">Mentions légales</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"Contact\" href=\"";
+        // line 75
+        echo "/confidentialite";
+        echo "\">Politique de confidentialité</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"Cookies\" href=\"";
+        // line 76
+        echo "/cookies";
+        echo "\">Cookies</a></li>
+        </ul>
+        <ul class=\"nav justify-content-center border-bottom pb-3 mb-3\">
+            <li class=\"ms-3\">
+                <a title=\"Facebook\" class=\"text-muted\" href=\"#\">
+                    <i class=\"bi bi-facebook\"></i>
+                </a>
+            </li>
+            
+            <li class=\"ms-3\">
+                <a title=\"Youtube\" class=\"text-muted\" href=\"#\">
+                    <i class=\"bi bi-youtube\"></i>
+                </a>
+            </li>
+
+            <li class=\"ms-3\">
+                <a title=\"Instagram\" class=\"text-muted\" href=\"#\">
+                    <i class=\"bi bi-instagram\"></i>
+                </a>
+            </li>
+        </ul>
+        <p class=\"text-center text-muted\">© 2024 Asso Animal</p>
+  </footer>
         <script src=\"";
-        // line 77
+        // line 99
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bootstrap-5.0.2-dist/js/bootstrap.bundle.js"), "html", null, true);
         echo "\"></script>
     </body>
@@ -248,7 +282,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
 
     }
 
-    // line 75
+    // line 66
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -287,7 +321,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
      */
     public function getDebugInfo()
     {
-        return array (  252 => 75,  239 => 19,  229 => 18,  216 => 15,  206 => 14,  187 => 5,  173 => 77,  170 => 76,  168 => 75,  154 => 63,  148 => 61,  145 => 60,  139 => 58,  137 => 57,  130 => 53,  124 => 50,  118 => 47,  112 => 44,  106 => 41,  100 => 38,  94 => 35,  78 => 21,  76 => 18,  73 => 17,  70 => 14,  65 => 11,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  286 => 66,  273 => 19,  263 => 18,  250 => 15,  240 => 14,  221 => 5,  207 => 99,  181 => 76,  177 => 75,  173 => 74,  169 => 73,  165 => 72,  161 => 71,  155 => 67,  153 => 66,  148 => 64,  136 => 54,  130 => 52,  127 => 51,  121 => 49,  119 => 48,  112 => 44,  106 => 41,  100 => 38,  94 => 35,  78 => 21,  76 => 18,  73 => 17,  70 => 14,  65 => 11,  59 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -316,7 +350,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
     <body>
         <main>
             <hearder>
-                <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+                <nav class=\"navbar navbar-expand-lg navbar-light bg-light fixed-top\">
                     <div class=\"container-fluid\">
                         <a class=\"navbar-brand\" href=\"#\">Navbar</a>
                         <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -332,16 +366,7 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
                                         <a class=\"nav-link\" title=\"Comment aider\" href=\"{{ '/aider' }}\">Comment aider</a>
                                     </li>
                                     <li class=\"nav-item\">
-                                        <a class=\"nav-link\" title=\"About\" href=\"{{ '/about' }}\">About</a>
-                                    </li>
-                                    <li class=\"nav-item\">
-                                        <a class=\"nav-link\" title=\"Contact\" href=\"{{ '/contact' }}\">Contact</a>
-                                    </li>
-                                    <li class=\"nav-item\">
                                         <a class=\"nav-link\" title=\"Evenements\" href=\"{{ '/events' }}\">Evenements</a>
-                                    </li>
-                                    <li class=\"nav-item\">
-                                        <a class=\"nav-link\" title=\"FAQ\" href=\"{{ '/faq' }}\">F.A.Q.</a>
                                     </li>
                                     <li class=\"nav-item\">
                                         <a class=\"nav-link\" title=\"News\" href=\"{{ '/news' }}\">News</a>
@@ -356,18 +381,49 @@ class __TwigTemplate_76faa9bcf1020141c70735c596b15b5e7f1fbf9d218856d69d9a83eee24
                                         {% endif %}
                                     </li>
                                 </ul>
-                                <form class=\"d-flex\">
-                                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
+                                <form method=\"GET\" action=\"/search\" class=\"d-flex\">
+                                    <input name=\"word\" class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
                                     <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
                                 </form>
                             </div>
                     </div>
             </nav>
 
-                <h1>Asso Animal</h1>
+            <a class=\"nav-link\" title=\"Home de Asso Animal\" href=\"{{ '/' }}\"><h1>Asso Animal</h1></a>
             </header>
                 {% block body %}{% endblock %}
         </main>
+
+        <footer class=\"py-3 my-4\">
+         <ul class=\"nav justify-content-center border-bottom pb-3 mb-3\">
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"Contact\" href=\"{{ '/contact' }}\">Contactez-nous</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"FAQ\" href=\"{{ '/faq' }}\">FAQs</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"About\" href=\"{{ '/about' }}\">About</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"Contact\" href=\"{{ '/mentionslegales' }}\">Mentions légales</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"Contact\" href=\"{{ '/confidentialite' }}\">Politique de confidentialité</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" title=\"Cookies\" href=\"{{ '/cookies' }}\">Cookies</a></li>
+        </ul>
+        <ul class=\"nav justify-content-center border-bottom pb-3 mb-3\">
+            <li class=\"ms-3\">
+                <a title=\"Facebook\" class=\"text-muted\" href=\"#\">
+                    <i class=\"bi bi-facebook\"></i>
+                </a>
+            </li>
+            
+            <li class=\"ms-3\">
+                <a title=\"Youtube\" class=\"text-muted\" href=\"#\">
+                    <i class=\"bi bi-youtube\"></i>
+                </a>
+            </li>
+
+            <li class=\"ms-3\">
+                <a title=\"Instagram\" class=\"text-muted\" href=\"#\">
+                    <i class=\"bi bi-instagram\"></i>
+                </a>
+            </li>
+        </ul>
+        <p class=\"text-center text-muted\">© 2024 Asso Animal</p>
+  </footer>
         <script src=\"{{ asset('bootstrap-5.0.2-dist/js/bootstrap.bundle.js') }}\"></script>
     </body>
 </html>

@@ -16,9 +16,10 @@ class AiderController extends AbstractController
     public function index(PageService $pageService, ArticleService $articleService): Response
     {
         $pageData = $pageService->findOnePage(6);
-        $articleData = $articleService->findOneArticleByFkPage(6);
+        $articleData = $articleService->findOneArticleByFkPageActive(6);
         
         return $this->render('aider/index.html.twig', [
+            'controller_name' => 'Aider',
             'pageData' => $pageData,
             'articleData'=>$articleData,
         ]);

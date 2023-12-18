@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EventPageController!{% endblock %}
+{% block title %}Event{% endblock %}
 
 {% block body %}
 <section>
-    {% for page in pageData %}
-        <h2>{{ page.titlePage }}</h2>
-    {% endfor %}
-    
-    {% for evenement in enventData %}
-        <h3>{{ evenement.titleEvent }}</h3>
-        <p>Date de début  : {{ evenement.startDate|date("m/d/Y") }}</p>
-        <p>Date de fin : {{ evenement.endDate|date("m/d/Y") }}</p>
+    {% for evenement in eventData %}
+        <h2>{{ evenement.titleEvent }}</h2>
+        {% if app.user %}
+            <a title="Inscription aux événements" href="{{ path('app_event_page', {'e': evenement.id, 'x': 'ok'}) }}">S'inscrire à l'événement</a>
+        {% else %}
+            <a title="Inscription au événements" href="{{ path('app_login', {'e': evenement.id}) }}">S'inscrire à l'événement</a>
+        {% endif %}
+        <p>Date de début  : {{ evenement.startDate|date("d/m/Y") }}</p>
+        <p>Date de fin : {{ evenement.endDate|date("d/m/Y") }}</p>
+        <p>Lieu de l'événement : {{ evenement.locationEvent|raw }}</p>
         <p>{{ evenement.descriptionEvent|raw }}</p>
     {% endfor %}
 </section>

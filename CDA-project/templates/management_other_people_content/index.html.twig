@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Management Other People's Content{% endblock %}
+
+{% block body %}
+<section>
+    <h3>Liste des articles des autres utilisateurs</h3>
+        
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">Date</th>
+                    <th scope="col" class="text-center">Titre</th>
+                    <th scope="col" class="text-center" colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in articleData %}
+                    {% if article.fkUser.id != app.user.id %}
+                    <tr>
+                        <td>{{ article.dateARticle|date("d/m/Y") }}</td>
+                        <td><a title="{{ article.titleArticle }}" href="{{ '/article?a=' }}{{ article.id }}">{{ article.titleArticle }}</a></td>
+                        <td class="text-end">
+                            <a href="{{ path('app_update_article', {'modif': article.id }) }}" class="btn btn-success">Modifier</a>
+                        </td>
+                        <td class="text-end">
+                            {% if article.active == 1 %}
+                                <a href="{{ '?active=' }}{{ article.id }}" class="btn btn-dark">Brouillon</a>
+                            {% else %}
+                                <a href="{{ '?active=' }}{{ article.id }}" class="btn btn-primary">Publier</a>
+                            {% endif %}
+                        </td>
+                        <td class="text-end">
+                            <a href="{{ '?supp=' }}{{ article.id }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr?')">Supprimer</a>
+                        </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+</section>
+{% endblock %}

@@ -1,31 +1,67 @@
 <?php
+
 namespace App\DTO;
 
 class PhoneDTO
 {
+    private $id;
     private $phoneNumber;
-    private $fkType;
-    private $center;
+    private $centerId;
+    private $isMobile;
+    private $fkTypeId;
 
-    public function __construct(string $phoneNumber, $fkType, $center)
+    public function getId()
     {
-        $this->phoneNumber = $phoneNumber;
-        $this->fkType = $fkType;
-        $this->center = $center;
+        return $this->id;
     }
 
-    public function getPhoneNumber(): string
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getPhoneNumber()
     {
         return $this->phoneNumber;
     }
 
-    public function getFkType(): int
+    public function setPhoneNumber($phoneNumber)
     {
-        return $this->fkType;
+        $this->phoneNumber = $phoneNumber;
+        return $this;
     }
-    
-    public function getCenter()
+
+    public function getCenterId()
     {
-        return $this->center;
+        return $this->centerId;
+    }
+
+    public function setCenterId($centerId)
+    {
+        $this->centerId = $centerId;
+        return $this;
+    }
+
+    public function getIsMobile()
+    {
+        return $this->isMobile;
+    }
+
+    public function setIsMobile($isMobile)
+    {
+        $this->isMobile = $isMobile;
+        return $this;
+    }
+
+    public function getFkTypeId()
+    {
+        return $this->fkTypeId;
+    }
+
+    public function setFkTypeId($fkTypeId)
+    {
+        $this->fkTypeId = $fkTypeId;
+        return $this;
     }
 }

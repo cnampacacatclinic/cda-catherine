@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegistrationEventController!{% endblock %}
+
+{% block body %}
+<h2>Liste des evenements où vos êtes inscrits</h2>
+<a class="nav-link" title="Evenements" href="{{ '/events' }}">Voir tous les évenements en cours</a>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">Date de début</th>
+            <th scope="col" class="text-center">Date de fin</th>
+            <th scope="col" class="text-center">Titre</th>
+            <th scope="col" class="text-center">Lieu</th>
+            <th scope="col" class="text-center">En savoir plus</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in eventData %}
+            {% if app.user in event.usersList %}
+                <tr>
+                    <td>{{ event.startDate|date("d/m/Y") }}</td>
+                    <td>{{ event.endDate|date("d/m/Y") }}</td>
+                    <td>{{ event.titleEvent }}</td>
+                    <td>{{ event.locationEvent|raw }}</td>
+                    <td><a title="Inscription aux événements" href="{{ path('app_event_page', {'e': event.id}) }}">En savoir plus</a></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

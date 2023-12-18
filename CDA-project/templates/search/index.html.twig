@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Search{% endblock %}
+
+{% block body %}
+<section>
+        <h2>Recherches</h2>
+        {% for event in eventSearch %}
+            <h3>{{ event.titleEvent }}</h3>
+            <p>{{ event.descriptionEvent|striptags|slice(0, 300)}} etc..</p>
+            <p><a href="{{ path('app_event_page', {'e': event.id}) }}">Lire la suite</a></p>
+            
+        {% endfor %}
+    
+    {% for article in articleSearch %}
+        <h3>{{ article.titleArticle }}</h3>
+        <p>{{ article.textArticle|striptags|slice(0, 300)}} etc..</p>
+        <p><a href="{{ path('app_article', {'a': article.id}) }}">Lire la suite</a></p>
+    {% endfor %}
+
+    </section>
+<section>
+{% endblock %}

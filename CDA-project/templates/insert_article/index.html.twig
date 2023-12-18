@@ -1,0 +1,21 @@
+{# templates/insert_article/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Créait un article</h1>
+
+{{ form_start(form) }}
+
+{{ form_row(form.active) }}
+
+{{ form_row(form.fkCategorie) }}
+
+{{ form_row(form.dateArticle) }}
+{{ form_row(form.titleArticle) }}
+{{ form_row(form.textArticle) }}
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+{{ form_end(form) }}
+{% endblock %}

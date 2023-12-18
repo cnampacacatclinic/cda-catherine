@@ -89,46 +89,30 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
     ";
         // line 7
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pageData"]) || array_key_exists("pageData", $context) ? $context["pageData"] : (function () { throw new RuntimeError('Variable "pageData" does not exist.', 7, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
+        $context['_seq'] = twig_ensure_traversable((isset($context["eventData"]) || array_key_exists("eventData", $context) ? $context["eventData"] : (function () { throw new RuntimeError('Variable "eventData" does not exist.', 7, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
             // line 8
             echo "        <h2>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "titlePage", [], "any", false, false, false, 8), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "titleEvent", [], "any", false, false, false, 8), "html", null, true);
             echo "</h2>
-    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 10
-        echo "    
-    ";
-        // line 11
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["enventData"]) || array_key_exists("enventData", $context) ? $context["enventData"] : (function () { throw new RuntimeError('Variable "enventData" does not exist.', 11, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
-            // line 12
-            echo "        <h3>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "titleEvent", [], "any", false, false, false, 12), "html", null, true);
-            echo "</h3>
         <p>Date de début  : ";
-            // line 13
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "startDate", [], "any", false, false, false, 13), "m/d/Y"), "html", null, true);
+            // line 9
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "startDate", [], "any", false, false, false, 9), "d/m/Y"), "html", null, true);
             echo "</p>
         <p>Date de fin : ";
-            // line 14
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "endDate", [], "any", false, false, false, 14), "m/d/Y"), "html", null, true);
+            // line 10
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "endDate", [], "any", false, false, false, 10), "d/m/Y"), "html", null, true);
             echo "</p>
         <p>";
-            // line 15
-            echo twig_get_attribute($this->env, $this->source, $context["evenement"], "descriptionEvent", [], "any", false, false, false, 15);
+            // line 11
+            echo twig_get_attribute($this->env, $this->source, $context["evenement"], "descriptionEvent", [], "any", false, false, false, 11);
             echo "</p>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 17
+        // line 13
         echo "</section>
 ";
         
@@ -160,7 +144,7 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
      */
     public function getDebugInfo()
     {
-        return array (  132 => 17,  124 => 15,  120 => 14,  116 => 13,  111 => 12,  107 => 11,  104 => 10,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  116 => 13,  108 => 11,  104 => 10,  100 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -171,18 +155,13 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
 
 {% block body %}
 <section>
-    {% for page in pageData %}
-        <h2>{{ page.titlePage }}</h2>
-    {% endfor %}
-    
-    {% for evenement in enventData %}
-        <h3>{{ evenement.titleEvent }}</h3>
-        <p>Date de début  : {{ evenement.startDate|date(\"m/d/Y\") }}</p>
-        <p>Date de fin : {{ evenement.endDate|date(\"m/d/Y\") }}</p>
+    {% for evenement in eventData %}
+        <h2>{{ evenement.titleEvent }}</h2>
+        <p>Date de début  : {{ evenement.startDate|date(\"d/m/Y\") }}</p>
+        <p>Date de fin : {{ evenement.endDate|date(\"d/m/Y\") }}</p>
         <p>{{ evenement.descriptionEvent|raw }}</p>
     {% endfor %}
 </section>
-{% endblock %}
-", "event_page/index.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\event_page\\index.html.twig");
+{% endblock %}", "event_page/index.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\event_page\\index.html.twig");
     }
 }

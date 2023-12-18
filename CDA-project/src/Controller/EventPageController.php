@@ -6,27 +6,45 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\EventService;
-use App\Service\PageService;
-use App\Service\ArticleService;
+use Symfony\Component\Security\Core\Security;
 
 class EventPageController extends AbstractController
 {
-    /**
-     * @Route("/events", name="app_event_page")
-     */
-    public function index(EventService $eventService, PageService $pageService, ArticleService $articleService): Response
+    private $security;
+
+    public function __construct(Security $security)
     {
-        
-        $pageData = $pageService->findOnePage(2);
-        $articleData = $articleService->findOneArticleByFkPage(2);
-        $eventData = $eventService->findActiveEvents();
-
-        return $this->render('event_page/index.html.twig', [
-            'pageData' => $pageData,
-            'articleData'=>$articleData,
-            'enventData'=>$eventData,
-        ]);
-
+        $this->security = $security;
     }
 
+    /**
+     * @Route("/event", name="app_event_page")
+     */
+    public function index(EventService $eventService): Response
+    {
+        $user = $this->security->getUser();
+
+        if (empty($_GET['e'])) {
+            return $this->render('page404/index.html.twig', [
+                'controller_name' => 'Page404Controller',
+            ]);
+        }
+        else{
+            $eventId = $_GET['e'];
+
+            $event = $eventService->findOneEvent($eventId);
+
+            if (!empty($_GET['x'])) {
+                //on cherche l'id de l'utilisateur
+                $userId = $user->getId();
+                // on enregistre la donnée dans la BDD pour inscrire l'utilisateur
+                $eventService->registrationUserEvent($userId, $eventId);
+            }
+
+            return $this->render('event_page/index.html.twig', [
+                'controller_name' => 'Events',
+                'eventData' => $event,
+            ]);
+        }
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Repository;
-
+use App\Entity\Article;
 use App\Entity\Comment;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -16,9 +16,13 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CommentRepository extends ServiceEntityRepository
 {
+    public $id=0;
+    private $entityManager;
+    
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Comment::class);
+        $this->entityManager = $registry->getManager();
     }
 
     public function add(Comment $entity, bool $flush = false): void
@@ -37,6 +41,66 @@ class CommentRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    // Méthode pour supprimer un élément par son ID
+    public function delete($id)
+    {
+        // L'EntityManager est une classe fournie par Doctrine. Elle gère les entités dans une application Symfony
+        $entityManager = $this->getEntityManager();
+
+        // Cherche grâce à l' ID
+        $e = $this->find($id);
+
+        // Si l'élément est trouvé
+        if ($e) {
+            // On supprime
+            $entityManager->remove($e);
+
+            // Applique les changements à la base de données
+            $entityManager->flush();
+
+            // Retourne true si la suppression a réussi
+            return true;
+        }
+
+        // Retourne false si l'élément n'a pas été trouvé
+        return false;
+    }
+
+    // Méthode pour supprimer un élément par son fkArticle
+    public function deleteByFkArticle(Article $id)
+    {
+        // L'EntityManager est une classe fournie par Doctrine. Elle gère les entités dans une application Symfony
+        $entityManager = $this->getEntityManager();
+
+        // Cherche grâce à l'fkArticle
+        $comments = $this->findBy(['fkArticle' => $id]);
+
+        // Si des éléments sont trouvés
+        if ($comments) {
+            foreach ($comments as $comment) {
+                // On supprime chaque élément
+                $entityManager->remove($comment);
+            }
+            // Applique les changements à la base de données
+            $entityManager->flush();
+
+            // Retourne true si la suppression a réussi
+            return true;
+        }
+
+        // Retourne false si l'élément n'a pas été trouvé
+        return false;
+    }
+
+    /*La fonction save() n'existe pas par defaut j'ai du l'ajouter*/
+    public function save($id)
+    {
+        /*Pour Doctrine "persist" signifie que l'objet sera enregistré par Doctrine et suivi pour les modifications. */
+        $this->entityManager->persist($id);
+        /*Pour Doctrine "flush" signifie que toutes les modifications en attente sont exécutées et les objets sont synchronisés avec la base de données. */
+        $this->entityManager->flush();
     }
 
 //    /**
