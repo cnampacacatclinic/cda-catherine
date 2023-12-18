@@ -34,7 +34,7 @@ class UpdateCenterController extends AbstractController
 
         if (empty($_GET['modif'])) {
             return $this->render('page404/index.html.twig', [
-                'controller_name' => 'Page404Controller',
+                'controller_name' => 'Page 404',
             ]);
         }else{
 

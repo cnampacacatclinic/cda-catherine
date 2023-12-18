@@ -4,35 +4,60 @@
 
 {% block body %}
 
-    <section>
-    {% for page in pageData %}
-        <h2>{{ page.titlePage }}</h2>
-    {% endfor %}
-    
+<section class="container-lg" id="sectionAider">
+    <div class="row">
     {% for article in articleData %}
-        <h3>{{ article.titleArticle }}</h3>
-        <p>{{ article.textArticle|raw }}</p>
-        <a title="En savoir plus " href="{{ path('app_aider') }}">En savoir plus sur comment aider</a>
+        <div class="col-md-6">
+            <h3>{{ article.titleArticle }}</h3>
+            {{ article.textArticle|raw }}
+            <a class="btn btn-orange" title="En savoir plus " href="{{ path('app_aider') }}">En savoir plus sur comment aider</a>
+        </div>
+        <figure class="col-md-6">
+            <img alt="Un chien dans d'un refuge, à travers les barreaux, tend sa patte à un humain qui la serre entre sa main. Photo de Wpadington" src="{{ asset('img/chienWpadington.jpg') }}">
+        </figure>
     {% endfor %}
-    </section>
-    <section>
-    <section>
-        <h3>Ils ont trouvé leur bonheur</h3>
+</div>
+</section>
+
+<section id="sectionLibreDOr"  class="container">
+    <h3>Ils ont trouvé leur bonheur</h3>
+    <article>
+        <figure>
+            <img alt="Un chaton paisiblement endormi" src="{{ asset('img/chat-23juillet2009-catclinic.jpg') }}">
+        </figure>
         {% for avis in livreDOr %}
-
-            <h4>{{ avis.titleArticle }}</h4>
-            <p>{{ avis.textArticle|striptags}}</p>
-            
+            <h5>{{ avis.titleArticle }}</h5>
+            <p>{{ avis.textArticle|striptags }}</p>
         {% endfor %}
-    </section>
-    <h3>Les dernières news</h3>
-    {% for news in lastNews %}
+    </article>
+</section>
 
-        <a title="{{ news.titleArticle }}" href="{{ path('app_article', {'a': news.id}) }}"><h3>{{ news.titleArticle }}</h3></a>
-        <p>{{ news.textArticle|striptags|slice(0, 300)}} etc..</p>
-        <p><a title="Lire la suite" href="{{ path('app_article', {'a': news.id}) }}">Lire la suite</a></p>
-        
-    {% endfor %}
-    </section>
+
+<section class="container-lg">
+    <h3>Les dernières news</h3>
+    <div class="row">
+        {% for news in lastNews %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a title="{{ news.titleArticle }}" href="{{ path('app_article', {'a': news.id}) }}">
+                            <h4 class="card-title">{{ news.titleArticle }}</h4>
+                        </a>
+                        <p class="card-text">{{ news.textArticle|striptags|slice(0, 200) }} (...)</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <a title="Lire la suite" href="{{ path('app_article', {'a': news.id}) }}">Lire la suite</a>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <p><a class="btn btn-orange" title="News" href="{{ path('app_news') }}">Lire toutes les news</a></p>
+</section>
+
+
 
 {% endblock %}

@@ -26,7 +26,7 @@ class ManagementOtherPeopleContentController extends AbstractController
         }
 
         return $this->render('management_other_people_content/index.html.twig', [
-            'controller_name' => 'Management Other People\'s Content',
+            'controller_name' => 'Gestion des autres articles',
             'articleData'=>$articleData,
             'authors'=>$authors,
         ]);

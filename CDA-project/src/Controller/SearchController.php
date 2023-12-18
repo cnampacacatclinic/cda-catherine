@@ -18,7 +18,7 @@ class SearchController extends AbstractController
         // si on a pas de valeur en get
         if (empty($_GET['word'])) {
             return $this->render('page404/index.html.twig', [
-                'controller_name' => 'Page404Controller',
+                'controller_name' => 'Page 404',
             ]);
         }
         else{
@@ -26,7 +26,7 @@ class SearchController extends AbstractController
             $eventSearch = $eventService->findWordE($_GET['word']);
             
             return $this->render('search/index.html.twig', [
-                'controller_name' => 'Search',
+                'controller_name' => 'Recherche',
                 'eventSearch' => $eventSearch,
                 'articleSearch'=>$articleSearch,
             ]);

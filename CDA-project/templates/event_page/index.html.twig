@@ -3,7 +3,7 @@
 {% block title %}Event{% endblock %}
 
 {% block body %}
-<section>
+<section class="container-lg">
     {% for evenement in eventData %}
         <h2>{{ evenement.titleEvent }}</h2>
         {% if app.user %}

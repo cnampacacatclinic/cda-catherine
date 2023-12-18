@@ -22,7 +22,7 @@ class EventsController extends AbstractController
         $eventData = $eventService->findActiveEvents();
 
         return $this->render('events/index.html.twig', [
-            'controller_name' => 'Events',
+            'controller_name' => 'Les événements',
             'pageData' => $pageData,
             'articleData'=>$articleData,
             'eventData'=>$eventData,

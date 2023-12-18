@@ -1,79 +1,91 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Fichier css personalisé contenant l'import de boostrap #}
-        {# La fonction asset permet une redirection vers le dossier public #}
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-    </head>
-    <body>
-        <main>
-            <hearder>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#"><img id="logo1" alt="Capture d'écran d'un site web" src="{{ asset('img/logo_asso_animal_couleur_svg.svg') }}"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                            <div class="navbar-nav">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" title="Home" href="{{ path('app_home') }}">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" title="Comment aider" href="{{ path('app_aider') }}">Comment aider</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" title="Evenements" href="{{ path('app_events') }}">Evenements</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" title="News" href="{{ path('app_news') }}">News</a>
-                                    </li>
-                                    <li class="nav-item">
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {# Fichier css personnalisé contenant l'import de Bootstrap #}
+    {# La fonction asset permet une redirection vers le dossier public #}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22></text></svg>">
+</head>
+<body>
+    <header>
+            <nav class="navbar navbar-expand-xl fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{{ path('app_home') }}" title="Home"><img id="logo1" alt="Logo d'Asso Animal" src="{{ asset('img/logo_asso_animal_couleur_svg.svg') }}"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" title="Home" href="{{ path('app_home') }}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" title="Comment aider" href="{{ path('app_aider') }}">Comment aider</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" title="Evenements" href="{{ path('app_events') }}">Evenements</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" title="News" href="{{ path('app_news') }}">News</a>
+                                </li>
+                                <li class="nav-item">
 
-                                        {% if app.user %}
-                                            <a class="nav-link" title="Logout" href="{{ path('app_logout') }}">Logout</a>
-                                        {% endif %}
-                                        {% if app.user==false %}
-                                            <a class="nav-link" title="Connexion" href="{{ path('app_login') }}">Login</a>
-                                        {% endif %}
-                                    </li>
                                     {% if app.user %}
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Administration
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" title="Profil utilisateur" href="{{ '/user' }}">Votre compte</a></li>
-                                                <li><a class="dropdown-item" title="Inscription au événements" href="{{ '/registration-event' }}">Inscription aux événements</a></li>
-                                                {% if is_granted('ROLE_ADMIN') %}
-                                                <li><a class="dropdown-item" title="Vos articles" href="{{ path('app_admin') }}">Vos articles</a></li>
-                                                    <li><a class="dropdown-item" title="Gestion des événements" href="{{ path('app_gestion_event') }}">Gestion des événements</a></li>
-                                                    <li><a class="dropdown-item" title="Gestion des commentaires" href="{{ path('app_gestion_comment') }}">Gestion des commentaires</a></li>
-                                                {% endif %}
-                                                {% if is_granted('ROLE_SUPER_ADMIN') %}
-                                                    <li><a class="dropdown-item" title="Gestion des autres articles" href="{{ path('app_management_other_people_content') }}">Gestion des autres articles</a></li>
-                                                    <li><a class="dropdown-item" title="Gestion des utilisateurs" href="{{ path('app_superadmin') }}">Gestion des utilisateurs</a></li>
-                                                    <li><a class="dropdown-item" title="Gestion des centres" href="{{ path('app_gestion_centre') }}">Gestion des centres</a></li>
-                                                {% endif %}
-                                            </ul>
-                                        </li>
+                                        <a class="nav-link" title="Logout" href="{{ path('app_logout') }}">Logout</a>
                                     {% endif %}
-                                </ul>
-                                <form method="GET" action="{{ path('app_search') }}" class="d-flex">
-                                    <input name="word" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-success" type="submit">Search</button>
-                                </form>
-                            </div>
+                                    {% if app.user==false %}
+                                        <a class="nav-link" title="Connexion" href="{{ path('app_login') }}">Login</a>
+                                    {% endif %}
+                                </li>
+                                {% if app.user %}
+                                    <li class="nav-item dropdown">
+                                        <span id="adminButton" class="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Administration
+                                        </span>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" title="Profil utilisateur" href="{{ path('app_user') }}">Votre compte</a></li>
+                                            <li><a class="dropdown-item" title="Inscription au événements" href="{{ path('app_registration_event') }}">Inscription aux événements</a></li>
+                                            {% if is_granted('ROLE_ADMIN') %}
+                                            <li><a class="dropdown-item" title="Vos articles" href="{{ path('app_admin') }}">Vos articles</a></li>
+                                                <li><a class="dropdown-item" title="Gestion des événements" href="{{ path('app_gestion_event') }}">Gestion des événements</a></li>
+                                                <li><a class="dropdown-item" title="Gestion des commentaires" href="{{ path('app_gestion_comment') }}">Gestion des commentaires</a></li>
+                                            {% endif %}
+                                            {% if is_granted('ROLE_SUPER_ADMIN') %}
+                                                <li><a class="dropdown-item" title="Gestion des autres articles" href="{{ path('app_management_other_people_content') }}">Gestion des autres articles</a></li>
+                                                <li><a class="dropdown-item" title="Gestion des utilisateurs" href="{{ path('app_superadmin') }}">Gestion des utilisateurs</a></li>
+                                                <li><a class="dropdown-item" title="Gestion des centres" href="{{ path('app_gestion_centre') }}">Gestion des centres</a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                            {# en GET pour aider l' utilisateur à retrouver et à partager la recherche #}
+                            <form id="formMin" method="get" action="{{ path('app_search') }}" class="d-flex">
+                                <fieldset class="d-flex">
+                                    <input name="word" type="search" aria-label="Search">
+                                    <button type="submit">Search</button>
+                                </fieldset>
+                            </form>
+                        </div>
                     </div>
-            </nav>
-
-            <a class="nav-link" title="Home de Asso Animal" href="{{ '/' }}"><h1>Asso Animal</h1></a>
-            </header>
+                </div>
+                <form id="formBig" method="get" action="{{ path('app_search') }}" class="d-flex">
+                    <fieldset class="d-flex">
+                        <input name="word" type="search" aria-label="Search">
+                        <button type="submit">Search</button>
+                    </fieldset>
+                </form>
+        </nav>
+        {% if app.request.attributes.get('_route') == 'app_home' %}
+            <div id="banniere">
+                <h1><a class="nav-link" title="Home de Asso Animal" href="{{ path('app_home') }}">Asso Animal</a></h1>
+            </div>
+        {% endif %}
+</header>
+        <main>
                 {% block body %}{% endblock %}
         </main>
 
@@ -105,10 +117,9 @@
                 </a>
             </li>
         </ul>
-        <p class="text-center text-muted">© 2024 Asso Animal</p>
+        <p class="text-center">© 2024 Asso Animal</p>
   </footer>
-        
-        <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
     </body>
+    <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
 </html>

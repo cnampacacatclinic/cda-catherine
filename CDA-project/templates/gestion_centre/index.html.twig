@@ -3,26 +3,26 @@
 {% block title %}Hello GestionCentreController!{% endblock %}
 
 {% block body %}
-<section>
-    <h1>Gestions des centres</h1>
+<section class="container-lg">
+    <h2>Gestions des centres</h2>
 
     <div class="card">
         <div class="card-body row">
             <div class="col-md-6 text-right">
-                <a href="{{ path('app_insert_contact') }}" class="btn btn-primary">Créer une adresse pour un centre</a>
+                <a href="{{ path('app_insert_contact') }}" class="btn btn-light">Créer une adresse pour un centre</a>
             </div>
         </div>
     </div>
     <div class="card">
         <div class="card-body row">
             <div class="col-md-6 text-right">
-                <a href="{{ path('app_insert_phone') }}" class="btn btn-primary">Ajouter un numéro de téléphone</a>
+                <a href="{{ path('app_insert_phone') }}" class="btn btn-light">Ajouter un numéro de téléphone</a>
             </div>
         </div>
     </div>
     
     <h3>Liste des centres</h3>
-    <table class="table table-hover">
+    <table class="table table-responsive table-hover">
         <thead>
             <tr>
                 <th scope="col" class="text-center">Nom</th>
