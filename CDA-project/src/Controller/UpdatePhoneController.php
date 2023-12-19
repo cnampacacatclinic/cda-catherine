@@ -13,18 +13,21 @@ use App\Entity\Center;
 use App\Form\UpdatePhoneType;
 use App\Service\PhoneTypeService;
 use App\Service\PhoneService;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class UpdatePhoneController extends AbstractController
 {
     private $doctrine;
     private $phoneTypeService;
     private $phoneService;
+    private $visitService;
 
-    public function __construct(ManagerRegistry $doctrine, PhoneTypeService $phoneTypeService, PhoneService $phoneService)
+    public function __construct(ManagerRegistry $doctrine, PhoneTypeService $phoneTypeService, PhoneService $phoneService,VisitService $visitService)
     {
         $this->doctrine = $doctrine;
         $this->phoneTypeService = $phoneTypeService;
         $this->phoneService = $phoneService;
+        $this->visitService = $visitService;
     }
 
     /**
@@ -32,7 +35,7 @@ class UpdatePhoneController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        
+        $this->visitService->visitCookie(); /* Pour les stat et le cookie */
         if (!empty($_GET['supp'])) {
             $this->phoneService->deleteById($_GET['supp']);
             return $this->redirectToRoute('app_update_center', ['modif' => $_GET['modif']]);

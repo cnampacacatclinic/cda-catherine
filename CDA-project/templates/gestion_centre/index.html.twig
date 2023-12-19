@@ -39,7 +39,7 @@
                         <a href="{{ path('app_update_center', {'modif': center.id }) }}" class="btn btn-success">Modifier</a>
                     </td>
                     <td class="text-end">
-                        <a href="{{ path('app_gestion_centre', {'supp': center.id }) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr?')">Supprimer</a>
+                        <a data-article-id="{{ center.id }}" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-danger supp"  href="{{ path('app_gestion_centre', {'supp': center.id }) }}">Supprimer</a>
                     </td>
                 </tr>
             {% endfor %}

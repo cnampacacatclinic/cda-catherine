@@ -10,6 +10,7 @@ use App\Service\PhoneTypeService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class ContactController extends AbstractController
 {
@@ -17,14 +18,14 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="app_contact")
      */
-    public function index(PhoneTypeService $phoneTypeService, CenterService $centerService, ArticleService $articleService, PhoneService $phoneService, CenterDTO $centerDTO): Response
+    public function index(VisitService $visitService,PhoneTypeService $phoneTypeService, CenterService $centerService, ArticleService $articleService, PhoneService $phoneService, CenterDTO $centerDTO): Response
     {
         $centerData = $centerService->findAllCenters();
         $articleData = $articleService->findOneArticle(3);
         $phonesForCenter1 = $phoneService->findPhonesByCenterIdOrderedByType($centerDTO->getId());
         $phonesForCenter2 = $phoneService->findAllPhones();
         $phoneTypes = $phoneTypeService->findAllTypePhoneOrderedByName();
-
+        $visitService->visitCookie(); /* Pour les stat et le cookie */
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'Contact',
             'centerData' => $centerData,

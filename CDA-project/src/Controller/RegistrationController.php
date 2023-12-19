@@ -17,13 +17,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class RegistrationController extends AbstractController
 {
     private EmailVerifier $emailVerifier;
-
-    public function __construct(EmailVerifier $emailVerifier)
+    private $visitService;
+    public function __construct(EmailVerifier $emailVerifier,VisitService $visitService)
     {
+        $this->visitService = $visitService;
         $this->emailVerifier = $emailVerifier;
     }
 
@@ -35,7 +37,7 @@ class RegistrationController extends AbstractController
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
-
+        $this->visitService->visitCookie(); /* Pour les stat et le cookie */
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setPassword(

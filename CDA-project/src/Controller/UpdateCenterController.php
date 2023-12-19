@@ -13,17 +13,20 @@ use App\Service\PhoneTypeService;
 use App\Service\PhoneService;
 use App\Form\UpdateCenterType;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class UpdateCenterController extends AbstractController
 {
     private $phoneTypeService;
     private $centerService;
     private $phoneService;
+    private $visitService;
 
-    public function __construct(PhoneTypeService $phoneTypeService,PhoneService $phoneService)
+    public function __construct(PhoneTypeService $phoneTypeService,PhoneService $phoneService,VisitService $visitService)
     {
         $this->phoneTypeService = $phoneTypeService;
         $this->phoneService = $phoneService;
+        $this->visitService = $visitService;
     }
     
     /**
@@ -31,7 +34,7 @@ class UpdateCenterController extends AbstractController
      */
     public function index(Request $request,PhoneTypeService $phoneTypeService,PhoneService $phoneService): Response
     {
-
+        $this->visitService->visitCookie(); /* Pour les stat et le cookie */
         if (empty($_GET['modif'])) {
             return $this->render('page404/index.html.twig', [
                 'controller_name' => 'Page 404',

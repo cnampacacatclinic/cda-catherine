@@ -8,18 +8,22 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Service\ArticleService;
 use App\Service\UserService;
 use App\Service\PageService;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class AdminController extends AbstractController
 {
     /**
      * @Route("/admin", name="app_admin")
      */
-    public function index(PageService $pageService, ArticleService $articleService, UserService $userService): Response
+    public function index(VisitService $visitService,PageService $pageService, ArticleService $articleService, UserService $userService): Response
     {
         $authors = $userService->findAllUsers();
         $pageData = $pageService->findOnePage(5);
         $articleData = $articleService->findOneArticleByFkPage(5);
         $articleSupp ='';
+
+        $visitService->visitCookie(); /* Pour les stat et le cookie */
+
         if(!empty($_GET['supp'])){
             $articleService->deleteById($_GET['supp']);
         }

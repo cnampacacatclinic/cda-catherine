@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 11 déc. 2023 à 16:16
+-- Généré le : lun. 18 déc. 2023 à 18:08
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -49,7 +49,7 @@ INSERT INTO `article` (`id`, `fk_page_id`, `fk_categorie_id`, `fk_user_id`, `dat
 (4, 5, 2, 1, '2023-11-22 15:27:53', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p>', 'Article 1', 1),
 (5, 5, 2, 1, '2023-11-22 15:29:05', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p>', 'Article 2', 0),
 (6, 5, 2, 1, '2023-11-22 15:29:06', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p>', 'Article 3', 1),
-(7, 5, 2, 1, '2023-11-22 16:20:24', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p>', 'Article 4', 1),
+(7, 5, 2, 1, '2023-11-22 16:20:24', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p><p>\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Aut sapiente pariatur nobis velit, neque incidunt iste assumenda vel nemo commodi maiores facilis officia aspernatur non et laudantium doloribus sequi ab.\r\n</p>', 'Article 4', 0),
 (9, 6, 5, 1, '2023-11-22 16:30:12', '<h3>Faire un don</h3>\r\n<p>\r\nLe don est le moyen le plus simple et le plus efficace d\'aider un refuge pour animaux. Votre don permettra de couvrir les frais de nourriture, de soins vétérinaires, d\'hébergement et de transport des animaux. Vous pouvez faire un don en ligne, par chèque ou par carte de crédit. \r\n</p>\r\n<h3>Devenir bénévole</h3>\r\n<p>\r\nDevenir bénévole est une autre excellente façon d\'aider un refuge pour animaux. Vous pouvez aider à nourrir et à soigner les animaux, à nettoyer les cages, à organiser des événements de collecte de fonds ou à faire du bénévolat dans le cadre d\'autres programmes. \r\n</p>\r\n<h3>Partager l\'information sur le refuge</h3>\r\n<p>\r\nPartager l\'information sur le refuge sur les réseaux sociaux ou avec vos amis et votre famille est un excellent moyen d\'aider à faire connaître le refuge et à trouver des familles adoptives pour les animaux. Vous pouvez également partager des histoires sur les animaux du refuge ou sur le travail du refuge. \r\n</p>\r\n<h3>Adopter un animal</h3>\r\n<p>\r\nL\'adoption est la meilleure façon d\'aider un refuge pour animaux. En adoptant un animal, vous lui donnez une chance de trouver une famille aimante et pour la vie. Les refuges accueillent des animaux de tous âges, races et personnalités. Vous êtes sûr de trouver l\'animal qui vous convient. \r\n</p>\r\n<h3>Votre soutien est important</h3>\r\n<p>\r\nGrâce à votre soutien, nous pouvons continuer à aider les animaux sans abri à trouver une famille aimante. Chaque geste, même petit, est important.</p>', 'Voici ce que vous pouvez faire', 1),
 (10, 1, 2, 2, '2023-11-01 11:13:37', '\r\n<p>Nos refuges animaliers accueillent des chiens et des chats abandonnés, perdus ou maltraités. Ils leur offrent un abri, des soins et une éducation pour les préparer à une adoption responsable.<br> \r\nLes refuges animaliers sont des lieux essentiels pour la protection des animaux. Grâce à leur travail, de nombreux chiens et chats trouvent un nouveau foyer et une seconde chance.</p>', 'Nous aider', 1),
 (11, 8, 1, 2, '2023-11-28 12:18:59', '<p>J\'ai eu le coup de foudre pour ce  chien ! Merci pour tout !</p>\r\n', '', 0),
@@ -59,7 +59,7 @@ INSERT INTO `article` (`id`, `fk_page_id`, `fk_categorie_id`, `fk_user_id`, `dat
 (15, 11, 1, 1, '2023-11-28 14:53:02', '<h4>Propriété intellectuelle</h4>\r\n<p>\r\nLes photographies et les textes publiés sur le site web du Asso Animal sont la propriété exclusive du refuge. Toute reproduction, représentation, adaptation, traduction, ou transformation, partielle ou intégrale, de ces éléments est strictement interdite sans l\'autorisation expresse de Asso Animal.\r\n</p><p>\r\nLes dessins et logos figurant sur le site web du refuge d\'animaux de compagnie sont également la propriété exclusive du refuge. Toute reproduction, représentation, ou exploitation, partielle ou intégrale, de ces éléments est strictement interdite sans l\'autorisation expresse du refuge.\r\n</p><p>\r\nL\'ensemble du contenu du site web du refuge d\'animaux de compagnie est protégé par le droit d\'auteur. Toute reproduction, représentation, ou exploitation, partielle ou intégrale, du site web est strictement interdite sans l\'autorisation expresse du refuge.\r\n</p>\r\n<h4>Hyperliens</h4>\r\n<p>\r\nLes liens hypertextes présents sur le site web du refuge d\'animaux de compagnie peuvent renvoyer sur des sites web tiers. Le refuge n\'exerce aucun contrôle sur ces sites web et décline toute responsabilité quant à leur contenu.\r\n</p>\r\n<h4>Modifications</h4>\r\n<p>\r\nAsso Animal se réserve le droit de modifier les mentions légales à tout moment. L\'utilisateur est invité à consulter régulièrement les mentions légales afin de prendre connaissance des modifications éventuelles.\r\n</p>\r\n', 'Mentions légales', 1),
 (16, 9, 1, 1, '2023-11-28 14:53:02', '<p>\r\nLe site web du refuge d\'animaux de compagnie utilise des cookies afin de collecter des informations sur la navigation des utilisateurs. Ces informations sont utilisées pour améliorer le contenu du site web et la navigation des utilisateurs.\r\n</p><p>\r\nL\'utilisateur peut s\'opposer à l\'utilisation des cookies en modifiant les paramètres de son navigateur. En effet vous pouvez vider le cache également grâce au raccourci clavier Ctrl + Maj + Suppr<br>\r\nPour un Mac, utilisez Command + Maj + Suppr .</p>', 'Cookies', 1),
 (17, 10, 1, 1, '2023-11-28 14:53:02', '<p>Asso Animal s\'engage à protéger la confidentialité des informations personnelles que vous nous fournissez.\r\n</p><p>\r\nNous collectons des informations personnelles lorsque vous utilisez notre site web, par exemple lorsque vous :\r\n<ul>\r\n<li>Visitez notre site web</li>\r\n<li>Vous inscrivez à notre newsletter</li>\r\n<li>Faites un don</li>\r\n<li>Adoptez un animal</li>\r\n</ul>\r\n</p>\r\n<p>Les informations personnelles que nous collectons peuvent inclure :\r\n<ul>\r\n<li>Votre nom</li>\r\n<li>Votre adresse e-mail</li>\r\n<li>Vos informations sur l\'animal que vous adoptez</li>\r\n</ul>\r\n</p><p>\r\nNous utilisons les informations personnelles que nous collectons pour :\r\n<ul>\r\n<li>\r\nVous fournir les services que vous demandez</li>\r\n<li>Vous contacter pour vous informer de nos activités</li>\r\n<li>Améliorer notre site web et nos services</li>\r\n</ul>\r\n</p>\r\n<p>\r\nNous ne partageons vos informations personnelles avec des tiers que dans les cas suivants :\r\n<ul>\r\n<li>Avec votre consentement</li>\r\n<li>Pour nous conformer à une loi ou une réglementation</li>\r\n<li>Pour protéger nos droits ou notre propriété</li>\r\n</ul>\r\n</p>\r\n<h4>Données personnelles</h4>\r\n<p>\r\nLes données personnelles collectées sur le site web de Asso Animal sont destinées à la gestion des relations avec les utilisateurs. Ces données sont conservées pendant une durée de 2 ans après la dernière interaction de l\'utilisateur avec le site web.\r\n</p><p>\r\nL\'utilisateur dispose d\'un droit d\'accès, de rectification, et d\'effacement des données personnelles le concernant. L\'utilisateur peut également demander la limitation du traitement de ses données personnelles ou s\'opposer à leur traitement.\r\n</p><p>\r\nL\'utilisateur peut exercer ses droits en contactant le refuge par mail à l\'adresse suivante : <a href=\"mailto:emailassoanimal@examplemail.org\">emailassoanimal@examplemail.org</a>\r\n</p>\r\n<h4>Sécurité</h4>\r\n<p>\r\nLe refuge d\'animaux de compagnie s\'engage à protéger les données personnelles des utilisateurs. Le refuge met en œuvre des mesures de sécurité techniques et organisationnelles pour protéger les données personnelles contre les risques de perte, de destruction, de modification, ou de divulgation à des tiers non autorisés.</p>', 'Politique de confidentialité', 1),
-(18, 5, 3, 2, '2023-11-29 00:00:00', 'Cathy a modifié l\'article de Paul mais n\'a pas modifié l\'auteur de l\'article !!!', 'Article de Paul', 1),
+(18, 5, 3, 2, '2023-11-29 00:00:00', 'Cathy a modifié l\'article de Paul mais n\'a pas modifié l\'auteur de l\'article !!!', 'Article de Paul', 0),
 (19, 5, 3, 2, '2023-11-29 14:45:01', 'article test de Paul', 'Article de Paul', 1),
 (20, 5, 2, 2, '2020-11-29 00:00:00', 'second article de Paul modifié par Cathy !', 'Article 2 de Paul', 0),
 (21, 5, 1, 1, '2018-01-01 00:00:00', '2584444', 'test44444', 0),
@@ -142,7 +142,8 @@ CREATE TABLE `center` (
 INSERT INTO `center` (`id`, `name_center`, `num_way`, `type_way`, `name_way`, `zip_code`, `city`) VALUES
 (1, 'Le blond', 15, 'Descente', 'du prince', 13123, 'Valence'),
 (2, 'Vertigo', 32, 'avenue', 'Jean-Jean De Jean', 75000, 'Paris'),
-(3, 'Carmin', 54, 'place', 'des quatre dauphins', 13190, 'Aix-En-Provence');
+(3, 'Carmin', 54, 'place', 'des quatre dauphins', 13190, 'Aix-En-Provence'),
+(13, 'grdfd', 11, 'Ecart', 'fddsf', 1000, 'Valence');
 
 -- --------------------------------------------------------
 
@@ -156,7 +157,7 @@ CREATE TABLE `comment` (
   `fk_user_id` int(11) DEFAULT NULL,
   `date_comment` datetime NOT NULL DEFAULT current_timestamp(),
   `text_comment` longtext NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT 0
+  `active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -187,7 +188,8 @@ CREATE TABLE `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20231122135428', '2023-11-22 14:54:36', 1579);
+('DoctrineMigrations\\Version20231122135428', '2023-11-22 14:54:36', 1579),
+('DoctrineMigrations\\Version20231218170501', '2023-12-18 18:05:12', 921);
 
 -- --------------------------------------------------------
 
@@ -200,19 +202,19 @@ CREATE TABLE `event` (
   `start_date` datetime NOT NULL,
   `end_date` datetime NOT NULL,
   `title_event` varchar(255) NOT NULL,
-  `active` tinyint(1) NOT NULL,
   `description_event` varchar(255) NOT NULL,
-  `location_event` varchar(255) NOT NULL
+  `location_event` varchar(255) NOT NULL,
+  `active` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `event`
 --
 
-INSERT INTO `event` (`id`, `start_date`, `end_date`, `title_event`, `active`, `description_event`, `location_event`) VALUES
-(2, '2023-11-24 15:48:04', '2023-11-28 15:48:04', 'Event non actif', 0, 'Non actif', '25 Boulevard du rat, Lyon'),
-(3, '2023-02-24 00:00:00', '2024-11-30 00:00:00', 'Actif event', 1, 'Éventement actif pour tester l\'affichage', 'Rue du Chat-qui-Pêche 75012 Paris'),
-(6, '2020-01-01 00:00:00', '2025-01-01 00:00:00', 'test', 1, 'test', 'Paris');
+INSERT INTO `event` (`id`, `start_date`, `end_date`, `title_event`, `description_event`, `location_event`, `active`) VALUES
+(2, '2023-11-24 15:48:04', '2023-11-28 15:48:04', 'Event non actif', 'Non actif', '25 Boulevard du rat, Lyon', 0),
+(3, '2023-02-24 00:00:00', '2024-11-30 00:00:00', 'Actif event', 'Éventement actif pour tester l\'affichage', 'Rue du Chat-qui-Pêche 75012 Paris', 1),
+(6, '2020-01-01 00:00:00', '2025-01-01 00:00:00', 'test', 'test', 'Paris', 1);
 
 -- --------------------------------------------------------
 
@@ -341,8 +343,11 @@ INSERT INTO `phone` (`id`, `center_id`, `fk_type_id`, `phone_number`, `is_mobile
 (14, 2, 1, '0024524524', 0),
 (21, 1, 3, '37524527452', 1),
 (30, 1, 2, '237523725742174', 1),
-(32, 1, 2, '1', 1),
-(33, 3, 2, '55555555555', 1);
+(33, 3, 2, '55555555555', 1),
+(34, 13, 1, '254244', 1),
+(35, 13, 1, '2542442', 1),
+(37, 1, 2, '3333333333', 1),
+(38, 1, 4, '3434545345', 0);
 
 -- --------------------------------------------------------
 
@@ -390,7 +395,7 @@ CREATE TABLE `reset_password_request` (
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(180) NOT NULL,
-  `roles` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`roles`)),
+  `roles` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '(DC2Type:json)' CHECK (json_valid(`roles`)),
   `password` varchar(255) NOT NULL,
   `is_verified` tinyint(1) NOT NULL,
   `last_name` varchar(255) NOT NULL,
@@ -406,6 +411,21 @@ INSERT INTO `user` (`id`, `email`, `roles`, `password`, `is_verified`, `last_nam
 (2, 'paul@gmail.com', '[\"ROLE_ADMIN\"]\r\n', '$2y$13$.eGV1CRP3zSg8Hk7Hp5sdOuUPYD73xTvPH9g4v5.2UaDCWQpYznWu', 0, 'paulo', 'paulopaulo'),
 (3, 'perso@gmail.com', '[]', '$2y$13$d8v.aXPloFdBkg9n8PMj1.Rw9ijfwX3CB.bdSkhMSmpG6utp8JTcO', 0, 'ccc', 'yyyy'),
 (4, 'rezrezr@fjdksljf.lm', '[]', '$2y$13$fyqYpQo8TvtlXg/vBkkTw.DCjMdcgrBy5rOF1lJz0i6UBSO5PsqJK', 0, 'rzer', 'rezre');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `visit`
+--
+
+CREATE TABLE `visit` (
+  `id` int(11) NOT NULL,
+  `ip` varchar(15) NOT NULL,
+  `origine` varchar(255) NOT NULL,
+  `date_visit` datetime NOT NULL,
+  `current_page` varchar(255) NOT NULL,
+  `cookie` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Index pour les tables déchargées
@@ -465,8 +485,8 @@ ALTER TABLE `event`
 --
 ALTER TABLE `event_user`
   ADD PRIMARY KEY (`user_id`,`event_id`),
-  ADD KEY `IDX_D96CF1FFA76ED395` (`user_id`),
-  ADD KEY `IDX_D96CF1FF71F7E88B` (`event_id`);
+  ADD KEY `IDX_92589AE2A76ED395` (`user_id`),
+  ADD KEY `IDX_92589AE271F7E88B` (`event_id`);
 
 --
 -- Index pour la table `img`
@@ -518,6 +538,12 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
 
 --
+-- Index pour la table `visit`
+--
+ALTER TABLE `visit`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -537,7 +563,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `center`
 --
 ALTER TABLE `center`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `comment`
@@ -549,19 +575,13 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `img`
 --
 ALTER TABLE `img`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT pour la table `messenger_messages`
---
-ALTER TABLE `messenger_messages`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `page`
@@ -573,7 +593,7 @@ ALTER TABLE `page`
 -- AUTO_INCREMENT pour la table `phone`
 --
 ALTER TABLE `phone`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT pour la table `phone_type`
@@ -592,6 +612,12 @@ ALTER TABLE `reset_password_request`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT pour la table `visit`
+--
+ALTER TABLE `visit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Contraintes pour les tables déchargées
@@ -623,8 +649,8 @@ ALTER TABLE `comment`
 -- Contraintes pour la table `event_user`
 --
 ALTER TABLE `event_user`
-  ADD CONSTRAINT `FK_D96CF1FF71F7E88B` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_D96CF1FFA76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_92589AE271F7E88B` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_92589AE2A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `phone`

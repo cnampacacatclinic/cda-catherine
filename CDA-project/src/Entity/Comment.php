@@ -39,9 +39,14 @@ class Comment
     private $fkUser;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="boolean")
      */
     private $active;
+
+    public function __construct()
+    {
+        $this->active = false; /*par défaut le tinyint sera égale à zéro en BDD*/
+    }
 
     public function getId(): ?int
     {

@@ -10,13 +10,14 @@ use App\Service\CenterService;
 use App\Service\ArticleService;
 use App\Service\PhoneService;
 use App\Service\PhoneTypeService;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class GestionCentreController extends AbstractController
 {
     /**
      * @Route("/gestion-centre", name="app_gestion_centre")
      */
-    public function index(PhoneTypeService $phoneTypeService, CenterService $centerService, ArticleService $articleService, PhoneService $phoneService, CenterDTO $centerDTO): Response
+    public function index(VisitService $visitService,PhoneTypeService $phoneTypeService, CenterService $centerService, ArticleService $articleService, PhoneService $phoneService, CenterDTO $centerDTO): Response
     {
         
         $centerData = $centerService->findAllCenters();
@@ -24,7 +25,7 @@ class GestionCentreController extends AbstractController
         $phonesForCenter1 = $phoneService->findPhonesByCenterIdOrderedByType($centerDTO->getId());
         $phonesForCenter2 = $phoneService->findAllPhones();
         $phoneTypes = $phoneTypeService->findAllTypePhoneOrderedByName();
-
+        $visitService->visitCookie(); /* Pour les stat et le cookie */
         if(!empty($_GET['supp'])){
             $centerService->deleteById($_GET['supp']);
         }

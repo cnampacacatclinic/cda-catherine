@@ -7,14 +7,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\EventService;
 use Symfony\Component\Security\Core\Security;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class EventPageController extends AbstractController
 {
     private $security;
+    private $visitService;
 
-    public function __construct(Security $security)
+    public function __construct(Security $security,VisitService $visitService)
     {
         $this->security = $security;
+        $this->visitService = $visitService;
     }
 
     /**
@@ -23,7 +26,7 @@ class EventPageController extends AbstractController
     public function index(EventService $eventService): Response
     {
         $user = $this->security->getUser();
-
+        $this->visitService->visitCookie(); /* Pour les stat et le cookie */
         if (empty($_GET['e'])) {
             return $this->render('page404/index.html.twig', [
                 'controller_name' => 'Page 404',

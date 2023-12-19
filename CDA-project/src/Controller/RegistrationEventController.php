@@ -10,13 +10,16 @@ use App\Entity\Event;
 use App\Service\EventService;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Security;//pour obtenir l'id de l'utilisateur connecté
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class RegistrationEventController extends AbstractController
 {
     private $security;
+    private $visitService;
 
-    public function __construct(Security $security)
+    public function __construct(Security $security,VisitService $visitService)
     {
+        $this->visitService = $visitService;
         $this->security = $security;
     }
     
@@ -31,7 +34,7 @@ class RegistrationEventController extends AbstractController
         $userId= $user->getId();/**/
         
         $eventData = $eventService->findAllEvents();
-
+        $this->visitService->visitCookie(); /* Pour les stat et le cookie */
         return $this->render('registration_event/index.html.twig', [
             'controller_name' => 'RegistrationEventController',
             'eventData' => $eventData,
