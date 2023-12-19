@@ -1,17 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello InsertPhoneController!{% endblock %}
-
+{# pour les form on utilise boostrap 5 #}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 {% block body %}
-<h1>Enregistrer un numero de téléphone</h1>
+<section class="container-lg">
+    <h2>Enregistrer un numéro de téléphone</h2>
 
-{{ form_start(form) }}
-{{ form_row(form.center) }}
-{{ form_row(form.phoneNumber) }}
-{{ form_row(form.isMobile) }}
-{{ form_row(form.fkType) }}
+    {{ form_start(form) }}
+    {{ form_row(form.center) }}
+    {{ form_row(form.phoneNumber) }}
+    {{ form_row(form.isMobile) }}
+    {{ form_row(form.fkType) }}
 
-<button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-orange">Submit</button>
 
-{{ form_end(form) }}
+    {{ form_end(form) }}
+</section>
 {% endblock %}

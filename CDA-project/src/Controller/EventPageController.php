@@ -26,7 +26,7 @@ class EventPageController extends AbstractController
 
         if (empty($_GET['e'])) {
             return $this->render('page404/index.html.twig', [
-                'controller_name' => 'Page404Controller',
+                'controller_name' => 'Page 404',
             ]);
         }
         else{
@@ -42,7 +42,7 @@ class EventPageController extends AbstractController
             }
 
             return $this->render('event_page/index.html.twig', [
-                'controller_name' => 'Events',
+                'controller_name' => 'Événement',
                 'eventData' => $event,
             ]);
         }

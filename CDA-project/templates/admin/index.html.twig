@@ -3,19 +3,19 @@
 {% block title %}Admin{% endblock %}
 
 {% block body %}
-<section>
-    <h1>Vos articles</h1>
+<section class="container-lg">
+    <h2>Vos articles</h2>
 
     <div class="card">
         <div class="card-body row">
             <div class="col-md-6 text-right">
-                <a href="{{ path('app_insert_article') }}" class="btn btn-primary">Créer un article</a>
+                <a class="btn btn-light" href="{{ path('app_insert_article') }}">Créer un article</a>
             </div>
         </div>
     </div>
     
     <h3>Liste des ses propres articles</h3>
-    <table class="table table-hover">
+    <table class="table table-responsive table-hover">
         <thead>
             <tr>
                 <th scope="col" class="text-center">Date</th>
@@ -34,9 +34,9 @@
                         </td>
                         <td class="text-end">
                             {% if article.active == 1 %}
-                                <a href="{{ path('app_admin', {'active': article.id }) }}" class="btn btn-dark">Brouillon</a>
+                                <a href="{{ path('app_admin', {'active': article.id }) }}" class="button btn btn-dark">Brouillon</a>
                             {% else %}
-                                <a href="{{ path('app_admin', {'active': article.id }) }}" class="btn btn-primary">Publier</a>
+                                <a href="{{ path('app_admin', {'active': article.id }) }}" class="button btn btn-primary">Publier</a>
                             {% endif %}
                         </td>
                         <td class="text-end">

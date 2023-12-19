@@ -38,7 +38,7 @@ class ArticleController extends AbstractController
         // si on a pas de valeur en get
         if (empty($_GET['a'])) {
             return $this->render('page404/index.html.twig', [
-                'controller_name' => 'Page404Controller',
+                'controller_name' => 'Page 404',
             ]);
         }
         else{

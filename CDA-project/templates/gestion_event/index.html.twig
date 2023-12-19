@@ -3,17 +3,17 @@
 {% block title %}Hello GestionEventController!{% endblock %}
 
 {% block body %}
-<section>
-        <h1>Gestion des evenements</h1>
+<section class="container-lg">
+        <h2>Gestion des évènements</h2>
         <div class="card">
             <div class="card-body row">
                 <div class="col-md-6 text-right">
-                    <a href="{{ path('app_insert_event') }}" class="btn btn-primary">Créer un evenement</a>
+                    <a href="{{ path('app_insert_event') }}" class="btn btn-light">Créer un evenement</a>
                 </div>
             </div>
         </div>
-        <h3>Liste des événements</h3>
-        <table class="table table-hover">
+        <h3>Liste des évènements</h3>
+        <table class="table table-responsive  table-hover">
             <thead>
                 <tr>
                     <th scope="col" class="text-center">Date de début</th>

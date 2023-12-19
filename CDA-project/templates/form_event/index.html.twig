@@ -1,22 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello InsertEventController!{% endblock %}
-
+{# pour les form on utilise boostrap 5 #}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 {% block body %}
-<h1>Créait un evenement</h1>
+<section class="container-lg">
+    <h2>Écrire un évènement</h2>
 
-{{ form_start(form) }}
+    {{ form_start(form) }}
 
-{{ form_row(form.startDate) }}
+    {{ form_row(form.startDate) }}
 
-{{ form_row(form.endDate) }}
+    {{ form_row(form.endDate) }}
 
-{{ form_row(form.locationEvent) }}
-{{ form_row(form.titleEvent) }}
-{{ form_row(form.descriptionEvent) }}
-{{ form_row(form.active) }}
+    {{ form_row(form.locationEvent) }}
+    {{ form_row(form.titleEvent) }}
+    {{ form_row(form.descriptionEvent) }}
+    {{ form_row(form.active) }}
 
-<button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-orange">Submit</button>
 
-{{ form_end(form) }}
+    {{ form_end(form) }}
+</section>
 {% endblock %}
