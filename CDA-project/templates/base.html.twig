@@ -90,24 +90,44 @@
         </main>
 
         <footer class="py-3 my-4">
-        {# Modale Bootstrap pour les cookies #}
+        {# Modal Bootstrap pour les cookies #}
         <div class="modal" tabindex="-1" role="dialog" id="modaleCookie">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Les Cookies</h5>
+                        <h5 class="modal-title">Les Cookies &#127850;</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Ce site utilise des cookies, cliquez <a class="nav-link" title="Cookies" href="{{ path('app_cookies') }}">ici</a> pour en savoir plus.
+                        Ce site utilise des cookies, cliquez <a title="Cookies" href="{{ path('app_cookies') }}">ici</a> pour en savoir plus.
                     </div>
                     <div class="modal-footer">
-                        <a href="javascript:void(0);" id="cookieButton"  data-bs-dismiss="modal" class="btn btn-success" style="color:#fff">OK</a>
-                        <a href="javascript:void(0);" id="noCookieButton"  data-bs-dismiss="modal" class="btn btn-danger" style="color:#fff">NO</a> 
+                        <a href="javascript:void(0);" id="cookieButton"  data-bs-dismiss="modal" class="btn btn-secondary">OK</a>
+                        <a href="javascript:void(0);" id="noCookieButton"  data-bs-dismiss="modal" class="btn btn-dark">NO</a>
                     </div>
                 </div>
             </div>
         </div>
+        {% if app.user %}
+            {# Si on est connecté on affiche une modal Bootstrap pour les suppression #}
+            <div class="modal fade" id="modaleSupp" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Confirmation de suppression</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Êtes-vous sûr de vouloir supprimer cet élément ?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-danger" id="confirmDelete">Supprimer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
 
         {# Nav du footer #}
          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -143,4 +163,5 @@
     <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('js/modalCookie.js') }}"></script>
+    <script src="{{ asset('js/modalDelete.js') }}"></script>
 </html>
