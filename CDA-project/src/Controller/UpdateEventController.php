@@ -8,14 +8,17 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Event;
 use App\Form\UpdateEventType;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class UpdateEventController extends AbstractController
 {
     /**
      * @Route("/update-event", name="app_update_event")
      */
-    public function index(Request $request): Response
+    public function index(Request $request,VisitService $visitService): Response
     {
+        $visitService->visitCookie(); /* Pour les stat et le cookie */
+        
         if (empty($_GET['modif'])) {
             return $this->render('page404/index.html.twig', [
                 'controller_name' => 'Page404Controller',

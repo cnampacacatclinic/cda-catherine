@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1487470d31e116a4fc10f0f0688bdebc
+class ComposerStaticInitca0464060e385f0fd4a45ab68b939819
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -632,6 +632,7 @@ class ComposerStaticInit1487470d31e116a4fc10f0f0688bdebc
         'App\\Entity\\PhoneType' => __DIR__ . '/../..' . '/src/Entity/PhoneType.php',
         'App\\Entity\\ResetPasswordRequest' => __DIR__ . '/../..' . '/src/Entity/ResetPasswordRequest.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\Entity\\Visit' => __DIR__ . '/../..' . '/src/Entity/Visit.php',
         'App\\Enum\\CityEnum' => __DIR__ . '/../..' . '/src/Enum/CityEnum.php',
         'App\\Enum\\TypeWay' => __DIR__ . '/../..' . '/src/Enum/TypeWay.php',
         'App\\Enum\\TypeWayEnum' => __DIR__ . '/../..' . '/src/Enum/TypeWayEnum.php',
@@ -659,6 +660,7 @@ class ComposerStaticInit1487470d31e116a4fc10f0f0688bdebc
         'App\\Repository\\PhoneTypeRepository' => __DIR__ . '/../..' . '/src/Repository/PhoneTypeRepository.php',
         'App\\Repository\\ResetPasswordRequestRepository' => __DIR__ . '/../..' . '/src/Repository/ResetPasswordRequestRepository.php',
         'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
+        'App\\Repository\\VisitRepository' => __DIR__ . '/../..' . '/src/Repository/VisitRepository.php',
         'App\\Security\\ConnexionAuthenticator' => __DIR__ . '/../..' . '/src/Security/ConnexionAuthenticator.php',
         'App\\Security\\EmailVerifier' => __DIR__ . '/../..' . '/src/Security/EmailVerifier.php',
         'App\\Service\\ArticleService' => __DIR__ . '/../..' . '/src/Service/ArticleService.php',
@@ -669,6 +671,7 @@ class ComposerStaticInit1487470d31e116a4fc10f0f0688bdebc
         'App\\Service\\PhoneService' => __DIR__ . '/../..' . '/src/Service/PhoneService.php',
         'App\\Service\\PhoneTypeService' => __DIR__ . '/../..' . '/src/Service/PhoneTypeService.php',
         'App\\Service\\UserService' => __DIR__ . '/../..' . '/src/Service/UserService.php',
+        'App\\Service\\VisitService' => __DIR__ . '/../..' . '/src/Service/VisitService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'CURLStringFile' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
@@ -6496,9 +6499,9 @@ class ComposerStaticInit1487470d31e116a4fc10f0f0688bdebc
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1487470d31e116a4fc10f0f0688bdebc::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1487470d31e116a4fc10f0f0688bdebc::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit1487470d31e116a4fc10f0f0688bdebc::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitca0464060e385f0fd4a45ab68b939819::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitca0464060e385f0fd4a45ab68b939819::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitca0464060e385f0fd4a45ab68b939819::$classMap;
 
         }, null, ClassLoader::class);
     }

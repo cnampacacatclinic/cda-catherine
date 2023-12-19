@@ -35,7 +35,7 @@ class Article
     private $titleArticle;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean")//par défaut le tinytint sera égale à 1 en BDD
      */
     private $active;
 

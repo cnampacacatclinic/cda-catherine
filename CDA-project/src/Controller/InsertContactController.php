@@ -9,13 +9,16 @@ use Symfony\Component\HttpFoundation\Request;//à ajouter pour les fomulaires
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Center;
 use App\Form\InsertContactType;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class InsertContactController extends AbstractController
 {
     private $doctrine;
+    private $visitService;
 
-    public function __construct(ManagerRegistry $doctrine) {
+    public function __construct(ManagerRegistry $doctrine,VisitService $visitService) {
         $this->doctrine = $doctrine;
+        $this->visitService = $visitService;
     }
 
     /**
@@ -25,7 +28,7 @@ class InsertContactController extends AbstractController
     {
         $contact = new Center();
         $form = $this->createForm(InsertContactType::class, $contact);
-
+        $this->visitService->visitCookie(); /* Pour les stat et le cookie */
 
         $form->handleRequest($request);
 

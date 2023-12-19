@@ -16,17 +16,20 @@ use App\Entity\Comment;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Symfony\Component\Security\Core\Security;//pour obtenir l'id de l'utilisateur connecté
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class ArticleController extends AbstractController
 {
     private $doctrine;
     private $security;
     private $articleRepository;
+    private $visitService;
 
-    public function __construct(ManagerRegistry $doctrine,Security $security)
+    public function __construct(ManagerRegistry $doctrine,Security $security,VisitService $visitService)
     {
         $this->doctrine = $doctrine;
         $this->security = $security;
+        $this->visitService = $visitService;
     }
     
     /**
@@ -34,7 +37,7 @@ class ArticleController extends AbstractController
      */
     public function index(Request $request, CommentService $commentService, ArticleService $articleService, UserService $userService,ArticleRepository $articleRepository): Response
     {
-        
+        $this->visitService->visitCookie(); /* Pour les stat et le cookie */
         // si on a pas de valeur en get
         if (empty($_GET['a'])) {
             return $this->render('page404/index.html.twig', [
