@@ -8,7 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Service\UserService;
 use App\Service\VisitService;
-use Symfony\Component\HttpFoundation\Request;//à ajouter pour les fomulaires
+use App\Service\BibiConnexionService;
+use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Form\ManagementUserType;
 
@@ -17,14 +18,16 @@ class ManagementUserController extends AbstractController
     private $doctrine;
     private $userService;
     private $visitService;
+    private $bibiConnexionService;
 
-    public function __construct(ManagerRegistry $doctrine,UserService $userService,VisitService $visitService) {
+    public function __construct(BibiConnexionService $bibiConnexionService, ManagerRegistry $doctrine, UserService $userService, VisitService $visitService)
+    {
         $this->doctrine = $doctrine;
         $this->userService = $userService;
         $this->visitService = $visitService;
-
+        $this->bibiConnexionService = $bibiConnexionService;
     }
-    
+
     /**
      * @Route("/management-user", name="app_management_user")
      */
@@ -35,14 +38,19 @@ class ManagementUserController extends AbstractController
         $form = $this->createForm(ManagementUserType::class, $user);
 
         if (!empty($_GET['modif'])) {
-            // Assuming you have a UserRepository, adjust this line accordingly
             $userRepository = $this->getDoctrine()->getRepository(User::class);
             $user = $userRepository->find($_GET['modif']);
 
-            // Check if the user is found
             if ($user) {
                 $form = $this->createForm(ManagementUserType::class, $user);
                 $form->handleRequest($request);
+            
+                // Utiliser la méthode crypterMotDePasse ici
+                $plainPassword = $form->get('password')->getData();
+                $encryptedPassword = $this->bibiConnexionService->crypterMotDePasse($user, $plainPassword);
+            
+                // Enregistrez le mot de passe crypté dans votre entité User
+                $user->setPassword($encryptedPassword);
             }
         } else {
             return $this->render('page404/index.html.twig', [
@@ -56,12 +64,10 @@ class ManagementUserController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('app_management_user', ['modif' => $_GET['modif']]);
-        
         }
 
         return $this->render('management_user/index.html.twig', [
             'form' => $form->createView(),
         ]);
     }
-
 }
