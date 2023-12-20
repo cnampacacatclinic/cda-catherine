@@ -6,15 +6,6 @@
 
 <section class="container-lg">
     <h2>Gestion des utilisateurs</h2>
-
-    <div class="card">
-        <div class="card-body row">
-            <div class="col-md-6 text-right">
-                <a href="#" class="btn btn-light">Créer un utilisateur</a>
-            </div>
-        </div>
-    </div>
-    <h3>Liste des utilisateurs</h3>
         <table class="table table-responsive  table-hover">
             <thead>
                 <tr>
@@ -29,7 +20,7 @@
                         <td>{{ user.firstName }}</td>
                         <td>{{ user.lastName }}</td>
                         <td class="text-end">
-                            <a href="#" class="btn btn-success">Modifier</a>
+                            <a href="{{ path('app_management_user', {'modif': user.id }) }}" class="btn btn-success">Modifier</a>
                         </td>
                     </tr>
                 {% endfor %}

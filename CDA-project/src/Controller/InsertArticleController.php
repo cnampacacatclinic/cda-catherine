@@ -43,10 +43,9 @@ class InsertArticleController extends AbstractController
         $form = $this->createForm(InsertContentType::class, $article);
 
         if (!empty($_GET['modif'])) {
-            $changeArticle = $article->getId($_GET['modif']);
-            // Utilisez setData pour charger l'entité existante
-             $form->setData($article);
-         }/** */
+            $article->getId($_GET['modif']);
+            $form->setData($article);
+         }
         
 
         $form->handleRequest($request);

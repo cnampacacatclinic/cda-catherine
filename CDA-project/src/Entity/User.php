@@ -31,8 +31,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = [];
-    //private $roles[] = 'ROLE_USER';
+    private $roles = []; /*Version d'origine, à l'origine on peut avoir plusieurs roles
+
+    /**
+    * @ORM\Column(type="string", length=255)
+    */
+    //private $role = '["ROLE_USER"]'; /*Dans le cas de ce site on souhaite un seul role par user donc on choisi le type string */
 
     /**
      * @var string The hashed password

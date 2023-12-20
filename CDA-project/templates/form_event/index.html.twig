@@ -6,20 +6,21 @@
 {% block body %}
 <section class="container-lg">
     <h2>Écrire un évènement</h2>
+    <div class="container-sm col-8">
+        {{ form_start(form) }}
 
-    {{ form_start(form) }}
+        {{ form_row(form.startDate) }}
 
-    {{ form_row(form.startDate) }}
+        {{ form_row(form.endDate) }}
 
-    {{ form_row(form.endDate) }}
+        {{ form_row(form.locationEvent) }}
+        {{ form_row(form.titleEvent) }}
+        {{ form_row(form.descriptionEvent) }}
+        {{ form_row(form.active) }}
 
-    {{ form_row(form.locationEvent) }}
-    {{ form_row(form.titleEvent) }}
-    {{ form_row(form.descriptionEvent) }}
-    {{ form_row(form.active) }}
+        <button type="submit" class="btn btn-orange">Submit</button>
 
-    <button type="submit" class="btn btn-orange">Submit</button>
-
-    {{ form_end(form) }}
+        {{ form_end(form) }}
+    </div>
 </section>
 {% endblock %}

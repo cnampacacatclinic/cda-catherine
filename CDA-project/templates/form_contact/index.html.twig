@@ -6,20 +6,20 @@
 {% block body %}
 <section class="container-lg">
 <h2>Enregistrer l'adresse d'un centre</h2>
+<div class="container-sm col-8">
+    {{ form_start(form) }}
 
-{{ form_start(form) }}
+    {{ form_row(form.nameCenter) }}
+    {{ form_row(form.numWay) }}
+    {{ form_row(form.typeWay) }}
+    {{ form_row(form.nameWay) }}
+    {{ form_row(form.zipCode) }}
+    {{ form_row(form.city) }}
 
-{{ form_row(form.nameCenter) }}
-{{ form_row(form.numWay) }}
-{{ form_row(form.typeWay) }}
-{{ form_row(form.nameWay) }}
-{{ form_row(form.zipCode) }}
-{{ form_row(form.city) }}
+    <button type="submit" class="btn btn-orange">Submit</button>
 
-<button type="submit" class="btn btn-orange">Submit</button>
-
-{{ form_end(form) }}
-
+    {{ form_end(form) }}
+</div>
 {% if app.request.query.get('modif') is not null %}
 
     <h2>Modifier les téléphones</h2>

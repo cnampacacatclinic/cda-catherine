@@ -100,6 +100,10 @@ nav i{
 #sectionLibreDOr img{
     width: 100%;
 }
+.border,.form-control,.card {
+    border: 1px solid #ccc !important;
+}
+
 /* /--------------------// ICON ET IMAGES //--------------------/ */
 i {
     color: #eb651a !important;

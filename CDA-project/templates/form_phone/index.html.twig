@@ -6,15 +6,16 @@
 {% block body %}
 <section class="container-lg">
     <h2>Enregistrer un numéro de téléphone</h2>
+    <div class="container-sm col-8">
+        {{ form_start(form) }}
+        {{ form_row(form.center) }}
+        {{ form_row(form.phoneNumber) }}
+        {{ form_row(form.isMobile) }}
+        {{ form_row(form.fkType) }}
 
-    {{ form_start(form) }}
-    {{ form_row(form.center) }}
-    {{ form_row(form.phoneNumber) }}
-    {{ form_row(form.isMobile) }}
-    {{ form_row(form.fkType) }}
+        <button type="submit" class="btn btn-orange">Submit</button>
 
-    <button type="submit" class="btn btn-orange">Submit</button>
-
-    {{ form_end(form) }}
+        {{ form_end(form) }}
+    </div>
 </section>
 {% endblock %}
