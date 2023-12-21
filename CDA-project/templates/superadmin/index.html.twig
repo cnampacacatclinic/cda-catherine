@@ -15,14 +15,18 @@
                 </tr>
             </thead>
             <tbody>
+
                 {% for user in userData %}
-                    <tr>
-                        <td>{{ user.firstName }}</td>
-                        <td>{{ user.lastName }}</td>
-                        <td class="text-end">
-                            <a href="{{ path('app_management_user', {'modif': user.id }) }}" class="btn btn-success">Modifier</a>
-                        </td>
-                    </tr>
+                    {#si l'id de l'utilisateur n'est pas celui de l'utilisateur connecté #}
+                    {% if user.id != app.user.id %}
+                        <tr>
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.lastName }}</td>
+                            <td class="text-end">
+                                <a href="{{ path('app_management_user', {'modif': user.id }) }}" class="btn btn-success">Modifier</a>
+                            </td>
+                        </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>

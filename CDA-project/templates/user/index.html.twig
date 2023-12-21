@@ -5,11 +5,14 @@
 {% block body %}
 <section class="container-lg">
     <h2>Bienvenue {{ app.user.firstName }} sur la page d'administration</h2>
-
-    <p>Cette page est en construction.</p>
-    <p>Vous êtes :</p>
-    <p>{{ app.user.firstName }}</p>
-    <p>{{ app.user.lastName }}</p>
-    <p>{{ app.user.email }}</p>
+    <h3>Modifier vos infos</h3>
+    <div class="container-sm col-8">
+        {{ form_start(form) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.lastName) }}
+        {{ form_row(form.firstName) }}
+        <button type="submit" class="btn btn-orange">Submit</button>
+        {{ form_end(form) }}
+    </div>
 </section>
 {% endblock %}

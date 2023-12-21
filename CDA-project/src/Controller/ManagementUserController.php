@@ -45,12 +45,12 @@ class ManagementUserController extends AbstractController
                 $form = $this->createForm(ManagementUserType::class, $user);
                 $form->handleRequest($request);
             
-                // Utiliser la méthode crypterMotDePasse ici
+             /*   // Utiliser la méthode crypterMotDePasse ici
                 $plainPassword = $form->get('password')->getData();
                 $encryptedPassword = $this->bibiConnexionService->crypterMotDePasse($user, $plainPassword);
             
                 // Enregistrez le mot de passe crypté dans votre entité User
-                $user->setPassword($encryptedPassword);
+                $user->setPassword($encryptedPassword);*/
             }
         } else {
             return $this->render('page404/index.html.twig', [

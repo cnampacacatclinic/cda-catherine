@@ -276,6 +276,9 @@ nav form{
 #cookieButton:hover, #noCookieButton:hover{
     color:#fff !important;
 }
+.form-check-label{
+    font-size: 0.6em;
+}
 /* /--------------------// MEDIA QUERY //--------------------/ */
 
 @media (max-width: 1200px) {/* 1200px correspond à la taille d'écran pour la classe navbar-expand-xl de Boostrap */
