@@ -644,6 +644,7 @@ class ComposerStaticInitca0464060e385f0fd4a45ab68b939819
         'App\\Form\\InsertContentType' => __DIR__ . '/../..' . '/src/Form/InsertContentType.php',
         'App\\Form\\InsertEventType' => __DIR__ . '/../..' . '/src/Form/InsertEventType.php',
         'App\\Form\\InsertPhoneType' => __DIR__ . '/../..' . '/src/Form/InsertPhoneType.php',
+        'App\\Form\\ManagementUserType' => __DIR__ . '/../..' . '/src/Form/ManagementUserType.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Form\\ResetPasswordRequestFormType' => __DIR__ . '/../..' . '/src/Form/ResetPasswordRequestFormType.php',
         'App\\Form\\UpdateCenterType' => __DIR__ . '/../..' . '/src/Form/UpdateCenterType.php',

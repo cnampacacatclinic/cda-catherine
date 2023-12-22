@@ -3,14 +3,25 @@
 namespace App\Service;
 
 use App\Repository\VisitRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class VisitService
 {
     private $visitRepository;
+    private $entityManager;
+    private $request;
 
-    public function __construct(VisitRepository $visitRepository)
+    public function __construct(EntityManagerInterface $entityManager, VisitRepository $visitRepository, RequestStack $request)
     {
         $this->visitRepository = $visitRepository;
+        $this->entityManager = $entityManager;
+        $this->request = $request;
+    }
+
+    public function deleteData2M()
+    {
+        return $this->visitRepository->deleteOldData();
     }
 
     public function findAllVisits()
@@ -44,8 +55,8 @@ class VisitService
             $nom_cookie = "cookieTest";
             
             // On créait le cookie avec son nom, sa valeur et sa durée de vie
-            // Expire dans 24 heures
-            setcookie($nom_cookie, $ref_cookie, time() + (86400));
+            // Expire dans 30 jours
+            setcookie($nom_cookie, $ref_cookie, time() + (2592000));
             
             // On obtient la valeur du nouveau cookie
             return $ref_cookie;
@@ -67,8 +78,8 @@ class VisitService
             $nom_cookieSecure = "cookieSecure";
             
             // On créait le cookie avec son nom, sa valeur et sa durée de vie
-            // Expire dans 24 heures
-            setcookie($nom_cookieSecure, $ref_cookieSecure, time() + (86400), $secure, $httponly);
+            // Expire dans 30 jours
+            setcookie($nom_cookieSecure, $ref_cookieSecure, time() + (2592000), $secure, $httponly);
             
             // On obtient la valeur du nouveau cookie
             return $ref_cookieSecure;
@@ -78,6 +89,43 @@ class VisitService
         return $_COOKIE["cookieTest"];
         // return $_COOKIE["cookieSecure"];
     }
+
+    public function cookieLogin() {
+
+        /* Cookie Login */
+        // Si le cookie n'existe pas
+        if (empty($_COOKIE["cookieLog"])) {
+            // le cookie est accessible uniquement via HTTPS
+            $secure = true;
+
+            // le cookie est accessible uniquement via le protocole HTTP
+            $httponly = true;
+            
+            // On génére une valeur aléatoire pour le cookie
+            $ref_cookieSecure = rand(1, 100) . '-' . time();
+            
+            // On donne le nom du cookie
+            $nom_cookieSecure = "cookieLog";
+            
+            // On créait le cookie avec son nom, sa valeur et sa durée de vie
+            // Expire dans 24 heures
+            setcookie($nom_cookieSecure, $ref_cookieSecure, time() + (86400), $secure, $httponly);
+            
+            // On obtient la valeur du nouveau cookie
+            return $ref_cookieSecure;
+        }
+
+
+        // Récupérer la valeur du cookie PHPSESSID
+        $phpSessionId = $this->request->cookies->get('PHPSESSID');
+
+        // Récupérer la valeur du cookie cookieLog
+        $cookieLog = $this->request->cookies->get('cookieLog');
+
+        $cookieValue = '["'.$phpSessionId.'"],["'.$cookieLog.'"]';
+
+        return $cookieValue;
+    }
     
     public function visitCookie(){
         /* Pour la table visit */
@@ -85,18 +133,16 @@ class VisitService
         $origine = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 'local';
         $ip = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : '127.0.0.1';
 
-        /* On ne créait pas un cookie */
-        if (empty($_GET['cookie']) || $_GET['cookie'] == 'no') {
+        if(!empty($_COOKIE["cookieLog"])){
+            $cookieValue = $_COOKIE["cookieLog"];
+            $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
+        }elseif(!empty($_COOKIE["cookieTest"])){
+            $cookieValue = $_COOKIE["cookieTest"];
+            $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
+        }
+        else{
             $cookieValue = 'Pas de cookie';
             $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
-            return $cookieValue;
-        }
-
-        /* On créait un cookie */
-        if (isset($_GET['cookie']) && $_GET['cookie'] == 'ok') {
-            $cookieValue = $this->cookiiie();
-            $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
-            return $cookieValue;
         }
     }
 }

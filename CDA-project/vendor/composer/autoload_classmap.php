@@ -64,6 +64,7 @@ return array(
     'App\\Form\\InsertContentType' => $baseDir . '/src/Form/InsertContentType.php',
     'App\\Form\\InsertEventType' => $baseDir . '/src/Form/InsertEventType.php',
     'App\\Form\\InsertPhoneType' => $baseDir . '/src/Form/InsertPhoneType.php',
+    'App\\Form\\ManagementUserType' => $baseDir . '/src/Form/ManagementUserType.php',
     'App\\Form\\RegistrationFormType' => $baseDir . '/src/Form/RegistrationFormType.php',
     'App\\Form\\ResetPasswordRequestFormType' => $baseDir . '/src/Form/ResetPasswordRequestFormType.php',
     'App\\Form\\UpdateCenterType' => $baseDir . '/src/Form/UpdateCenterType.php',

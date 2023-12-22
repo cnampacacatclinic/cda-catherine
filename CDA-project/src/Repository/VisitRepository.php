@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Repository;
 
 use App\Entity\Visit;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface; // Added missing import
 
 /**
  * @extends ServiceEntityRepository<Visit>
@@ -16,12 +16,12 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class VisitRepository extends ServiceEntityRepository
 {
-    private $entityManager;
+    private $entityManager; // Fixed variable name
 
-    public function __construct(ManagerRegistry $registry, \Doctrine\ORM\EntityManagerInterface $entityManager)
+    public function __construct(ManagerRegistry $registry, EntityManagerInterface $visitManager)
     {
         parent::__construct($registry, Visit::class);
-        $this->entityManager = $entityManager;
+        $this->entityManager = $visitManager;
     }
 
     public function saveVisit(string $ip, string $origine, string $currentPage, string $cookie): void
@@ -36,22 +36,34 @@ class VisitRepository extends ServiceEntityRepository
         $this->entityManager->flush();
     }
 
-    public function add(Visit $entity, bool $flush = false): void
+    public function add(Visit $visit, bool $flush = false): void
     {
-        $this->getEntityManager()->persist($entity);
+        $this->getEntityManager()->persist($visit);
 
         if ($flush) {
             $this->getEntityManager()->flush();
         }
     }
 
-    public function remove(Visit $entity, bool $flush = false): void
+    public function remove(Visit $visit, bool $flush = false): void
     {
-        $this->getEntityManager()->remove($entity);
+        $this->getEntityManager()->remove($visit);
 
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    //Supprime au bout d'un mois
+    public function deleteOldData()
+    {
+        $twoMonthsAgo = new \DateTime('-2 months');
+        $this->getEntityManager()->createQueryBuilder() // Fixed variable name
+            ->delete(Visit::class, 'v')
+            ->where('v.dateVisit < :twoMonthsAgo')
+            ->setParameter('twoMonthsAgo', $twoMonthsAgo)
+            ->getQuery()
+            ->execute();
     }
 
 //    /**
