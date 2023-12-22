@@ -7,11 +7,11 @@
     <h2>Visiteurs</h2>
     <div class="card">
         <div class="card-body row">
-            <div class="col-md-6 text-right">
-                <a data-article-id=1 data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-danger supp" href="{{ path('app_visit', {'supp': 1 }) }}">
-                    Supprimer les données antérieures à 30 jours
+            <p class="text-end">
+                <a data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-danger supp" href="{{ path('app_visit', {'supp': 1 }) }}" data-article-id="1">
+                    Supprimer les données datant de plus de 2 mois
                 </a>
-            </div>
+            </p>
         </div>
     </div>
         <table class="table table-striped table-bordered table-responsive">
