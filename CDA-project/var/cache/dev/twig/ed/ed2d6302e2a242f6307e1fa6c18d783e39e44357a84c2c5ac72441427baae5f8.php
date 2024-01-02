@@ -491,6 +491,6 @@ class __TwigTemplate_6f628d6731c06f90b678449c54123311f95c3f108fc10f15117e16826af
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
     }
 }

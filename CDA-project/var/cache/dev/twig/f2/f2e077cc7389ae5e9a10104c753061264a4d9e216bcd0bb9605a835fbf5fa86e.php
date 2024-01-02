@@ -652,6 +652,6 @@ class __TwigTemplate_1696bf25fd43e805e43a8c531fb6ffcbcccac8b0b120c2c5f58456a5159
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/notifier.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\notifier.html.twig");
+", "@WebProfiler/Collector/notifier.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\notifier.html.twig");
     }
 }

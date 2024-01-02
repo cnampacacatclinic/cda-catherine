@@ -231,6 +231,6 @@ class __TwigTemplate_e251ae0a6920ef8a5ae739a1dc686911f0dd2794c315c4261a0d537c56c
         {% block body '' %}
     </body>
 </html>
-", "@WebProfiler/Profiler/base.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base.html.twig");
+", "@WebProfiler/Profiler/base.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base.html.twig");
     }
 }

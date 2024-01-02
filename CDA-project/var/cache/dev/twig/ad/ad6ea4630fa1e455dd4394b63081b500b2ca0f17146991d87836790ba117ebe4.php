@@ -480,6 +480,6 @@ class __TwigTemplate_4ad1549fc05087b5425f2d21b2df0bc4807dab3dc45f63dd4d6632e74f8
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\twig.html.twig");
     }
 }

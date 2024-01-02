@@ -155,6 +155,6 @@ class __TwigTemplate_bbdb041595b2c4e8835b012582bd21f3754da83e24a0800d81e9c03772a
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: profiler_url }) }}
 {% endblock %}
-", "@WebProfiler/Profiler/cancel.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\cancel.html.twig");
+", "@WebProfiler/Profiler/cancel.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\cancel.html.twig");
     }
 }

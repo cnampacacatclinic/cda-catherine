@@ -453,6 +453,6 @@ class __TwigTemplate_5ded2e1d21ca488ace96160a023bc8c2fea8f82cd2e976a30efe14f0449
     });
 })();
 </script>
-", "@WebProfiler/Profiler/settings.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\settings.html.twig");
+", "@WebProfiler/Profiler/settings.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\settings.html.twig");
     }
 }

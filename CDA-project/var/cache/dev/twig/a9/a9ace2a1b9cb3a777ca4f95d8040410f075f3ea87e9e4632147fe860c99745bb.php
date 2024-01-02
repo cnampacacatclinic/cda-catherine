@@ -65,7 +65,7 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello EventPageController!";
+        echo "Event";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,7 +85,7 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<section>
+        echo "<section class=\"container-lg\">
     ";
         // line 7
         $context['_parent'] = $context;
@@ -95,24 +95,43 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
             echo "        <h2>";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "titleEvent", [], "any", false, false, false, 8), "html", null, true);
             echo "</h2>
-        <p>Date de début  : ";
+        ";
             // line 9
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "startDate", [], "any", false, false, false, 9), "d/m/Y"), "html", null, true);
+            if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9)) {
+                // line 10
+                echo "            <a title=\"Inscription aux événements\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_event_page", ["e" => twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 10), "x" => "ok"]), "html", null, true);
+                echo "\">S'inscrire à l'événement</a>
+        ";
+            } else {
+                // line 12
+                echo "            <a title=\"Inscription au événements\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login", ["e" => twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 12)]), "html", null, true);
+                echo "\">S'inscrire à l'événement</a>
+        ";
+            }
+            // line 14
+            echo "        <p>Date de début  : ";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "startDate", [], "any", false, false, false, 14), "d/m/Y"), "html", null, true);
             echo "</p>
         <p>Date de fin : ";
-            // line 10
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "endDate", [], "any", false, false, false, 10), "d/m/Y"), "html", null, true);
+            // line 15
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "endDate", [], "any", false, false, false, 15), "d/m/Y"), "html", null, true);
+            echo "</p>
+        <p>Lieu de l'événement : ";
+            // line 16
+            echo twig_get_attribute($this->env, $this->source, $context["evenement"], "locationEvent", [], "any", false, false, false, 16);
             echo "</p>
         <p>";
-            // line 11
-            echo twig_get_attribute($this->env, $this->source, $context["evenement"], "descriptionEvent", [], "any", false, false, false, 11);
+            // line 17
+            echo twig_get_attribute($this->env, $this->source, $context["evenement"], "descriptionEvent", [], "any", false, false, false, 17);
             echo "</p>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 13
+        // line 19
         echo "</section>
 ";
         
@@ -144,24 +163,30 @@ class __TwigTemplate_7df40492f83ce236343d0c99adc143b6ced9a779dbe65538a7c861b74a0
      */
     public function getDebugInfo()
     {
-        return array (  116 => 13,  108 => 11,  104 => 10,  100 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  135 => 19,  127 => 17,  123 => 16,  119 => 15,  114 => 14,  108 => 12,  102 => 10,  100 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello EventPageController!{% endblock %}
+{% block title %}Event{% endblock %}
 
 {% block body %}
-<section>
+<section class=\"container-lg\">
     {% for evenement in eventData %}
         <h2>{{ evenement.titleEvent }}</h2>
+        {% if app.user %}
+            <a title=\"Inscription aux événements\" href=\"{{ path('app_event_page', {'e': evenement.id, 'x': 'ok'}) }}\">S'inscrire à l'événement</a>
+        {% else %}
+            <a title=\"Inscription au événements\" href=\"{{ path('app_login', {'e': evenement.id}) }}\">S'inscrire à l'événement</a>
+        {% endif %}
         <p>Date de début  : {{ evenement.startDate|date(\"d/m/Y\") }}</p>
         <p>Date de fin : {{ evenement.endDate|date(\"d/m/Y\") }}</p>
+        <p>Lieu de l'événement : {{ evenement.locationEvent|raw }}</p>
         <p>{{ evenement.descriptionEvent|raw }}</p>
     {% endfor %}
 </section>
-{% endblock %}", "event_page/index.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\event_page\\index.html.twig");
+{% endblock %}", "event_page/index.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\templates\\event_page\\index.html.twig");
     }
 }

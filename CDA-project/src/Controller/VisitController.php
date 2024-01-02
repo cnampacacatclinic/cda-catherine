@@ -5,7 +5,6 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Visit;
 use App\Service\VisitService;
 
 class VisitController extends AbstractController
@@ -31,7 +30,7 @@ class VisitController extends AbstractController
             $this->visitService->deleteData2M();
 
             return $this->redirectToRoute('app_visit');
-            $this->addFlash('Les visites plus anciennes de 2 mois ont été supprimées avec succès.');
+            //$this->addFlash('Les visites plus anciennes de 2 mois ont été supprimées avec succès.');
         }
 
         return $this->render('visit/index.html.twig', [

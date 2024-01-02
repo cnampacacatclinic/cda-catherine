@@ -86,110 +86,128 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
 
         // line 6
         echo "
-    <section>
+<section class=\"container-lg\" id=\"sectionAider\">
+    <div class=\"row\">
     ";
-        // line 8
+        // line 9
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pageData"]) || array_key_exists("pageData", $context) ? $context["pageData"] : (function () { throw new RuntimeError('Variable "pageData" does not exist.', 8, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
-            // line 9
-            echo "        <h2>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["page"], "titlePage", [], "any", false, false, false, 9), "html", null, true);
-            echo "</h2>
-    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
-        echo "    
-    ";
-        // line 12
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["articleData"]) || array_key_exists("articleData", $context) ? $context["articleData"] : (function () { throw new RuntimeError('Variable "articleData" does not exist.', 12, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["articleData"]) || array_key_exists("articleData", $context) ? $context["articleData"] : (function () { throw new RuntimeError('Variable "articleData" does not exist.', 9, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 13
-            echo "        <h3>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "titleArticle", [], "any", false, false, false, 13), "html", null, true);
+            // line 10
+            echo "        <div class=\"col-md-6\">
+            <h3>";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "titleArticle", [], "any", false, false, false, 11), "html", null, true);
             echo "</h3>
-        <p>";
-            // line 14
-            echo twig_get_attribute($this->env, $this->source, $context["article"], "textArticle", [], "any", false, false, false, 14);
-            echo "</p>
-        <a title=\"En savoir plus \" href=\"";
-            // line 15
-            echo "/aider";
+            ";
+            // line 12
+            echo twig_get_attribute($this->env, $this->source, $context["article"], "textArticle", [], "any", false, false, false, 12);
+            echo "
+            <a class=\"btn btn-orange\" title=\"En savoir plus \" href=\"";
+            // line 13
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_aider");
             echo "\">En savoir plus sur comment aider</a>
+        </div>
+        <figure class=\"col-md-6\">
+            <img alt=\"Un chien dans d'un refuge, à travers les barreaux, tend sa patte à un humain qui la serre entre sa main. Photo de Wpadington\" src=\"";
+            // line 16
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/chienWpadington.jpg"), "html", null, true);
+            echo "\">
+        </figure>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 17
-        echo "    </section>
-    <section>
-    <section>
-        <h3>Ils ont trouvé leur bonheur</h3>
+        // line 19
+        echo "</div>
+</section>
+
+<section id=\"sectionLibreDOr\"  class=\"container\">
+    <h3>Ils ont trouvé leur bonheur</h3>
+    <article>
+        <figure>
+            <img alt=\"Un chaton paisiblement endormi\" src=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/chat-23juillet2009-catclinic.jpg"), "html", null, true);
+        echo "\">
+        </figure>
         ";
-        // line 21
+        // line 28
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["livreDOr"]) || array_key_exists("livreDOr", $context) ? $context["livreDOr"] : (function () { throw new RuntimeError('Variable "livreDOr" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["livreDOr"]) || array_key_exists("livreDOr", $context) ? $context["livreDOr"] : (function () { throw new RuntimeError('Variable "livreDOr" does not exist.', 28, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["avis"]) {
-            // line 22
-            echo "
-            <h4>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["avis"], "titleArticle", [], "any", false, false, false, 23), "html", null, true);
-            echo "</h4>
+            // line 29
+            echo "            <h5>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["avis"], "titleArticle", [], "any", false, false, false, 29), "html", null, true);
+            echo "</h5>
             <p>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_striptags(twig_get_attribute($this->env, $this->source, $context["avis"], "textArticle", [], "any", false, false, false, 24)), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, twig_striptags(twig_get_attribute($this->env, $this->source, $context["avis"], "textArticle", [], "any", false, false, false, 30)), "html", null, true);
             echo "</p>
-            
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['avis'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
-        echo "    </section>
+        // line 32
+        echo "    </article>
+</section>
+
+
+<section class=\"container-lg\">
     <h3>Les dernières news</h3>
-    ";
-        // line 29
+    <div class=\"row\">
+        ";
+        // line 39
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["lastNews"]) || array_key_exists("lastNews", $context) ? $context["lastNews"] : (function () { throw new RuntimeError('Variable "lastNews" does not exist.', 29, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["lastNews"]) || array_key_exists("lastNews", $context) ? $context["lastNews"] : (function () { throw new RuntimeError('Variable "lastNews" does not exist.', 39, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["news"]) {
-            // line 30
-            echo "
-        <a title=\"Lire la suite\" href=\"";
-            // line 31
-            echo "/article?a=";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 31), "html", null, true);
-            echo "\"><h3>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "titleArticle", [], "any", false, false, false, 31), "html", null, true);
-            echo "</h3></a>
-        <p>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_slice($this->env, twig_striptags(twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 32)), 0, 300), "html", null, true);
-            echo " etc..</p>
+            // line 40
+            echo "            <div class=\"col-md-4\">
+                <div class=\"card\">
+                    <img src=\"...\" class=\"card-img-top\" alt=\"...\">
+                    <div class=\"card-body\">
+                        <a title=\"";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "titleArticle", [], "any", false, false, false, 44), "html", null, true);
+            echo "\" href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article", ["a" => twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 44)]), "html", null, true);
+            echo "\">
+                            <h4 class=\"card-title\">";
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "titleArticle", [], "any", false, false, false, 45), "html", null, true);
+            echo "</h4>
+                        </a>
+                        <p class=\"card-text\">";
+            // line 47
+            echo twig_escape_filter($this->env, twig_slice($this->env, twig_striptags(twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 47)), 0, 200), "html", null, true);
+            echo " (...)</p>
+                        <p class=\"card-text\">
+                            <small class=\"text-muted\">
+                                <a title=\"Lire la suite\" href=\"";
+            // line 50
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article", ["a" => twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+            echo "\">Lire la suite</a>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
         ";
-            // line 33
-            if ((1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["news"], "textArticle", [], "any", false, false, false, 33)), 300))) {
-                // line 34
-                echo "            <p><a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article", ["a" => twig_get_attribute($this->env, $this->source, $context["news"], "id", [], "any", false, false, false, 34)]), "html", null, true);
-                echo "\">Lire la suite</a></p>
-        ";
-            }
-            // line 36
-            echo "        
-    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['news'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
-        echo "    </section>
+        // line 57
+        echo "    </div>
+    <p><a class=\"btn btn-orange\" title=\"News\" href=\"";
+        // line 58
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_news");
+        echo "\">Lire toutes les news</a></p>
+</section>
+
+
 
 ";
         
@@ -221,7 +239,7 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
      */
     public function getDebugInfo()
     {
-        return array (  192 => 38,  185 => 36,  179 => 34,  177 => 33,  173 => 32,  166 => 31,  163 => 30,  159 => 29,  155 => 27,  146 => 24,  142 => 23,  139 => 22,  135 => 21,  129 => 17,  121 => 15,  117 => 14,  112 => 13,  108 => 12,  105 => 11,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  206 => 58,  203 => 57,  190 => 50,  184 => 47,  179 => 45,  173 => 44,  167 => 40,  163 => 39,  154 => 32,  146 => 30,  141 => 29,  137 => 28,  132 => 26,  123 => 19,  114 => 16,  108 => 13,  104 => 12,  100 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -232,39 +250,62 @@ class __TwigTemplate_6ada0bc41488b6b3f5f3cbf9d29b84d66e1759325d51daed5c532d59bc3
 
 {% block body %}
 
-    <section>
-    {% for page in pageData %}
-        <h2>{{ page.titlePage }}</h2>
-    {% endfor %}
-    
+<section class=\"container-lg\" id=\"sectionAider\">
+    <div class=\"row\">
     {% for article in articleData %}
-        <h3>{{ article.titleArticle }}</h3>
-        <p>{{ article.textArticle|raw }}</p>
-        <a title=\"En savoir plus \" href=\"{{ '/aider' }}\">En savoir plus sur comment aider</a>
+        <div class=\"col-md-6\">
+            <h3>{{ article.titleArticle }}</h3>
+            {{ article.textArticle|raw }}
+            <a class=\"btn btn-orange\" title=\"En savoir plus \" href=\"{{ path('app_aider') }}\">En savoir plus sur comment aider</a>
+        </div>
+        <figure class=\"col-md-6\">
+            <img alt=\"Un chien dans d'un refuge, à travers les barreaux, tend sa patte à un humain qui la serre entre sa main. Photo de Wpadington\" src=\"{{ asset('img/chienWpadington.jpg') }}\">
+        </figure>
     {% endfor %}
-    </section>
-    <section>
-    <section>
-        <h3>Ils ont trouvé leur bonheur</h3>
+</div>
+</section>
+
+<section id=\"sectionLibreDOr\"  class=\"container\">
+    <h3>Ils ont trouvé leur bonheur</h3>
+    <article>
+        <figure>
+            <img alt=\"Un chaton paisiblement endormi\" src=\"{{ asset('img/chat-23juillet2009-catclinic.jpg') }}\">
+        </figure>
         {% for avis in livreDOr %}
-
-            <h4>{{ avis.titleArticle }}</h4>
-            <p>{{ avis.textArticle|striptags}}</p>
-            
+            <h5>{{ avis.titleArticle }}</h5>
+            <p>{{ avis.textArticle|striptags }}</p>
         {% endfor %}
-    </section>
+    </article>
+</section>
+
+
+<section class=\"container-lg\">
     <h3>Les dernières news</h3>
-    {% for news in lastNews %}
+    <div class=\"row\">
+        {% for news in lastNews %}
+            <div class=\"col-md-4\">
+                <div class=\"card\">
+                    <img src=\"...\" class=\"card-img-top\" alt=\"...\">
+                    <div class=\"card-body\">
+                        <a title=\"{{ news.titleArticle }}\" href=\"{{ path('app_article', {'a': news.id}) }}\">
+                            <h4 class=\"card-title\">{{ news.titleArticle }}</h4>
+                        </a>
+                        <p class=\"card-text\">{{ news.textArticle|striptags|slice(0, 200) }} (...)</p>
+                        <p class=\"card-text\">
+                            <small class=\"text-muted\">
+                                <a title=\"Lire la suite\" href=\"{{ path('app_article', {'a': news.id}) }}\">Lire la suite</a>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <p><a class=\"btn btn-orange\" title=\"News\" href=\"{{ path('app_news') }}\">Lire toutes les news</a></p>
+</section>
 
-        <a title=\"Lire la suite\" href=\"{{ '/article?a=' }}{{ news.id }}\"><h3>{{ news.titleArticle }}</h3></a>
-        <p>{{ news.textArticle|striptags|slice(0, 300)}} etc..</p>
-        {% if news.textArticle|length > 300 %}
-            <p><a href=\"{{ path('app_article', {'a': news.id}) }}\">Lire la suite</a></p>
-        {% endif %}
-        
-    {% endfor %}
-    </section>
 
-{% endblock %}", "home/index.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\home\\index.html.twig");
+
+{% endblock %}", "home/index.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\templates\\home\\index.html.twig");
     }
 }

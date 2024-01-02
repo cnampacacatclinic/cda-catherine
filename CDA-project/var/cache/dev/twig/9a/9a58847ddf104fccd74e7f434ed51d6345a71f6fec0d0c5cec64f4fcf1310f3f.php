@@ -106,6 +106,6 @@ class __TwigTemplate_b9233bbcfb4d7455aa054c08e3ca585c28063e8dd3d77667049f0648a5d
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
     }
 }

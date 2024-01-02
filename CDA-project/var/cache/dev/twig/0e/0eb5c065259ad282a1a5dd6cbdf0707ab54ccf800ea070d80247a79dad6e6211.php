@@ -85,20 +85,36 @@ class __TwigTemplate_1cb61fa343493f2c4d07581ccf9e3efa29a6dd9a81f572bc6b5ad808428
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Bienvenue ";
+        echo "<section class=\"container-lg\">
+    <h2>Bienvenue ";
+        // line 7
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "user", [], "any", false, false, false, 7), "firstName", [], "any", false, false, false, 7), "html", null, true);
+        echo " sur la page d'administration</h2>
+    <h3>Modifier vos infos</h3>
+    <div class=\"container-sm col-8\">
+        ";
+        // line 10
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_start');
+        echo "
+        ";
+        // line 11
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), "email", [], "any", false, false, false, 11), 'row');
+        echo "
+        ";
         // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "firstName", [], "any", false, false, false, 12), "html", null, true);
-        echo " sur la page d'administration</h1>
-
-    <p>Cette page est en construction.</p>
-
-</div>
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), "lastName", [], "any", false, false, false, 12), 'row');
+        echo "
+        ";
+        // line 13
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "firstName", [], "any", false, false, false, 13), 'row');
+        echo "
+        <button type=\"submit\" class=\"btn btn-orange\">Submit</button>
+        ";
+        // line 15
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form_end');
+        echo "
+    </div>
+</section>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -129,7 +145,7 @@ class __TwigTemplate_1cb61fa343493f2c4d07581ccf9e3efa29a6dd9a81f572bc6b5ad808428
      */
     public function getDebugInfo()
     {
-        return array (  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  114 => 15,  109 => 13,  105 => 12,  101 => 11,  97 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -139,18 +155,18 @@ class __TwigTemplate_1cb61fa343493f2c4d07581ccf9e3efa29a6dd9a81f572bc6b5ad808428
 {% block title %}User{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Bienvenue {{ app.user.firstName }} sur la page d'administration</h1>
-
-    <p>Cette page est en construction.</p>
-
-</div>
-{% endblock %}
-", "user/index.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\user\\index.html.twig");
+<section class=\"container-lg\">
+    <h2>Bienvenue {{ app.user.firstName }} sur la page d'administration</h2>
+    <h3>Modifier vos infos</h3>
+    <div class=\"container-sm col-8\">
+        {{ form_start(form) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.lastName) }}
+        {{ form_row(form.firstName) }}
+        <button type=\"submit\" class=\"btn btn-orange\">Submit</button>
+        {{ form_end(form) }}
+    </div>
+</section>
+{% endblock %}", "user/index.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\templates\\user\\index.html.twig");
     }
 }

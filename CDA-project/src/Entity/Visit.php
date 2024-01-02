@@ -77,7 +77,7 @@ class Visit
         return $this->origine;
     }
 
-    public function setDateVisit(\DateTimeInterface $dateComment): self
+    public function setDateVisit(\DateTimeInterface $dateVisit): self
     {
         $this->dateVisit = $dateVisit;
 
