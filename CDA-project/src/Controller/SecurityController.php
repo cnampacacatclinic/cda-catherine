@@ -23,7 +23,8 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         
-        $this->visitService->cookieLogin();/*On créait un cookie automatiquement pour cette page*/
+        //$this->visitService->cookieLogin();
+        $this->visitService->visitCookie();/*On créait un cookie automatiquement pour cette page*/
         
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('target_path');
