@@ -10,30 +10,33 @@ class VisitServiceTest extends TestCase
 {
     private $visitRepositoryMock;
     private $entityManagerMock;
+    private $visitService;
 
-    public function __construct()
+    public function setUp(): void
     {
-        parent::__construct();
-        
-        // On créait un mock pour l'objet EntityManagerInterface
-        $this->entityManagerMock = $this->createMock(EntityManagerInterface::class);
+        parent::setUp();
 
+        // On créé un mock pour l'objet EntityManagerInterface
+        $this->entityManagerMock = $this->createMock(EntityManagerInterface::class);
+        // On créé un mock pour l'objet VisitRepository
+        $this->visitRepositoryMock = $this->createMock(VisitRepository::class);
+
+        // On créé une instance de VisitService en injectant les mocks
+        $this->visitService = new VisitService($this->entityManagerMock, $this->visitRepositoryMock, $this->createMock(RequestStack::class));
     }
 
-    public function testVisitCookie(VisitRepository $visitRepositoryMock,RequestStack $requestStackMock)
+    public function testFindAllVisits()
     {
-        // on veut obtenir le mock pour retourner une valeur lors de l'appel à la méthode saveOneVisit
+        // Définir le comportement du mock pour findAll
+        $expectedVisits = [/* mettez ici des objets Visit fictifs pour simuler le résultat de la base de données */];
         $this->visitRepositoryMock->expects($this->once())
-            ->method('saveOneVisit')
-            ->willReturn('1, 127.0.0.1,/,2023-12-30 19:09:04,ref_49846546'); // La valeur attendue
+            ->method('findAll')
+            ->willReturn($expectedVisits);
 
-        // On créait un objet VisitService
-        $visitService = new VisitService($this->entityManagerMock, $visitRepositoryMock, $requestStackMock);
+        // Appeler la méthode à tester
+        $result = $this->visitService->findAllVisits();
 
-        // la methode à tester
-        $visitService->cookiiie();
-
-        // une assertions pour vérifier que la méthode saveOneVisit donne le résultat attentes
-        $this->assertEquals('1, 127.0.0.1,/,2023-12-30 19:09:04,ref_49846546', $visitService->cookiiie()); // 'cookieTest' est la valeur attendue
+        // Assertions pour vérifier que le résultat de la méthode correspond à ce que retourne le mock du repository
+        $this->assertEquals($expectedVisits, $result);
     }
 }

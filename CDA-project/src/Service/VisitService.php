@@ -38,85 +38,28 @@ class VisitService
         return $this->visitRepository->saveVisit($ip,$origine, $currentPage, $cookie);
     }
 
-    
-    /*public function cookiiie() {
-
-        /* On a besoin d'un cookie test en local mais il ne sera pas utilisé sur le server distant
-        * Avec ce cookie test, on peut lire dans la console ceci:
-        * SameSite=None
-        * cela indique que le cookie test peut être envoyé dans des requêtes cross-site */
-       
-        // Si le cookie n'existe pas
-    /*    if (empty($_COOKIE["cookieTest"])) {
-            // On génére une valeur aléatoire pour le cookie
-            $ref_cookie = rand(1, 100) . '-' . time();
-            
-            // On donne le nom du cookie
-            $nom_cookie = "cookieTest";
-            
-            // On créait le cookie avec son nom, sa valeur et sa durée de vie
-            // Expire dans 30 jours
-            setcookie($nom_cookie, $ref_cookie, time() + (2592000));
-            
-            // On obtient la valeur du nouveau cookie
-            return $ref_cookie;
-        }
-
-        /* Cookie securisé */
-        // Si le cookie n'existe pas
-   /*     if (empty($_COOKIE["cookieSecure"])) {
-            // le cookie est accessible uniquement via HTTPS
-            $secure = true;
-
-            // le cookie est accessible uniquement via le protocole HTTP
-            $httponly = true;
-            
-            // On génére une valeur aléatoire pour le cookie
-            $ref_cookieSecure = rand(1, 100) . '-' . time();
-            
-            // On donne le nom du cookie
-            $nom_cookieSecure = "cookieSecure";
-            
-            // On créait le cookie avec son nom, sa valeur et sa durée de vie
-            // Expire dans 30 jours
-            setcookie($nom_cookieSecure, $ref_cookieSecure, time() + (2592000), $secure, $httponly);
-            
-            // On obtient la valeur du nouveau cookie
-            return $ref_cookieSecure;
-        }
+    public function cookiiie()
+    {
         
-        // Si le cookie existe déjà, on retourne sa valeur actuelle
-        if (empty($cookieValue) && !empty($_COOKIE["cookieTest"])) {
-            $cookieValue = $_COOKIE["cookieTest"];
-        }
-    
-        return $cookieValue;
-        // return $_COOKIE["cookieSecure"];
-    }
-/** */
-
-public function cookiiie()
-{
-    
-        // If the cookieTest does not exist
-      if (empty($_COOKIE["cookieTest"])) {
-            // Generate a random value for the cookie
+        // Si le cookie n'existe pas
+        if (empty($_COOKIE['cookieTest'])) {
+            // on genere un cookie random
             $ref_cookie = rand(1, 100) . '-' . time();
 
-            // Set the name of the cookie
+            // on nomme le cookie
             $nom_cookie = "cookieTest";
 
-            // Create the cookie with its name, value, and expiration time (expires in 30 days)
+            // on creait une cookie qui va expirer dans 30 jours
             setcookie($nom_cookie, $ref_cookie, time() + 2592000);
 
-            // Return the value of the new cookie
+            //on obtient la  valeur du cookie
             return $ref_cookie;
-       }
-    
+        }
+        
 
-    // If the cookieTest already exists, return its current value
-    return $_COOKIE["cookieTest"];
-}
+        // si le cookie existe on renvoie sa valeur actuelle
+        return $_COOKIE['cookieTest'];
+    }
 
     public function visitCookie() {
 
@@ -130,15 +73,11 @@ public function cookiiie()
         if (!empty($_COOKIE["cookieTest"])) {
           // Utilise la valeur du cookie cookieTest
           $cookieValue = $_COOKIE["cookieTest"];
-          return $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
+          $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
         }else{
             $cookieValue=$this->cookiiie();
             $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
         }
-      
-        // Si aucun cookie n'existe, définit la valeur du cookie à "Aucun cookie"
-        $cookieValue = 'Aucun cookie';
-        return $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
       }
     }
 }
