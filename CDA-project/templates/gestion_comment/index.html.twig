@@ -26,6 +26,7 @@
                             {% endif %}
                         {% endfor %}
                     </td>
+                    <td>{{ comment.textComment }}</td>
                     <td class="text-end">
                         {% if comment.active == 1 %}
                             <a href="{{ path('app_gestion_comment', {'active': comment.id }) }}" class="btn btn-dark">Ne pas valider</a>
