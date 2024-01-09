@@ -9,15 +9,16 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Article;
 use App\Form\UpdateContentType;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class UpdateArticleController extends AbstractController
 {
     /**
      * @Route("/update-article", name="app_update_article")
      */
-    public function yourAction(Request $request): Response
+    public function yourAction(Request $request,VisitService $visitService): Response
     {
-
+        $visitService->visitCookie(); /* Pour les stat et le cookie */
         if (empty($_GET['modif'])) {
             return $this->render('page404/index.html.twig', [
                 'controller_name' => 'Page 404',

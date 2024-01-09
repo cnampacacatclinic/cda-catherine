@@ -79,6 +79,6 @@ class __TwigTemplate_29767adabbb907c93ed18fd13419050d5de9a5fbbd99391dda3d802c45e
     <path d=\"M4 6v6a8 3 0 0 0 16 0v-6\"></path>
     <path d=\"M4 12v6a8 3 0 0 0 16 0v-6\"></path>
 </svg>
-", "@Doctrine/Collector/database.svg", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\database.svg");
+", "@Doctrine/Collector/database.svg", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\database.svg");
     }
 }

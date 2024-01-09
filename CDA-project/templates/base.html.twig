@@ -57,6 +57,8 @@
                                                 <li><a class="dropdown-item" title="Gestion des autres articles" href="{{ path('app_management_other_people_content') }}">Gestion des autres articles</a></li>
                                                 <li><a class="dropdown-item" title="Gestion des utilisateurs" href="{{ path('app_superadmin') }}">Gestion des utilisateurs</a></li>
                                                 <li><a class="dropdown-item" title="Gestion des centres" href="{{ path('app_gestion_centre') }}">Gestion des centres</a></li>
+                                                <li><a class="dropdown-item" title="Les pages" href="{{ path('app_management_page') }}">Gestions des pages</a></li>
+                                                <li><a class="dropdown-item" title="Visiteurs" href="{{ path('app_visit') }}">Voir les visites</a></li>
                                             {% endif %}
                                         </ul>
                                     </li>
@@ -90,15 +92,55 @@
         </main>
 
         <footer class="py-3 my-4">
-         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        {# Modal Bootstrap pour les cookies #}
+        <div class="modal" tabindex="-1" role="dialog" id="modaleCookie">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Les Cookies &#127850;</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Ce site utilise des cookies, cliquez <a title="Cookies" href="{{ path('app_cookies') }}">ici</a> pour en savoir plus.
+                    </div>
+                    <div class="modal-footer">
+                        <a href="javascript:void(0);" id="cookieButton"  data-bs-dismiss="modal" class="btn btn-secondary">OK</a>
+                        <a href="javascript:void(0);" id="noCookieButton"  data-bs-dismiss="modal" class="btn btn-dark">NO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if app.user %}
+            {# Si on est connecté on affiche une modal Bootstrap pour les suppression #}
+            <div class="modal fade" id="modaleSupp" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Confirmation de suppression</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Êtes-vous sûr de vouloir supprimer cet élément ?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-danger" id="confirmDelete">Supprimer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {# Nav du footer #}
+         <ul class="nav justify-content-center pb-3 mb-3">
             <li class="nav-item"><a class="nav-link" title="Contact" href="{{ path('app_contact') }}">Contactez-nous</a></li>
             <li class="nav-item"><a class="nav-link" title="FAQ" href="{{ path('app_faq') }}">FAQs</a></li>
             <li class="nav-item"><a class="nav-link" title="About" href="{{ path('app_about') }}">About</a></li>
-            <li class="nav-item"><a class="nav-link" title="Contact" href="{{ path('app_mentionslegales') }}">Mentions légales</a></li>
-            <li class="nav-item"><a class="nav-link" title="Contact" href="{{ path('app_confidentialite') }}">Politique de confidentialité</a></li>
+            <li class="nav-item"><a class="nav-link" title="Mentions légales" href="{{ path('app_mentionslegales') }}">Mentions légales</a></li>
+            <li class="nav-item"><a class="nav-link" title="Confidentialité" href="{{ path('app_confidentialite') }}">Politique de confidentialité</a></li>
             <li class="nav-item"><a class="nav-link" title="Cookies" href="{{ path('app_cookies') }}">Cookies</a></li>
         </ul>
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <ul class="nav justify-content-center pb-3 mb-3">
             <li class="ms-3">
                 <a title="Facebook" class="text-muted" href="#">
                     <i class="bi bi-facebook"></i>
@@ -121,5 +163,7 @@
   </footer>
     </body>
     <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/modalCookie.js') }}"></script>
+    <script src="{{ asset('js/modalDelete.js') }}"></script>
 </html>

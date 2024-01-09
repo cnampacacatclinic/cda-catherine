@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ManagementPageController!{% endblock %}
+
+{% block body %}
+<section class="container-lg">
+    <h2>Gestion des pages</h2>
+        <table class="table table-responsive  table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">Titre</th>
+                    <th scope="col" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                {% for page in pageData %}
+                    {% for article in articleData %}
+                        {% if article.fkPage.id == page.id %}
+                            {# On ne peut afficher que les pages qui ont certains identifiants #}
+                            {% if page.id in [1, 2, 4, 6, 9, 10, 11] %}
+                            
+                                <tr>
+                                    <td>{{ page.titlePage }}</td>
+                                    <td class="text-end">
+                                        <a href="{{ path('app_update_article', {'modif': article.id }) }}" class="btn btn-success">Modifier</a>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+</section>
+{% endblock %}

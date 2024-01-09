@@ -40,68 +40,11 @@
                             {% endif %}
                         </td>
                         <td class="text-end">
-                            <a data-article-id="{{ article.id }}" data-bs-toggle="modal" data-bs-target="#myModal" href="{{ path('app_admin', {'supp': article.id }) }}" class="btn btn-danger supp">Supprimer</a>
+                            <a data-article-id="{{ article.id }}" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-danger supp" href="{{ path('app_admin', {'supp': article.id }) }}">Supprimer</a>
                         </td>
                     {% endif %}
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-
-    <!-- Modale de confirmation Bootstrap -->
-    <div class="modal fade" id="myModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Confirmation de suppression</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Êtes-vous sûr de vouloir supprimer cet élément ?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-danger" id="confirmDelete">Supprimer</button>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-<!-- Script JavaScript pour gérer la suppression -->
-<script>
-    console.log('supprimerButton.length');
-     //Obtient les éléments de classe 'supp'
-     var supprimerButton = document.querySelectorAll('.supp');
-        
-     //Pour chaque elements de la class supp
-     supprimerButton.forEach(function (supprimerButton) {
-         supprimerButton.addEventListener('click', function (event) {
-             event.preventDefault(); //On empêche le comportement par défaut du lien
-
-             console.log('Le bouton de suppression a été cliqué');
-             console.log('2');
-
-            // Sélectionnez le bouton avec l'ID #confirmDelete
-            var confirmButton = document.getElementById('confirmDelete');
-            
-                //On obtient l'ID
-                var articleId = supprimerButton.getAttribute('data-article-id');
-
-                // On cache la modale
-                myModal.style.display = 'block';
-
-                //On envoie l'ID en tant que paramètre GET
-                var url = '?supp=' + articleId;
-
-                // Effectuez une requête AJAX ou une redirection vers l'URL
-                // Notez que cet exemple utilise une redirection pour illustrer le concept
-                window.location.href = url;
-
-         });
-     });
-      
-  </script>
-
 {% endblock %}

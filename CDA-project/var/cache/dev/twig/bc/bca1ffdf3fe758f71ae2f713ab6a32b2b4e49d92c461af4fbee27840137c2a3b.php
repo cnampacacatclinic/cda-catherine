@@ -119,6 +119,6 @@ class __TwigTemplate_e790fd1897a8070cd0fe61b3155f4ef381f2f7a6cda9f337b87379e11d1
 <p>
     Cheers!
 </p>
-", "registration/confirmation_email.html.twig", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\templates\\registration\\confirmation_email.html.twig");
+", "registration/confirmation_email.html.twig", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\templates\\registration\\confirmation_email.html.twig");
     }
 }

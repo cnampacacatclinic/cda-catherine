@@ -11,16 +11,19 @@ use App\Entity\Page;
 use App\Form\InsertContentType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Security;//pour obtenir l'id de l'utilisateur connecté
+use App\Service\VisitService;/* Pour les stat et le cookie */
 
 class InsertArticleController extends AbstractController
 {
     private $doctrine;
     private $security;
+    private $visitService;
 
-    public function __construct(ManagerRegistry $doctrine,Security $security)
+    public function __construct(ManagerRegistry $doctrine,Security $security,VisitService $visitService)
     {
         $this->doctrine = $doctrine;
         $this->security = $security;
+        $this->visitService = $visitService;
     }
 
     /**
@@ -33,17 +36,16 @@ class InsertArticleController extends AbstractController
         
         $article = new Article();
         $article->setFkUser($user);
-        
+        $this->visitService->visitCookie(); /* Pour les stat et le cookie */
         // Set la valeur par défaut pour la page dont l'id est 5
         $article->setFkPage($this->doctrine->getManager()->getRepository(Page::class)->find(5));
 
         $form = $this->createForm(InsertContentType::class, $article);
 
         if (!empty($_GET['modif'])) {
-            $changeArticle = $article->getId($_GET['modif']);
-            // Utilisez setData pour charger l'entité existante
-             $form->setData($article);
-         }/** */
+            $article->getId($_GET['modif']);
+            $form->setData($article);
+         }
         
 
         $form->handleRequest($request);

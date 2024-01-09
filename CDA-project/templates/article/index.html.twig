@@ -17,21 +17,22 @@
         le {{ article.dateARticle|date("d/m/Y") }}</p>
         <p>{{ article.textArticle|raw }}</p>
 </section>
-<section>
+<section class="container-md">
     <!-- si je ne suis pas connecté on affiche une lien pour se connecter -->
     {% if app.user == null %}
         <a title="Connexion" href="{{ path('app_login', {'a': article.id}) }}"><h3>Laisser un commentaire</h3></a>
     {% else %}
     <!-- sinon on affiche le formulaire -->
     <h3>Laisser un commentaire</h3>
-
+        <div class="container-sm col-8">
         {{ form_start(form) }}
             {{ form_row(form.textComment) }}
                 <button type="submit" class="btn btn-primary">Submit</button>
             {{ form_end(form) }}
-        {% endif %}
+        </div>
+    {% endif %}
 </section>
-<section>
+<section class="container-md">
     {% for comment in comments %}
         {% if comment.active == 1 and comment.fkArticle.id == article.id %}
         <h3>Les commentaires</h3>

@@ -100,6 +100,10 @@ nav i{
 #sectionLibreDOr img{
     width: 100%;
 }
+.border,.form-control,.card {
+    border: 1px solid #ccc !important;
+}
+
 /* /--------------------// ICON ET IMAGES //--------------------/ */
 i {
     color: #eb651a !important;
@@ -266,9 +270,15 @@ nav form{
     color: #eb651a !important;
     transition-duration: 1s !important;
 }
-
-
-
+#cookieButton, #noCookieButton{
+    color:#fff;
+}
+#cookieButton:hover, #noCookieButton:hover{
+    color:#fff !important;
+}
+.form-check-label{
+    font-size: 0.6em;
+}
 /* /--------------------// MEDIA QUERY //--------------------/ */
 
 @media (max-width: 1200px) {/* 1200px correspond à la taille d'écran pour la classe navbar-expand-xl de Boostrap */

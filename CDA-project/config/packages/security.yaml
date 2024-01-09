@@ -54,6 +54,9 @@ security:
         - { path: ^/gestioncomment, roles: ROLE_SUPER_ADMIN }
         - { path: ^/gestion-centre, roles: ROLE_SUPER_ADMIN }
         - { path: ^/management-other-people-content, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/management-user, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/management-page, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/visit, roles: ROLE_SUPER_ADMIN }
 
 when@test:
     security:

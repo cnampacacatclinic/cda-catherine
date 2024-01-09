@@ -79,6 +79,6 @@ class __TwigTemplate_ce404323fa34737ccdcacb27455e0ef135aab02032dc1d1acd83dd6db80
     <line x1=\"7\" y1=\"7\" x2=\"7\" y2=\"17\"></line>
     <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"16\"></line>
 </svg>
-", "@DoctrineMigrations/Collector/icon-v3.svg", "C:\\Users\\Simplon\\Documents\\prive-cda-catherine\\CDA-project\\vendor\\doctrine\\doctrine-migrations-bundle\\Resources\\views\\Collector\\icon-v3.svg");
+", "@DoctrineMigrations/Collector/icon-v3.svg", "C:\\Users\\Admin\\Documents\\cda-catherine\\CDA-project\\vendor\\doctrine\\doctrine-migrations-bundle\\Resources\\views\\Collector\\icon-v3.svg");
     }
 }

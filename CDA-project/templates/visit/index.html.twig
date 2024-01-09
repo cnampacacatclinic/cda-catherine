@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VisitController!{% endblock %}
+
+{% block body %}
+<section class="container-lg">
+    <h2>Visiteurs</h2>
+    <div class="card">
+        <div class="card-body row">
+            <p class="text-end">
+                <a data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-danger supp" href="{{ path('app_visit', {'supp': 1 }) }}" data-article-id="1">
+                    Supprimer les données datant de plus de 2 mois
+                </a>
+            </p>
+        </div>
+    </div>
+        <table class="table table-striped table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Provenance</th>
+                    <th scope="col">Sortie</th>
+                    <th scope="col">Cookie</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for visit in visitData %}
+                        <tr>
+                            <td>{{ visit.dateVisit|date("d/m/Y H:i:s") }}</td>
+                            <td>{{ visit.origine }}</td>
+                            <td>{{ visit.currentPage }}</td>
+                            <td>{{ visit.cookie }}</td>
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</section>
+{% endblock %}

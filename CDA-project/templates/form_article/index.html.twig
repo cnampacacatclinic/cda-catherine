@@ -7,19 +7,20 @@
 {% block body %}
 <section class="container-lg">
     <h2>Écrire un article</h2>
+    <div class="container-sm col-8">
+        {{ form_start(form) }}
 
-    {{ form_start(form) }}
+        {{ form_row(form.active) }}
 
-    {{ form_row(form.active) }}
+        {{ form_row(form.fkCategorie) }}
 
-    {{ form_row(form.fkCategorie) }}
+        {{ form_row(form.dateArticle) }}
+        {{ form_row(form.titleArticle) }}
+        {{ form_row(form.textArticle) }}
 
-    {{ form_row(form.dateArticle) }}
-    {{ form_row(form.titleArticle) }}
-    {{ form_row(form.textArticle) }}
+        <button type="submit" class="btn btn-orange">Submit</button>
 
-    <button type="submit" class="btn btn-orange">Submit</button>
-
-    {{ form_end(form) }}
+        {{ form_end(form) }}
+    <div>
 </section>
 {% endblock %}
