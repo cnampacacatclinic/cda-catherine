@@ -61,7 +61,7 @@ class VisitService
         return $_COOKIE['cookieTest'];
     }
 
-    public function visitCookie() {
+    /*public function visitCookie() {
 
         // Pour la table visit
         $currentPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
@@ -69,15 +69,33 @@ class VisitService
         $ip = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : '127.0.0.1';
       
       if(!empty($_GET['cookie']) && $_GET['cookie']=='ok'){
-        // Vérifie si le cookie cookieTest existe
+        // si le cookie cookieTest existe
         if (!empty($_COOKIE["cookieTest"])) {
-          // Utilise la valeur du cookie cookieTest
+          // on utilise la valeur du cookie cookieTest
           $cookieValue = $_COOKIE["cookieTest"];
           $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
         }else{
             $cookieValue=$this->cookiiie();
             $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
         }
+        
       }
+    }/** */
+    public function visitCookie() {
+        // Pour la table visit
+        $currentPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+        $origine = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : 'local';
+        $ip = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : '127.0.0.1';
+      
+        if(!empty($_GET['cookie']) && $_GET['cookie'] == 'ok') {
+            // Vérifie si le cookie existe
+            $cookieValue = !empty($_COOKIE["cookieTest"]) ? $_COOKIE["cookieTest"] : $this->cookiiie();
+
+            // Enregistrez la visite avec les informations obtenues
+            $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
+        }else {
+            $cookieValue = !empty($_COOKIE["cookieTest"]) ? $_COOKIE["cookieTest"] : 'pas de cookie';
+            $this->saveOneVisit($ip, $origine, $currentPage, $cookieValue);
+        }
     }
 }

@@ -18,6 +18,7 @@
             <thead>
                 <tr>
                     <th scope="col">Date</th>
+                    <th scope="col">ip</th>
                     <th scope="col">Provenance</th>
                     <th scope="col">Sortie</th>
                     <th scope="col">Cookie</th>
@@ -28,6 +29,7 @@
                 {% for visit in visitData %}
                         <tr>
                             <td>{{ visit.dateVisit|date("d/m/Y H:i:s") }}</td>
+                            <td>{{ visit.ip }}</td>
                             <td>{{ visit.origine }}</td>
                             <td>{{ visit.currentPage }}</td>
                             <td>{{ visit.cookie }}</td>
