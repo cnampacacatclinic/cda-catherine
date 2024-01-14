@@ -4,15 +4,15 @@
 
 {% block body %}
 
-<section class="container-lg" id="sectionAider">
+<section class="container" id="sectionAider">
     <div class="row">
     {% for article in articleData %}
-        <div class="col-md-6">
+        <div class="col">
             <h3>{{ article.titleArticle }}</h3>
             {{ article.textArticle|raw }}
             <a class="btn btn-orange" title="En savoir plus " href="{{ path('app_aider') }}">En savoir plus sur comment aider</a>
         </div>
-        <figure class="col-md-6">
+        <figure class="col">
             <img alt="Un chien dans d'un refuge, à travers les barreaux, tend sa patte à un humain qui la serre entre sa main. Photo de Wpadington" src="{{ asset('img/chienWpadington.jpg') }}">
         </figure>
     {% endfor %}
@@ -33,13 +33,14 @@
 </section>
 
 
-<section class="container-lg">
+<section class="container">
     <h3>Les dernières news</h3>
     <div class="row">
         {% for news in lastNews %}
-            <div class="col-md-4">
+            <div class="col">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ asset('img/jaune-img-1.png')}}" class="card-img-top" alt="vignette photo d'un animal de comagnie">
+                    
                     <div class="card-body">
                         <a title="{{ news.titleArticle }}" href="{{ path('app_article', {'a': news.id}) }}">
                             <h4 class="card-title">{{ news.titleArticle }}</h4>
@@ -57,7 +58,4 @@
     </div>
     <p><a class="btn btn-orange" title="News" href="{{ path('app_news') }}">Lire toutes les news</a></p>
 </section>
-
-
-
 {% endblock %}
